@@ -685,7 +685,7 @@ phase2.diversity$phase<- "phase 2"
 diversity.nester <-rbind(phase1.diversity, phase2.diversity)
 
 #
-diversity.nester.e<-merge(diversity.nester, plot.meta)
+
 
 # Plot nester diversity, phase dependence
 nests.diversity.phase.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=phase)) +
@@ -783,50 +783,73 @@ summary(model_height) # ns
 # get environmental data
 bait.double.e<-merge(bait.double, tree.meta)
 
-# Binominal regression
-bait.double.model <- glmmTMB(species.per.bait~elevation+(1|Block/Plot),
-                               data=bait.double.e,
-                               family=nbinom2)
-summary(bait.double.model)
-overdisp_fun(bait.double.model)
+#
+bait.double.model1 <- lmer(species.per.bait~elevation*height.sqrt+(1|Block/Plot),
+                               data=bait.double.e)
+bait.double.model2 <- lmer(species.per.bait~elevation+height.sqrt+(1|Block/Plot),
+                          data=bait.double.e)
 
-# model does not run properly, what to do? same for nbinom1
+anova(bait.double.model1, bait.double.model2) # probably ok to leave out interactions
+summary(bait.double.model2)
+overdisp_fun(bait.double.model2)
+#
+testDispersion(bait.double.model2) # ok
+simulateResiduals(bait.double.model2, plot = T) # not good
+testZeroInflation(simulateResiduals(fittedModel = bait.double.model2)) # zero inflated
+
 
 # with environmental factors
-bait.double.model.e <- glmmTMB(species.per.bait~elevation+Lianas.n+height+dw.percent+dw.number+trunk+Caco+slope.var+(1|Block/Plot),
-                                 data=bait.double.e,
-                                 family=nbinom2)
+bait.double.model.e <- lmer(species.per.bait~elevation+Lianas.n+height+dw.percent+dw.number+trunk+Caco+slope.var+(1|Block/Plot),
+                                 data=bait.double.e)
 summary(bait.double.model.e)
 overdisp_fun(bait.double.model.e)
-# model does not run properly, what to do? same for nbinom1
+#
+testDispersion(bait.double.model.e) # ok
+simulateResiduals(bait.double.model.e, plot = T) # not good
+testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e)) # zero inflated
+
+
+# model does not run properly, what to do? same for glmmTMB nbinom1/nbinom2
 
 ## Bait occupancy
 # get environmental data
 baiting.incidence.e<-merge(baiting.incidence, tree.meta)
 
 # Binominal regression
-baitoccupancy.model <- glmmTMB(occupancy~elevation+(1|Block/Plot),
+baitoccupancy.model1 <- glmmTMB(occupancy~elevation*height.sqrt+(1|Block/Plot),
                                data=baiting.incidence.e,
                                family=binomial)
-summary(baitoccupancy.model)
-overdisp_fun(baitoccupancy.model)
-testDispersion(baitoccupancy.model)
-simulateResiduals(fittedModel = baitoccupancy.model, plot = T) # within group deviation from normality - probably no big problem?
-testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model))
+baitoccupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+(1|Block/Plot),
+                                data=baiting.incidence.e,
+                                family=binomial)
+anova(baitoccupancy.model1, baitoccupancy.model2) # interaction model better
+
+summary(baitoccupancy.model1)
+#
+overdisp_fun(baitoccupancy.model1)
+testDispersion(baitoccupancy.model1) # ok
+simulateResiduals(fittedModel = baitoccupancy.model1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model1)) # ok
 
 # with environmental factors
-baitoccupancy.model.e <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
-                                 data=baiting.incidence.e,
-                                 family=binomial)
-summary(baitoccupancy.model.e)
-overdisp_fun(baitoccupancy.model.e)
+baitoccupancy.model.e1 <- glmmTMB(occupancy~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log*trunk.log+Caco+slope.var.log+(1|Block/Plot),
+                                  data=baiting.incidence.e,
+                                  family=binomial)
+baitoccupancy.model.e2 <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log*trunk.log+Caco+slope.var.log+(1|Block/Plot),
+                                  data=baiting.incidence.e,
+                                  family=binomial)
+
+anova(baitoccupancy.model.e1, baitoccupancy.model.e2) # interaction model little bit better
+
+summary(baitoccupancy.model.e1)
+overdisp_fun(baitoccupancy.model.e1)
 #
-testDispersion(baitoccupancy.model.e) # ok
-simulateResiduals(baitoccupancy.model.e, plot = T) # lower quantiles a bit weird  - probably not a big problem?
-testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e)) # ok
+testDispersion(baitoccupancy.model.e1) # ok
+simulateResiduals(baitoccupancy.model.e1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e1)) # ok
 
 # with abundance 
-baitoccupancy.model1 <- glmmTMB(Abundance~elevation+(1|Block/Plot),
+baitoccupancy.model1 <- glmmTMB(Abundance~elevation*height.sqrt+(1|Block/Plot),
                                 data=baiting.incidence.e,
                                 family=nbinom1)
 summary(baitoccupancy.model1)
@@ -848,116 +871,21 @@ testDispersion(baitoccupancy.model.e1) # for nbinom1 overdispersion ok, for nbin
 simulateResiduals(baitoccupancy.model.e1, plot = T) # doesnt look good for either family
 testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e1)) # ok for binom1, not ok for binom2
 
-#----------------------------------------------------------#
-## Bamboo statistics
-#----------------------------------------------------------#
-
-# bamboo occupancy models
-
-# Get environmental metadata
-bamboo.incidence.e<-merge(phase.nests, tree.meta)
-
-# binominal model of bamboo nesting using phase
-bamboo.occupancy.model <- glmmTMB(occupancy~elevation+phase+(1|Block/Plot),
-                                  data=bamboo.incidence.e,
-                                  family=binomial)
-summary(bamboo.occupancy.model)
-overdisp_fun(bamboo.occupancy.model)
-#
-testDispersion(bamboo.occupancy.model) # ok
-simulateResiduals(bamboo.occupancy.model, plot = T) # slight deviance in lower quantiles, probably fine
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model)) # ok 
-
-
-# binominal model of bamboo nesting using only controls
-bamboo.occupancy.model <- glmmTMB(occupancy~elevation+phase+(1|Block/Plot),
-                                  data=subset(bamboo.incidence.e, Treatment=="control"),
-                                  family=binomial)
-summary(bamboo.occupancy.model)
-overdisp_fun(bamboo.occupancy.model)
-#
-testDispersion(bamboo.occupancy.model) # ok
-simulateResiduals(bamboo.occupancy.model, plot = T) # slight deviance in lower quantiles, probably fine
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model)) # ok 
-
-# or alternatively, splitting phase 2 into different treatments. Works only as fixed factor since its levels are not well replicated across forest types
-bamboo.occupancy.model2 <- glmmTMB(occupancy~elevation+new.Treatment+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
-                                   family=binomial)
-summary(bamboo.occupancy.model2)
-overdisp_fun(bamboo.occupancy.model2)
-#
-testDispersion(bamboo.occupancy.model2) # ok
-simulateResiduals(bamboo.occupancy.model2, plot = T) # slight deviance in lower quantiles, probably fine
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
-
-
-# binominal model of bamboo nesting using phase with environment
-bamboooccupancy.model.e <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
-                                   family=binomial)
-summary(bamboooccupancy.model.e)
-overdisp_fun(bamboooccupancy.model.e)
-#
-testDispersion(bamboooccupancy.model.e) # ok
-simulateResiduals(bamboooccupancy.model.e, plot = T) # all good
-testZeroInflation(simulateResiduals(fittedModel = bamboooccupancy.model.e)) # ok 
-
-# with abundance 
-bamboo.occupancy.model3 <- glmmTMB(nesting.estimate~elevation+phase+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
-                                   family=nbinom1)
-summary(bamboo.occupancy.model3)
-overdisp_fun(bamboo.occupancy.model3)
-#
-testDispersion(bamboo.occupancy.model3) # ok
-simulateResiduals(bamboo.occupancy.model3, plot = T) # ok for nbinom1 / not good for nbinom2
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model3)) # ok 
-
-# with abundance and environmental
-bamboo.occupancy.model.e4 <- glmmTMB(nesting.estimate~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
-                                     data=bamboo.incidence.e,
-                                     family=nbinom1)
-summary(bamboo.occupancy.model.e4)
-overdisp_fun(bamboo.occupancy.model.e4)
-#
-testDispersion(bamboo.occupancy.model.e4) # ok
-simulateResiduals(bamboo.occupancy.model.e4, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model.e4)) # ok 
-
-# Species diversity in bamboo model
-bamboo.diversity.model <- lmer(expH ~ elevation * phase+ (1|Block), data = diversity.nester.e)
-summary(bamboo.diversity.model)
-overdisp_fun(bamboo.diversity.model)
-#
-testDispersion(bamboo.diversity.model) # ok
-simulateResiduals(bamboo.diversity.model, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model)) # zero inflated - troubles! 
-
-# diversity changes with environment metadata
-bamboo.diversity.model.e <- lmer(expH ~ elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean+phase+ (1|Block), data = diversity.nester.e)
-summary(bamboo.diversity.model.e)
-overdisp_fun(bamboo.diversity.model.e) # overdispersion?
-#
-testDispersion(bamboo.diversity.model.e) # ok
-simulateResiduals(bamboo.diversity.model.e, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e)) # zero inflated - troubles! 
-
-# Baiting diversity 
+#####  Baiting diversity 
 # Fit a LMM for shannon diversity
 baitdiversity.model <- lmer(expH ~ elevation + (1|Block), data = baiting.diversity.e)
 summary(baitdiversity.model)
-overdisp_fun(baitdiversity.model)
+overdisp_fun(baitdiversity.model) # overdispersion 
 #
 testDispersion(baitdiversity.model) # ok
 simulateResiduals(baitdiversity.model, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model)) # ?
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model)) # ok
 
 # add environmental factors
 baitdiversity.model.e <- lmer(expH ~elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean + (1|Block),
                               data = baiting.diversity.e)
 summary(baitdiversity.model.e)
-overdisp_fun(baitdiversity.model.e) # overdipsersion?
+overdisp_fun(baitdiversity.model.e) # overdispersion?
 #
 testDispersion(baitdiversity.model.e) # ok
 simulateResiduals(baitdiversity.model.e, plot = T) # weird 
@@ -970,17 +898,157 @@ overdisp_fun(baitdiversity.model.eve)
 #
 testDispersion(baitdiversity.model.eve) # ok
 simulateResiduals(baitdiversity.model.eve, plot = T) # weird 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve)) # weird
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve)) # ok
 
 # add environmental factors
 baitdiversity.model.eve.e <- lmer(evenness ~elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean + (1|Block),
-                              data = baiting.diversity.e)
+                                  data = baiting.diversity.e)
 summary(baitdiversity.model.eve.e)
 overdisp_fun(baitdiversity.model.eve.e)
 #
 testDispersion(baitdiversity.model.eve.e) # ok
 simulateResiduals(baitdiversity.model.eve.e, plot = T) # weird 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e)) # weird
+
+#----------------------------------------------------------#
+## Bamboo statistics
+#----------------------------------------------------------#
+
+# bamboo occupancy models
+
+# Get environmental metadata
+bamboo.incidence.e<-merge(phase.nests, tree.meta)
+
+# binominal model of bamboo nesting using phase
+bamboo.occupancy.model1 <- glmmTMB(occupancy~elevation*height.sqrt+phase+(1|Block/Plot),
+                                  data=bamboo.incidence.e,
+                                  family=binomial)
+bamboo.occupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+phase+(1|Block/Plot),
+                                   data=bamboo.incidence.e,
+                                   family=binomial)
+# interaction model convergence troubles, so without interaction
+
+summary(bamboo.occupancy.model2)
+overdisp_fun(bamboo.occupancy.model2)
+#
+testDispersion(bamboo.occupancy.model2) # ok
+simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
+
+
+# binominal model of bamboo nesting using only controls
+bamboo.occupancy.model <- glmmTMB(occupancy~elevation+height.sqrt+phase+(1|Block/Plot),
+                                  data=subset(bamboo.incidence.e, Treatment=="control"),
+                                  family=binomial)
+# interaction model convergence troubles, so without interaction
+summary(bamboo.occupancy.model)
+overdisp_fun(bamboo.occupancy.model)
+#
+testDispersion(bamboo.occupancy.model) # ok
+simulateResiduals(bamboo.occupancy.model, plot = T) # slight deviance in lower quantiles, probably fine
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model)) # ok 
+
+# or alternatively, splitting phase 2 into different treatments. Works only as fixed factor since its levels are not well replicated across forest types
+bamboo.occupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+new.Treatment+(1|Block/Plot),
+                                   data=bamboo.incidence.e,
+                                   family=binomial)
+summary(bamboo.occupancy.model2)
+overdisp_fun(bamboo.occupancy.model2)
+#
+testDispersion(bamboo.occupancy.model2) # ok
+simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
+
+
+# binominal model of bamboo nesting using phase with environment
+bamboooccupancy.model.e1 <- glmmTMB(occupancy~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+                                   data=bamboo.incidence.e,
+                                   family=binomial)
+bamboooccupancy.model.e2 <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+                                    data=bamboo.incidence.e,
+                                    family=binomial)
+anova(bamboooccupancy.model.e1, bamboooccupancy.model.e2) # ns -  better using no interactions
+
+summary(bamboooccupancy.model.e2)
+overdisp_fun(bamboooccupancy.model.e2)
+#
+testDispersion(bamboooccupancy.model.e2) # ok
+simulateResiduals(bamboooccupancy.model.e2, plot = T) # all good
+testZeroInflation(simulateResiduals(fittedModel = bamboooccupancy.model.e2)) # ok 
+
+# with abundance 
+bamboo.occupancy.model3 <- glmmTMB(nesting.estimate~elevation*height.sqrt+phase+(1|Block/Plot),
+                                   data=bamboo.incidence.e,
+                                   family=nbinom2)
+bamboo.occupancy.model4 <- glmmTMB(nesting.estimate~elevation+height.sqrt+phase+(1|Block/Plot),
+                                   data=bamboo.incidence.e,
+                                   family=nbinom2)
+anova(bamboo.occupancy.model3,bamboo.occupancy.model4) # ns, better without interaction
+summary(bamboo.occupancy.model4)
+overdisp_fun(bamboo.occupancy.model4)
+#
+testDispersion(bamboo.occupancy.model4) # ok
+simulateResiduals(bamboo.occupancy.model4, plot = T) # bit troubles for both nbinom1 and 2
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model4)) # ok 
+
+# with abundance and environmental
+bamboo.occupancy.model.e4 <- glmmTMB(nesting.estimate~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+                                     data=bamboo.incidence.e,
+                                      family=nbinom1)
+bamboo.occupancy.model.e5 <- glmmTMB(nesting.estimate~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+                                     data=bamboo.incidence.e,
+                                     family=nbinom1) # not working
+
+summary(bamboo.occupancy.model.e4)
+overdisp_fun(bamboo.occupancy.model.e4)
+#
+testDispersion(bamboo.occupancy.model.e4) # ok
+simulateResiduals(bamboo.occupancy.model.e4, plot = T) # okish 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model.e4)) # ok 
+
+#####   Bamboo Species diversity
+diversity.nester.e<-merge(diversity.nester, plot.meta)
+
+bamboo.diversity.model1 <- lmer(expH ~ elevation * phase+ (1|Block), data = diversity.nester.e)
+bamboo.diversity.model2 <- lmer(expH ~ elevation + phase+ (1|Block), data = diversity.nester.e)
+anova(bamboo.diversity.model1, bamboo.diversity.model2) #ns, no interaction better
+
+summary(bamboo.diversity.model2)
+overdisp_fun(bamboo.diversity.model2)
+#
+testDispersion(bamboo.diversity.model2) # ok
+simulateResiduals(bamboo.diversity.model2, plot = T) # ok 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model2)) # zero inflated - troubles? 
+
+# bamboo diversity changes with environment metadata
+bamboo.diversity.model.e1 <- lmer(expH ~ elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean*phase+ (1|Block), data = diversity.nester.e)
+bamboo.diversity.model.e2 <- lmer(expH ~ elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean+phase+ (1|Block), data = diversity.nester.e)
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) #ns, no interaction better
+
+summary(bamboo.diversity.model.e2)
+overdisp_fun(bamboo.diversity.model.e2) 
+#
+testDispersion(bamboo.diversity.model.e2) # ok
+simulateResiduals(bamboo.diversity.model.e2, plot = T) # ok 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e2)) # zero inflated - troubles?
+
+#----------------------------------------------------------#
+## Summary statistics
+#----------------------------------------------------------#
+
+# Does bait occupancy change?
+
+# Does bait abundance change?
+
+# Does bait diversity change?
+
+# Does bamboo occupancy change?
+
+# Does bamboo diversity change?
+
+# abundance of ants inside bamboo is not as interesting as bait abundance
+# eveness is probably not so interesting since its partly accounted for in shannon diversity (expH)
+
 
 #----------------------------------------------------------#
 # Figure summaries -----
