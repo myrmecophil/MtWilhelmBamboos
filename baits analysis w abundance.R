@@ -1,9 +1,10 @@
-## Numba-Kausi Baits & nests - R script by Phil 10 march 2023
+## Numba-Kausi Baits & nests - R script by Phil 18 April 2023
 
 # to do: 
-# check all statiscal models
+# optimize all models
+# include soil humidity in environmental data
 
-# Associated csv files:
+### Associated csv files:
 
 # BaitsData.csv: data on the baiting experiment
 # NestsData.csv: data on bamboon nesting
@@ -55,16 +56,6 @@ parse_abundance <- function(x) {
   }
 }
 
-# test for overdispersion
-overdisp_fun<-function(model) {
-  rdf <- df.residual(model)
-  rp <- residuals(model,type="pearson")
-  Pearson.chisq <- sum(rp^2)
-  prat <- Pearson.chisq/rdf
-  pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE)
-  c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval)
-}
-
 ### Raw Baiting data
 # Import raw occurrence data
 baiting.raw =read.csv(file="raw data/BaitsData.csv", header=T)
@@ -108,14 +99,14 @@ nest.raw$Moved.to.plot<-as.factor(nest.raw$Moved.to.plot)
 nest.raw$Moved.to.block<-as.factor(nest.raw$Moved.to.block)
 
 # remove bamboo data from poisoned plots (KX-S3)
-nest.raw<-subset(nest.raw, Moved.to.plot!= "KP1-S3" & Moved.to.plot!= "KP2-S3" & Moved.to.plot!= "KP4-S3"& Moved.to.plot!= "KP6-S3")
+nest.raw2<-subset(nest.raw, Moved.to.plot!= "KP1-S3" & Moved.to.plot!= "KP2-S3" & Moved.to.plot!= "KP4-S3"& Moved.to.plot!= "KP6-S3")
 
 # parse number of nesting ants
-nest.raw$nesting.estimate <- apply(nest.raw["N.ants..camera."],1, parse_abundance)
+nest.raw2$nesting.estimate <- apply(nest.raw2["N.ants..camera."],1, parse_abundance)
 
 # Count a bamboo nest as occupied if there were >2 worker ants inside or 1 queen
 # add 'moved to' forest and block
-nesters <-nest.raw %>%
+nesters <-nest.raw2 %>%
   mutate(phase1.occupancy = case_when(nesting.estimate > 2 ~ 1,
                                       TRUE ~ 0),
          phase2.occupancy = case_when(N.ants > 2 ~ 1,
@@ -170,9 +161,12 @@ tree.metada.raw<-read.csv(file="raw data/TreeAttributes.csv", header=T)
 # turn number of lianas into numeric
 tree.metada.raw$Lianas.n <- as.numeric(gsub('>', '', tree.metada.raw$Lianas))
 
+# define plot.stratum 
+tree.metada.raw$plot.stratum<-paste(tree.metada.raw$Plot,tree.metada.raw$Stratum)
+
 # Prepare tree-level metadata for later models
 tree.meta.sub<-tree.metada.raw %>%
-  dplyr::select(Plot, mastercode, Trunk.perimenter..cm., tree.ID, Lianas.n, deadwood.., deadwood., Bait.Bamboo.Height.m.)%>%
+  dplyr::select(Plot, plot.stratum, mastercode, Trunk.perimenter..cm., tree.ID, Lianas.n, deadwood.., deadwood., Bait.Bamboo.Height.m.)%>%
   rename(trunk =Trunk.perimenter..cm., Code = mastercode, height = Bait.Bamboo.Height.m., dw.percent = deadwood., dw.number=deadwood..)
 
 plot.metada.sub<-  plot.metada.raw %>%
@@ -195,6 +189,18 @@ tree.meta<-merge(tree.meta.sub,plot.metada.sub)
 # plot attributes incl. tree level means
 plot.meta<-merge(plot.metada.sub,tree.meta.plot)
 
+# Prepare stratum-level metadata for later models
+
+## calculate tree metadata as means on stratum level
+tree.meta.plot2<-tree.meta.sub.ID %>%
+  group_by(Plot, plot.stratum) %>%  summarise(across(
+    .cols = where(is.numeric), 
+    .fns = list(mean = ~mean(., na.rm = TRUE)),
+    .names = "{col}_{fn}"))
+
+# stratum level plot attributes (averages)
+plot.meta2<-merge(tree.meta.plot2,plot.metada.sub)
+
 #----------------------------------------------------------#
 # 1.1 Bait occupancy -----
 #----------------------------------------------------------#
@@ -214,8 +220,38 @@ bait.double <-bait.double %>%
                                        .default = 1)) #
 
 
-### Plot bait occupancy as average proportion per plot
+### Plot bait occupancy as average proportion per plot-stratum
 
+# define plot-stratum
+baiting.incidence$plot.stratum <-paste(baiting.incidence$Plot,baiting.incidence$Stratum)
+
+#count total baits per stratum per plot
+baits.c<-count(baiting.incidence, plot.stratum)
+
+# summarize occupied per stratum per plot
+bait1 <- baiting.incidence %>%
+  group_by(Forest, Plot, Stratum, plot.stratum) %>%
+  summarize(occupancy = sum(occupancy))
+
+# merge with total baits
+baits.final<-merge(bait1, baits.c)
+
+# proportion
+baits.final$proportion<-baits.final$occupancy/baits.final$n*100
+
+# plot it
+bait.occupancy.stratum<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Stratum)) +
+  ggtitle("Bait occupancy") +
+  ylab("Occupancy [%]")+
+  xlab("")+ 
+  #ylim(0,50)+
+  geom_boxplot()+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  theme_bw()
+bait.occupancy.stratum
+
+### Plot bait occupancy as average proportion per plot
 
 #count total baits per plot
 baits.c<-count(baiting.incidence, Plot)
@@ -243,10 +279,12 @@ bait.occupancy.plot<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Fore
   theme_bw()
 bait.occupancy.plot
 
+
 #----------------------------------------------------------#
 # 1.2 Bait diversity -----
 #----------------------------------------------------------#
 
+## On plot level
 # plot x species incidence
 ant_m<-dcast(baiting.data, formula = Plot ~ AntSpCODE, length)
 rownames(ant_m)<-ant_m[,1] # Plot as rownames
@@ -266,14 +304,11 @@ str(data2)
 plot_m<-distinct(baiting.data, Plot, .keep_all = TRUE)
 diversity<-merge(data2, plot_m)
 
-# 
-baiting.diversity.e<-merge(diversity, plot.meta)
-
 ## Plot it
 #Labs
 labs <- expression("Kausi", "Numba")
 
-baitdiversity<-ggplot(diversity, aes(x=Forest, y=expH, fill=Forest)) +
+baitdiversity.plot<-ggplot(diversity, aes(x=Forest, y=expH, fill=Forest)) +
   ggtitle("Bait species diversity") +
   geom_boxplot()+
   ylim(0,20)+
@@ -283,10 +318,48 @@ baitdiversity<-ggplot(diversity, aes(x=Forest, y=expH, fill=Forest)) +
   xlab("")+ 
   guides(fill="none")+
   theme_bw()
-baitdiversity
+baitdiversity.plot
+
+## On stratum level
+baiting.data$plot.stratum <-paste(baiting.data$Plot,baiting.data$Stratum)
+
+# plot.stratum x species incidence
+ant_m<-dcast(baiting.data, formula = plot.stratum ~ AntSpCODE, length)
+rownames(ant_m)<-ant_m[,1] # Plot as rownames
+ant_m<-ant_m[,-c(1,2)]
+
+# extract diversity values
+data3 <- data.frame(row.names(ant_m))     # create a new file with plot numbers
+names(data3) <- "plot.stratum" # rename variable "plot.stratum"
+data3$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon diversity per plot
+data3$Richness <- specnumber(ant_m)                          # Richness per plot
+data3$expH <- exp(data3$Shannon)                                         # exponential Shannon diversity per plot
+data3$expH[data3$Richness == 0] <- 0                                     # define exp(Shannon) = 0
+data3$evenness <- data3$Shannon/log(specnumber(ant_m)) # evenness per plot
+str(data3)
+
+# add Plot location
+plot_m2<-distinct(baiting.data, plot.stratum, .keep_all = TRUE)
+diversity.stratum<-merge(data3, plot_m2)
+# 
+
+## Plot it
+#Labs
+labs <- expression("Kausi", "Numba")
+
+baitdiversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = Stratum)) +
+  ggtitle("Bait diversity") +
+  ylab("Shannon diversity")+
+  xlab("")+ 
+  #ylim(0,50)+
+  geom_boxplot()+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  theme_bw()
+baitdiversity.stratum
 
 #----------------------------------------------------------#
-#  1.3 Bait composition -----
+# 1.3 Bait composition -----
 #----------------------------------------------------------#
 
 # summarize bait incidence counts
@@ -396,6 +469,41 @@ bait.incidence.plot
 #----------------------------------------------------------#
 # 2.1 Nest occupancy -----
 #----------------------------------------------------------#
+
+# Survivor Plots
+
+# create extra variable
+nest.raw$Forest.Treatment<-paste(nest.raw$Forest, nest.raw$Treatment)
+labs1 <- expression("low elevation control", "high elevation control", "other elevation transfer", "same elevation transfer")
+
+
+# Survived as proportion of occupied nests
+nest.raw %>% filter(Occupied == TRUE)%>%
+  count(Forest.Treatment, Survived) %>%
+  ggplot(aes(Forest.Treatment, n, fill = Survived)) + 
+  xlab("Treatment") +
+  scale_x_discrete(labels=labs1)+
+  ylab("occupied nests") +
+  ggtitle("Survived as proportion of occupied nests") +
+  scale_fill_brewer(palette="Dark2")+
+  geom_col() + 
+  geom_text(aes(label = n), 
+            position = position_stack(vjust=.5),colour = "black", size = 5)
+
+# Survived as proportion of total nests
+nest.raw %>%
+  count(Forest.Treatment, Survived) %>%
+  ggplot(aes(Forest.Treatment, n, fill = Survived)) + 
+  xlab("Treatment") +
+  scale_x_discrete(labels=labs1)+
+  ylab("Bamboos translocated") +
+  ggtitle("Survived as proportion of total bamboos") +
+  scale_fill_brewer(palette="Dark2")+
+  geom_col() + 
+  geom_text(aes(label = n), 
+            position = position_stack(vjust=.5),colour = "black", size = 5)
+
+
 # define treatments.
 
 phase.nests <-phase.nests %>%
@@ -515,6 +623,39 @@ nest.phase2.plot
 
 ##### ignoring phase and empty bamboos: Proportion of occupancy
 
+### Plot nest occupancy as average proportion per plot
+phase1.n<-subset(phase.nests, phase=="phase 1")
+phase2.n<-subset(phase.nests, phase=="phase 2")
+
+# define plot-stratum
+phase.nests$plot_stratum<-paste(phase.nests$Plot, phase.nests$Stratum)
+
+#count total nests per plot and stratum
+nests.c<-count(phase.nests, plot_stratum)
+
+# summarize occupied per plot
+nest1 <- phase.nests %>%
+  group_by(Forest, Plot, Stratum, plot_stratum) %>%
+  summarize(occupancy = sum(occupancy))
+
+# merge with total baits
+nests.final<-merge(nest1, nests.c)
+
+# proportion
+nests.final$proportion<-nests.final$occupancy/nests.final$n*100
+
+# plot it
+nests.final.occupancy.plot<-ggplot(nests.final, aes(x=Forest, y=proportion, fill = Stratum)) +
+  ggtitle("Nest occupancy") +
+  ylab("Occupancy [%]")+
+  xlab("")+ 
+  #ylim(0,50)+
+  geom_boxplot()+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  theme_bw()
+nests.final.occupancy.plot
+
 # plot nest occupancy as proportion
 nest.proportion3 <- phase.nests %>%
   group_by(Forest, AntSpCode) %>%
@@ -559,6 +700,49 @@ nesting.proportion<-ggplot(nest.proportion3, aes(x = Forest, y = percentage, fil
   #scale_fill_brewer(palette="Dark2")+
   theme_minimal()
 nesting.proportion
+
+##### ignoring phase and empty bamboos: Proportion of occupancy per stratum per plot
+phase.nests
+
+#count total bamboos per plot per stratum
+ca.c<-count(phase.nests, Plot)
+
+counts<-rbind(phase1.c,phase2.c)
+
+# summarize occupied per plot per phase
+phase1 <- phase1.n %>%
+  group_by(Forest, Plot) %>%
+  summarize(occupancy = sum(occupancy))
+
+phase1$phase <- "phase 1"
+
+phase2<- phase2.n %>%
+  group_by(Forest, Plot) %>%
+  summarize(occupancy = sum(occupancy))
+
+phase2$phase<-"phase 2"
+
+# merge
+phase.t<-rbind(phase1, phase2)
+
+# merge with total nests
+phase.final<-merge(phase.t, counts)
+
+# proportion
+phase.final$proportion<-phase.final$occupancy/phase.final$n*100
+
+# plot it
+nest.occupancy.phase.plot<-ggplot(phase.final, aes(x=Forest, y=proportion, fill=phase)) +
+  ggtitle("Bamboo nest occupancy") +
+  labs(fill = "Phase")+  
+  ylab("Occupancy [%]")+
+  xlab("")+ 
+  ylim(0,50)+
+  geom_boxplot()+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  theme_bw()
+nest.occupancy.phase.plot
 
 
 ##### ignoring phase and empty bamboos: Proportion of abundance
@@ -616,23 +800,26 @@ abundance.proportion
 nesters<-phase.nests
 nesters$AntSpCode[nesters$occupancy==0]  <- ""
 
+# define plot.stratum
+nesters$plot.stratum<-paste(nesters$Plot,nesters$Stratum)
+
 # subset phase
 phase1<-subset(nesters, phase=="phase 1")
 phase2<-subset(nesters, phase=="phase 2")
 
-# phase 1 plot x species incidence
-ant_n.phase1<-dcast(phase1, formula = Plot ~ AntSpCode, length)
-rownames(ant_n.phase1)<-ant_n.phase1[,1] # Plot as rownames
+# phase 1 plot.stratum x species incidence
+ant_n.phase1<-dcast(phase1, formula = plot.stratum ~ AntSpCode, length)
+rownames(ant_n.phase1)<-ant_n.phase1[,1] # plot.stratum as rownames
 ant_n.phase1<-ant_n.phase1[,-c(1,2)]
 
-# phase 2 plot x species incidence
-ant_n.phase2<-dcast(phase2, formula = Plot ~ AntSpCode, length)
-rownames(ant_n.phase2)<-ant_n.phase2[,1] # Plot as rownames
+# phase 2 plot.stratum x species incidence
+ant_n.phase2<-dcast(phase2, formula = plot.stratum ~ AntSpCode, length)
+rownames(ant_n.phase2)<-ant_n.phase2[,1] # plot.stratum as rownames
 ant_n.phase2<-ant_n.phase2[,-c(1,2)]
 
 # extract diversity values for phase 1
 data2 <- data.frame(row.names(ant_n.phase1))     # create a new file with plot numbers
-names(data2) <- "Plot" # rename variable "plot"
+names(data2) <- "plot.stratum" # rename variable "plot.stratum"
 data2$Shannon <- diversity(ant_n.phase1, index = "shannon", base = exp(1)) # Shannon diversity per plot
 data2$Richness <- specnumber(ant_n.phase1)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
@@ -641,12 +828,13 @@ data2$evenness <- data2$Shannon/log(specnumber(ant_n.phase1)) # evenness per plo
 str(data2)
 
 # add Plot location
-phase1.diversity<-merge(data2, plot_m)
-phase1.diversity$Plot<-as.factor(phase1.diversity$Plot)
+plot_m3<-subset(nesters, phase=="phase 1")
+plot_m3<-distinct(plot_m3, plot.stratum, .keep_all = TRUE)
+phase1.diversity<-merge(data2, plot_m3)
 
 # extract diversity values for phase 2
 data2 <- data.frame(row.names(ant_n.phase2))     # create a new file with plot numbers
-names(data2) <- "Plot" # rename variable "plot"
+names(data2) <- "plot.stratum" # rename variable "plot.stratum"
 data2$Shannon <- diversity(ant_n.phase2, index = "shannon", base = exp(1)) # Shannon diversity per plot
 data2$Richness <- specnumber(ant_n.phase2)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
@@ -655,11 +843,12 @@ data2$evenness <- data2$Shannon/log(specnumber(ant_n.phase2)) # evenness per plo
 str(data2)
 
 # add Plot location
-phase2.diversity<-merge(data2, plot_m)
-phase2.diversity$Plot<-as.factor(phase2.diversity$Plot)
+plot_m4<-subset(nesters, phase=="phase 2")
+plot_m4<-distinct(plot_m4, plot.stratum, .keep_all = TRUE)
+phase2.diversity<-merge(data2, plot_m4)
 
 ## gg plot it
-nests.phase1<-ggplot(phase1.diversity, aes(x=Forest, y=expH, fill=Forest)) +
+nests.phase1<-ggplot(phase1.diversity, aes(x=Forest, y=expH, fill=Stratum)) +
   ggtitle("Phase 1 Bamboo nester diversity") +
   geom_boxplot()+
   ylim(0,5)+
@@ -669,7 +858,7 @@ nests.phase1<-ggplot(phase1.diversity, aes(x=Forest, y=expH, fill=Forest)) +
   theme(axis.text.x = element_text(size=12))
 nests.phase1
 
-nests.phase2 <-ggplot(phase2.diversity, aes(x=Forest, y=expH, fill=Forest)) +
+nests.phase2 <-ggplot(phase2.diversity, aes(x=Forest, y=expH, fill=Stratum)) +
   ggtitle("Phase 2 Bamboo nester diversity") +
   geom_boxplot()+
   #ylim(0,5)+
@@ -679,13 +868,7 @@ nests.phase2 <-ggplot(phase2.diversity, aes(x=Forest, y=expH, fill=Forest)) +
   theme(axis.text.x = element_text(size=12))
 nests.phase2
 #
-phase1.diversity$phase<- "phase 1"
-phase2.diversity$phase<- "phase 2"
-
 diversity.nester <-rbind(phase1.diversity, phase2.diversity)
-
-#
-
 
 # Plot nester diversity, phase dependence
 nests.diversity.phase.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=phase)) +
@@ -698,13 +881,30 @@ nests.diversity.phase.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=
   scale_fill_manual(values=c("#009E73", "#D55E00"))+
   theme_bw()
 nests.diversity.phase.plot
+
 #----------------------------------------------------------#
-# Statistics -----
+# 3.1 Statistic: Environment  -----
 #----------------------------------------------------------#
 
 # Q1: Should plot means of environmental variables be transformed as well? Such as dw.percent_mean
+
 # Q2: Can/should 'tree ID' be included in the models? For a couple baits/bamboos, the trees are the same (and thus, also dbh and liana counts). 
-# One possibility would be to include them as another crossed random factor, but not sure if it makes sense since its not always the case: (1|Block/Plot/tree.ID)
+# One possibility would be to include them as another crossed random factor, but not sure if it makes: (1|Block/Plot/tree.ID)
+
+# Q3: We have two cases where a factor could enter the model either as two-level category, or as continuous measure. For now, I entered them 
+# as continous variables, but is it really better?
+# 1st case is Stratum: height (continuous), or Stratum (two levels, Canopy (CA) or Understory (UN))
+# 2nd case is Location: elevation (continuous), or Forest (two levels, Kausi and Numba)
+
+# test for overdispersion
+overdisp_fun<-function(model) {
+  rdf <- df.residual(model)
+  rp <- residuals(model,type="pearson")
+  Pearson.chisq <- sum(rp^2)
+  prat <- Pearson.chisq/rdf
+  pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE)
+  c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval)
+}
 
 # Plot attribute transformations: Are environmental factors skewed?
 hist(tree.meta$trunk) #right skewed, log+1 transformation fine
@@ -775,19 +975,19 @@ model_height<- lmer(height.sqrt ~  elevation + (1|Block/Plot), data= tree.meta)
 summary(model_height) # ns
 
 #----------------------------------------------------------#
-## Bait statistics
+# 3.2 Bait Statistics -----
 #----------------------------------------------------------#
 
 # Are there more species per bait in higher elevation?
 
 # get environmental data
 bait.double.e<-merge(bait.double, tree.meta)
-
 #
 bait.double.model1 <- lmer(species.per.bait~elevation*height.sqrt+(1|Block/Plot),
                                data=bait.double.e)
 bait.double.model2 <- lmer(species.per.bait~elevation+height.sqrt+(1|Block/Plot),
                           data=bait.double.e)
+# scaling and singularity issues
 
 anova(bait.double.model1, bait.double.model2) # probably ok to leave out interactions
 summary(bait.double.model2)
@@ -809,7 +1009,7 @@ simulateResiduals(bait.double.model.e, plot = T) # not good
 testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e)) # zero inflated
 
 
-# model does not run properly, what to do? same for glmmTMB nbinom1/nbinom2
+## model does not run properly, what to do? same for glmmTMB nbinom1/nbinom2
 
 ## Bait occupancy
 # get environmental data
@@ -824,7 +1024,7 @@ baitoccupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+(1|Block/Plot),
                                 family=binomial)
 anova(baitoccupancy.model1, baitoccupancy.model2) # interaction model better
 
-summary(baitoccupancy.model1)
+summary(baitoccupancy.model2)
 #
 overdisp_fun(baitoccupancy.model1)
 testDispersion(baitoccupancy.model1) # ok
@@ -849,16 +1049,18 @@ simulateResiduals(baitoccupancy.model.e1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e1)) # ok
 
 # with abundance 
-baitoccupancy.model1 <- glmmTMB(Abundance~elevation*height.sqrt+(1|Block/Plot),
+baitabundance.model1 <- glmmTMB(Abundance~elevation+height.sqrt+(1|Block/Plot),
                                 data=baiting.incidence.e,
                                 family=nbinom1)
-summary(baitoccupancy.model1)
-overdisp_fun(baitoccupancy.model1)
+summary(baitabundance.model1)
+overdisp_fun(baitabundance.model1)
+
+# model doesnt work if height is included as interaction
 
 #
-testDispersion(baitoccupancy.model1) # for nbinom1 overdispersion ok, for nbinom2 not good
-simulateResiduals(baitoccupancy.model1, plot = T) # doesnt look good for either family
-testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model1)) # ok for binom1, not ok for binom2
+testDispersion(baitabundance.model1) # for nbinom1 overdispersion ok, for nbinom2 not good
+simulateResiduals(baitabundance.model1, plot = T) # doesnt look good for either family
+testZeroInflation(simulateResiduals(fittedModel = baitabundance.model1)) # ok for binom1, not ok for binom2
 
 # with abundance and environmental
 baitoccupancy.model.e1 <- glmmTMB(Abundance~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
@@ -872,6 +1074,11 @@ simulateResiduals(baitoccupancy.model.e1, plot = T) # doesnt look good for eithe
 testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e1)) # ok for binom1, not ok for binom2
 
 #####  Baiting diversity 
+# NOTE: Here we test plot-level diversity, which aggregates strata
+
+# get environmental data: Plot.meta has averages for variables on Plot-level
+baiting.diversity.e<-merge(diversity, plot.meta)
+
 # Fit a LMM for shannon diversity
 baitdiversity.model <- lmer(expH ~ elevation + (1|Block), data = baiting.diversity.e)
 summary(baitdiversity.model)
@@ -891,7 +1098,7 @@ testDispersion(baitdiversity.model.e) # ok
 simulateResiduals(baitdiversity.model.e, plot = T) # weird 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.e)) # weird
 
-# Fit a LMM for evenness
+# evenness (will maybe be deleted?)
 baitdiversity.model.eve <- lmer(evenness ~ elevation + (1|Block), data = baiting.diversity.e)
 summary(baitdiversity.model.eve)
 overdisp_fun(baitdiversity.model.eve)
@@ -910,8 +1117,41 @@ testDispersion(baitdiversity.model.eve.e) # ok
 simulateResiduals(baitdiversity.model.eve.e, plot = T) # weird 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e)) # weird
 
+
+### Bait diversity incl. stratum
+# NOTE: Here, we look at stratum-level diversity, i.e. twice for each plot (understory+canopy)
+
+# get environmental data: plot.meta2 has averages for variables on Stratum-level (2 strata per plot)
+diversity.stratum.e<-merge(diversity.stratum, plot.meta2, by.x = 'plot.stratum', by.y = 'plot.stratum', all.x = T)
+
+# Fit a LMM for shannon diversity. Needs also plot as random factor since strata are not independent
+baitdiversity.stratum.model1 <- lmer(expH ~ elevation + height_mean+ (1|Block.x/Plot.x), data = diversity.stratum.e)
+baitdiversity.stratum.model2 <- lmer(expH ~ elevation * height_mean+ (1|Block.x/Plot.x), data = diversity.stratum.e)
+anova(baitdiversity.stratum.model1, baitdiversity.stratum.model2) # both are similar, probably best w/o interaction
+
+summary(baitdiversity.stratum.model1)
+summary(baitdiversity.stratum.model2)
+
+
+overdisp_fun(baitdiversity.stratum.model1) # overdispersion 
+#
+testDispersion(baitdiversity.stratum.model1) # ok
+simulateResiduals(baitdiversity.stratum.model1, plot = T) # ok 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model1)) # ok
+
+# add environmental factors
+baitdiversity.stratum.model.e <- lmer(expH ~elevation+height_mean+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean + (1|Block.x/Plot.x),
+                              data = diversity.stratum.e)
+
+summary(baitdiversity.stratum.model.e)
+overdisp_fun(baitdiversity.stratum.model.e) # overdispersion?
+#
+testDispersion(baitdiversity.stratum.model.e) # ok
+simulateResiduals(baitdiversity.stratum.model.e, plot = T) # weird 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e)) # ok
+
 #----------------------------------------------------------#
-## Bamboo statistics
+# 3.3 Bamboo Nest Statistics -----
 #----------------------------------------------------------#
 
 # bamboo occupancy models
@@ -920,38 +1160,15 @@ testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e)) # 
 bamboo.incidence.e<-merge(phase.nests, tree.meta)
 
 # binominal model of bamboo nesting using phase
-bamboo.occupancy.model1 <- glmmTMB(occupancy~elevation*height.sqrt+phase+(1|Block/Plot),
+bamboo.occupancy.model1 <- glmmTMB(occupancy~elevation*height.sqrt+new.Treatment+(1|Block/Plot),
                                   data=bamboo.incidence.e,
                                   family=binomial)
-bamboo.occupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+phase+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
-                                   family=binomial)
-# interaction model convergence troubles, so without interaction
-
-summary(bamboo.occupancy.model2)
-overdisp_fun(bamboo.occupancy.model2)
-#
-testDispersion(bamboo.occupancy.model2) # ok
-simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
-
-
-# binominal model of bamboo nesting using only controls
-bamboo.occupancy.model <- glmmTMB(occupancy~elevation+height.sqrt+phase+(1|Block/Plot),
-                                  data=subset(bamboo.incidence.e, Treatment=="control"),
-                                  family=binomial)
-# interaction model convergence troubles, so without interaction
-summary(bamboo.occupancy.model)
-overdisp_fun(bamboo.occupancy.model)
-#
-testDispersion(bamboo.occupancy.model) # ok
-simulateResiduals(bamboo.occupancy.model, plot = T) # slight deviance in lower quantiles, probably fine
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model)) # ok 
-
-# or alternatively, splitting phase 2 into different treatments. Works only as fixed factor since its levels are not well replicated across forest types
 bamboo.occupancy.model2 <- glmmTMB(occupancy~elevation+height.sqrt+new.Treatment+(1|Block/Plot),
                                    data=bamboo.incidence.e,
                                    family=binomial)
+anova(bamboo.occupancy.model2, bamboo.occupancy.model1)
+# interaction model convergence troubles
+
 summary(bamboo.occupancy.model2)
 overdisp_fun(bamboo.occupancy.model2)
 #
@@ -959,12 +1176,11 @@ testDispersion(bamboo.occupancy.model2) # ok
 simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
 
-
-# binominal model of bamboo nesting using phase with environment
-bamboooccupancy.model.e1 <- glmmTMB(occupancy~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+# binominal model of bamboo nesting with environment
+bamboooccupancy.model.e1 <- glmmTMB(occupancy~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                    data=bamboo.incidence.e,
                                    family=binomial)
-bamboooccupancy.model.e2 <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+bamboooccupancy.model.e2 <- glmmTMB(occupancy~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                     data=bamboo.incidence.e,
                                     family=binomial)
 anova(bamboooccupancy.model.e1, bamboooccupancy.model.e2) # ns -  better using no interactions
@@ -977,10 +1193,10 @@ simulateResiduals(bamboooccupancy.model.e2, plot = T) # all good
 testZeroInflation(simulateResiduals(fittedModel = bamboooccupancy.model.e2)) # ok 
 
 # with abundance 
-bamboo.occupancy.model3 <- glmmTMB(nesting.estimate~elevation*height.sqrt+phase+(1|Block/Plot),
+bamboo.occupancy.model3 <- glmmTMB(nesting.estimate~elevation*height.sqrt+new.Treatment+(1|Block/Plot),
                                    data=bamboo.incidence.e,
                                    family=nbinom2)
-bamboo.occupancy.model4 <- glmmTMB(nesting.estimate~elevation+height.sqrt+phase+(1|Block/Plot),
+bamboo.occupancy.model4 <- glmmTMB(nesting.estimate~elevation+height.sqrt+new.Treatment+(1|Block/Plot),
                                    data=bamboo.incidence.e,
                                    family=nbinom2)
 anova(bamboo.occupancy.model3,bamboo.occupancy.model4) # ns, better without interaction
@@ -988,16 +1204,17 @@ summary(bamboo.occupancy.model4)
 overdisp_fun(bamboo.occupancy.model4)
 #
 testDispersion(bamboo.occupancy.model4) # ok
-simulateResiduals(bamboo.occupancy.model4, plot = T) # bit troubles for both nbinom1 and 2
+simulateResiduals(bamboo.occupancy.model4, plot = T) # minor troubles
 testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model4)) # ok 
 
 # with abundance and environmental
-bamboo.occupancy.model.e4 <- glmmTMB(nesting.estimate~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+bamboo.occupancy.model.e4 <- glmmTMB(nesting.estimate~elevation+Lianas.n.log+height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                      data=bamboo.incidence.e,
                                       family=nbinom1)
-bamboo.occupancy.model.e5 <- glmmTMB(nesting.estimate~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+phase+(1|Block/Plot),
+bamboo.occupancy.model.e5 <- glmmTMB(nesting.estimate~elevation*Lianas.n.log*height.sqrt+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                      data=bamboo.incidence.e,
-                                     family=nbinom1) # not working
+                                     family=nbinom1) 
+# interaction model not working properly
 
 summary(bamboo.occupancy.model.e4)
 overdisp_fun(bamboo.occupancy.model.e4)
@@ -1007,59 +1224,84 @@ simulateResiduals(bamboo.occupancy.model.e4, plot = T) # okish
 testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model.e4)) # ok 
 
 #####   Bamboo Species diversity
-diversity.nester.e<-merge(diversity.nester, plot.meta)
-
-bamboo.diversity.model1 <- lmer(expH ~ elevation * phase+ (1|Block), data = diversity.nester.e)
-bamboo.diversity.model2 <- lmer(expH ~ elevation + phase+ (1|Block), data = diversity.nester.e)
-anova(bamboo.diversity.model1, bamboo.diversity.model2) #ns, no interaction better
-
-summary(bamboo.diversity.model2)
-overdisp_fun(bamboo.diversity.model2)
+# get environment
+diversity.nester.e<-merge(diversity.nester,plot.meta2, by.x = "plot.stratum", by.y = 'plot.stratum', all.x = TRUE)
 #
-testDispersion(bamboo.diversity.model2) # ok
-simulateResiduals(bamboo.diversity.model2, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model2)) # zero inflated - troubles? 
+bamboo.diversity.model1 <- lmer(expH ~ elevation * new.Treatment+height_mean+ (1|Block.x/Plot.x), data = diversity.nester.e)
+bamboo.diversity.model2 <- lmer(expH ~ elevation + new.Treatment+height_mean+(1|Block.x/Plot.x), data = diversity.nester.e)
+#
+bamboo.diversity.model3 <- lmer(expH ~ elevation+ new.Treatment+height_mean+trunk_mean+ (1|Block.x/Plot.x), data = diversity.nester.e)
+summary(bamboo.diversity.model3)
+
+# issues with model singularity 
+
+anova(bamboo.diversity.model1, bamboo.diversity.model2, bamboo.diversity.model3) # better to include trunk mean as fixed factor
+
+overdisp_fun(bamboo.diversity.model3)#ok
+#
+testDispersion(bamboo.diversity.model3) # ok
+simulateResiduals(bamboo.diversity.model3, plot = T) # ok 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model3)) # zero inflated - troubles?! 
 
 # bamboo diversity changes with environment metadata
-bamboo.diversity.model.e1 <- lmer(expH ~ elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean*phase+ (1|Block), data = diversity.nester.e)
-bamboo.diversity.model.e2 <- lmer(expH ~ elevation+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean+phase+ (1|Block), data = diversity.nester.e)
-anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) #ns, no interaction better
-
-summary(bamboo.diversity.model.e2)
-overdisp_fun(bamboo.diversity.model.e2) 
+bamboo.diversity.model.e1 <- lmer(expH ~ elevation+Stratum+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean*new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e)
+bamboo.diversity.model.e2 <- lmer(expH ~ elevation+Stratum+slope.var+Caco+trunk_mean+Lianas.n_mean+dw.number_mean+dw.percent_mean+new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e)
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # interaction better
+# issues with model singularity
+summary(bamboo.diversity.model.e1)
+overdisp_fun(bamboo.diversity.model.e1) 
 #
-testDispersion(bamboo.diversity.model.e2) # ok
-simulateResiduals(bamboo.diversity.model.e2, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e2)) # zero inflated - troubles?
+testDispersion(bamboo.diversity.model.e1) # ok
+simulateResiduals(bamboo.diversity.model.e1, plot = T) # weird 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e1)) # zero inflated - troubles?!
 
 #----------------------------------------------------------#
-## Summary statistics
+# 3.4 Summary Statistics -----
 #----------------------------------------------------------#
+
+# This part is just a selection of the most important models and the questions they address, and their interpretation
 
 # Does bait occupancy change?
+summary(baitoccupancy.model1)
+# - higher baits -> higher occupancy
+# - interaction: lower elevation has higher occupancy in canopy
 
 # Does bait abundance change?
+summary(baitdiversity.stratum.model1)
+# - higher baits, higher abundance 
+# - lower elevation, higher abundance
 
 # Does bait diversity change?
-
+summary(baitdiversity.model)
+# - higher elevation, higher diversity
+# - higher diversity in understory
+ 
 # Does bamboo occupancy change?
+summary(bamboo.occupancy.model2)
+# - higher elevation lower occupancy
+# - higher occupancy in canopy
+# - first phase treatment slightly lower occupancy
 
 # Does bamboo diversity change?
+summary(bamboo.diversity.model3)
+# - higher elevation, lower nesting diversity
+# - first phase lower diversity
+# - bigger trees, higher diversity
 
-# abundance of ants inside bamboo is not as interesting as bait abundance
-# eveness is probably not so interesting since its partly accounted for in shannon diversity (expH)
+
+# abundance of ants inside bamboo is not as interesting as bait abundance, so I would not present it in the main manuscript
+# evenness is probably not so interesting since its partly accounted for in Shannon diversity (expH)
 
 
 #----------------------------------------------------------#
 # Figure summaries -----
 #----------------------------------------------------------#
-## with incidences
 
 #Bamboo diversity
 nests.diversity.phase.plot
 
 #Bait diversity
-baitdiversity
+baitdiversity.stratum
 
 #bamboo occupied
 nest.occupancy.phase.plot
@@ -1067,15 +1309,17 @@ nest.occupancy.phase.plot
 #Bamboo 
 nesting.proportion
 
-### Bait composition
+# Bait composition
 # as proportion of incidence
 bait.incidence.plot
 # as proportion of abundance
 abundance.plot
 
-figure_baitsbamboos <- ggarrange(nests.diversity.phase.plot, baitdiversity, nesting.proportion, abundance.plot,
+
+figure_baitsbamboos <- ggarrange(nests.diversity.phase.plot, baitdiversity.stratum, nesting.proportion, abundance.plot,
                                labels = c("A", "B", "C", "D"),
                                ncol = 2, nrow = 2, common.legend = F
 )
 figure_baitsbamboos
+
 
