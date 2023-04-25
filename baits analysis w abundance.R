@@ -3,6 +3,10 @@
 # to do: 
 # optimize all models
 # include soil humidity in environmental data
+# calculate dbh
+# delete survivals and see if sth changes
+
+rm(list=ls()) 
 
 ### Associated csv files:
 
@@ -15,6 +19,7 @@
 ### List of R-packages
 #----------------------------------------------------------#
 
+
 package_list <- 
   c("dplyr",
     "tidyr",
@@ -26,7 +31,8 @@ package_list <-
     "glmmTMB",
     "lme4",
     "lmerTest",
-    "DHARMa")
+    "DHARMa",
+    "corrplot")
 
 # install all packages
 #sapply(package_list, install.packages, character.only = TRUE)
@@ -474,8 +480,30 @@ bait.incidence.plot
 
 # create extra variable
 nest.raw$Forest.Treatment<-paste(nest.raw$Forest, nest.raw$Treatment)
-labs1 <- expression("low elevation control", "high elevation control", "other elevation transfer", "same elevation transfer")
 
+nest.raw3 <-nest.raw %>%
+  mutate(survived.d = case_when(Survived == "TRUE" ~ "survived",
+                                Reoccupied == "TRUE" ~ "not survived",
+                                Abandoned == "TRUE" ~ "not survived",
+                                TRUE ~ "empty"))
+
+ggplot(nest.raw3, aes(fill=survived.d, y=Forest.Treatment, x=Forest.Treatment)) + 
+  geom_bar(position="fill", stat="identity")
+
+nest.raw3 %>%
+  count(Forest.Treatment, survived.d) %>%
+  ggplot(aes(Forest.Treatment, n, fill = survived.d)) + 
+  geom_bar(position="fill", stat="identity")+
+  xlab("Treatment")+
+  scale_x_discrete(labels=labs1)+
+  ylab("% Bamboos translocated") +
+  ggtitle("Survived as proportion of total bamboos") +
+  scale_fill_brewer(palette="Dark2") +
+  coord_cartesian(ylim = c(0, .25))
+  #geom_text(aes(label = n), vjust=1, colour = "black", size = 5)
+
+    
+labs1 <- expression("low elevation control", "high elevation control", "other elevation transfer", "same elevation transfer")
 
 # Survived as proportion of occupied nests
 nest.raw %>% filter(Occupied == TRUE)%>%
@@ -974,6 +1002,13 @@ summary(model_lianas)
 model_height<- lmer(height.sqrt ~  elevation + (1|Block/Plot), data= tree.meta)
 summary(model_height) # ns
 
+# correlation plot of environmental variables
+mydata.cor <- cor(tree.meta[, c(11:19)], method = c("spearman"), use = "pairwise.complete.obs")
+corrplot(mydata.cor,
+         method = "color", type = "lower", order = "AOE", diag = F,
+         tl.col = "black", outline = T, addCoef.col = "black", number.cex = 0.8,
+         tl.cex = 1.1, cl.cex = 0.9
+)
 #----------------------------------------------------------#
 # 3.2 Bait Statistics -----
 #----------------------------------------------------------#
@@ -1158,6 +1193,12 @@ testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e)
 
 # Get environmental metadata
 bamboo.incidence.e<-merge(phase.nests, tree.meta)
+
+# binominal model of bamboo nesting using phase
+bamboo.occupancy.model1 <- glmmTMB(occupancy~elevation+height.sqrt+(1|Block/Plot),
+                                   data=subset(bamboo.incidence.e, Treatment=="control"),
+                                   family=binomial)
+summary(bamboo.occupancy.model1)
 
 # binominal model of bamboo nesting using phase
 bamboo.occupancy.model1 <- glmmTMB(occupancy~elevation*height.sqrt+new.Treatment+(1|Block/Plot),
