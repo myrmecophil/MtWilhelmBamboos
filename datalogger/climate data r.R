@@ -237,6 +237,17 @@ soiltemp<-ggplot(datalogger, aes(x=Plot, y=temp.bottom1, fill=Location)) +
   theme(axis.text.x = element_text(size=12))
 soiltemp
 
+groundtemp<-ggplot(datalogger, aes(x=Plot, y=temp.bottom2, fill=Location)) +
+  ggtitle("Ground level Temperature") +
+  geom_boxplot()+
+  ylim(15,35)+
+  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  ylab("Temperature [?C]")+
+  xlab("")+
+  theme_hc()+
+  theme(axis.text.x = element_text(size=12))
+groundtemp
+
 humidity<-ggplot(datalogger, aes(x=Plot, y=humidity.bottom, fill=Location)) +
   ggtitle("Soil Humidity") +
   geom_boxplot()+
