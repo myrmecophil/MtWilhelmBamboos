@@ -4,10 +4,9 @@
 # to do: 
 # optimize all models
 # include soil humidity in environmental data
-# calculate dbh
+# calculate dbh?
 # delete survivals and see if sth changes
 
-# testest
 rm(list=ls()) 
 
 ### Associated csv files:
@@ -1221,14 +1220,15 @@ summary(baitdiversity.model.eve)
 overdisp_fun(baitdiversity.model.eve)
 #
 testDispersion(baitdiversity.model.eve) # ok
-simulateResiduals(baitdiversity.model.eve, plot = T) # weird 
+simulateResiduals(baitdiversity.model.eve, plot = T) # ok 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve)) # ok
 
 # add environmental factors
 baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block),
                                   data = baiting.diversity.e, family = gaussian)
-baitdiversity.model.eve.e2 <- glmmTMB(evenness~Forest*Lianas.n_mean+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+ (1|Block),
-                                  data = baiting.diversity.e, family = gaussian) # convergence troubles
+baitdiversity.model.eve.e2 <- glmmTMB(evenness~Forest*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+ (1|Block),
+                                  data = baiting.diversity.e, family = gaussian)
+anova(baitdiversity.model.eve.e1, baitdiversity.model.eve.e2) # ns, no interaction
 
 summary(baitdiversity.model.eve.e1)
 overdisp_fun(baitdiversity.model.eve.e1)
@@ -1244,10 +1244,10 @@ testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e1)) #
 diversity.stratum.e<-merge(diversity.stratum, plot.meta2, by.x = 'plot.stratum', by.y = 'plot.stratum', all.x = T)
 
 # Fit a LMM for Shannon diversity. Needs also plot as random factor since strata are not independent
-baitdiversity.stratum.model1 <- glmmTMB(expH ~ Forest + Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
-baitdiversity.stratum.model2 <- glmmTMB(expH ~ Forest * Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
+baitdiversity.stratum.model1 <- glmmTMB(expH ~ Forest.x + Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
+baitdiversity.stratum.model2 <- glmmTMB(expH ~ Forest.x * Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
 
-anova(baitdiversity.stratum.model1, baitdiversity.stratum.model2) # both are similar, probably best w/o interaction
+anova(baitdiversity.stratum.model1, baitdiversity.stratum.model2) # ns, both are similar, probably best w/o interaction
 
 summary(baitdiversity.stratum.model1)
 overdisp_fun(baitdiversity.stratum.model1) # overdispersion 
@@ -1257,18 +1257,18 @@ simulateResiduals(baitdiversity.stratum.model1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model1)) # ok
 
 # add environmental factors
-baitdiversity.stratum.model.e1 <- glmmTMB(expH ~Forest+Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
+baitdiversity.stratum.model.e1 <- glmmTMB(expH ~Forest.x+Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
                               data = diversity.stratum.e, family = gaussian)
-baitdiversity.stratum.model.e2 <- glmmTMB(expH ~Forest*Stratum*Lianas.n_mean.log+slope.var+Cac.logo+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
+baitdiversity.stratum.model.e2 <- glmmTMB(expH ~Forest.x*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
                                          data = diversity.stratum.e, family = gaussian)
-anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # ns, without interaction is fine
+anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # interaction is better
 
-summary(baitdiversity.stratum.model.e1)
-overdisp_fun(baitdiversity.stratum.model.e1) # overdispersion?
+summary(baitdiversity.stratum.model.e2)
+overdisp_fun(baitdiversity.stratum.model.e2) # overdispersion?
 #
-testDispersion(baitdiversity.stratum.model.e1) # ok
-simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # ok-ish? 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
+testDispersion(baitdiversity.stratum.model.e2) # ok
+simulateResiduals(baitdiversity.stratum.model.e2, plot = T) # ok-ish? 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e2)) # ok
 
 #----------------------------------------------------------#
 # 3.3 Bamboo Nest Statistics -----
@@ -1297,7 +1297,7 @@ simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
 
 # binominal model of bamboo nesting with environment
-bamboooccupancy.model.e1 <- glmmTMB(occupancy~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco.log+slope.var.log+new.Treatment+(1|Block/Plot),
+bamboooccupancy.model.e1 <- glmmTMB(occupancy~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                    data=bamboo.incidence.e,
                                    family=binomial)
 bamboooccupancy.model.e2 <- glmmTMB(occupancy~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
@@ -1349,8 +1349,8 @@ testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model.e4)) # 
 # get environment
 diversity.nester.e<-merge(diversity.nester,plot.meta2, by.x = "plot.stratum", by.y = 'plot.stratum', all.x = TRUE)
 #
-bamboo.diversity.model1 <- glmmTMB(expH ~ Forest+new.Treatment+Stratum+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
-bamboo.diversity.model2 <- glmmTMB(expH ~ Forest* Stratum *new.Treatment+(1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model1 <- glmmTMB(expH ~ Forest.x+new.Treatment+Stratum+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model2 <- glmmTMB(expH ~ Forest.x* Stratum *new.Treatment+(1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
 
 anova(bamboo.diversity.model2,bamboo.diversity.model1) # ns, no interaction
 #
@@ -1363,10 +1363,11 @@ simulateResiduals(bamboo.diversity.model1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model1)) # zero inflated - troubles?! 
 
 # bamboo diversity changes with environment metadata
-bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest+Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log*new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
-bamboo.diversity.model.e2 <- glmmTMB(expH ~ Forest*Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
-anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # interaction better
-#
+bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest.x+Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log*new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model.e2 <- glmmTMB(expH ~ Forest.x*Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+ (1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian)
+# convergence problem with interaction model
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # 
+
 summary(bamboo.diversity.model.e2)
 overdisp_fun(bamboo.diversity.model.e2) 
 #
