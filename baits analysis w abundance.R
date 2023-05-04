@@ -7,6 +7,7 @@
 # calculate dbh
 # delete survivals and see if sth changes
 
+# testest
 rm(list=ls()) 
 
 ### Associated csv files:
