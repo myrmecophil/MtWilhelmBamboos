@@ -36,7 +36,9 @@ package_list <-
     "corrplot",
     "car",
     "emmeans",
-    "effects")
+    "effects",
+    "broom.mixed",
+    "openxlsx")
 
 # install all packages
 #sapply(package_list, install.packages, character.only = TRUE)
@@ -1182,22 +1184,22 @@ plot(allEffects(baitabundance.model2)) # model visualization
 # 
 
 # with abundance and environmental
-baitoccupancy.model.e1 <- glmmTMB(Abundance~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
+baitabundance.model.e1 <- glmmTMB(Abundance~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
                                   zi=~Forest*Stratum,
                                   data=baiting.incidence.e,
                                   family=nbinom1)
-baitoccupancy.model.e2 <- glmmTMB(Abundance~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
+baitabundance.model.e2 <- glmmTMB(Abundance~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+(1|Block/Plot),
                                   zi=~Forest*Stratum,
                                   data=baiting.incidence.e,
                                   family=nbinom1)
-anova(baitoccupancy.model.e1, baitoccupancy.model.e2) # better without interaction
+anova(baitabundance.model.e1, baitabundance.model.e2) # better without interaction
 
-summary(baitoccupancy.model.e1)
-overdisp_fun(baitoccupancy.model.e1)
+summary(baitabundance.model.e1)
+overdisp_fun(baitabundance.model.e1)
 #
-testDispersion(baitoccupancy.model.e1) # ok
-simulateResiduals(baitoccupancy.model.e1, plot = T) #  maybe ok
-testZeroInflation(simulateResiduals(fittedModel = baitoccupancy.model.e1)) # ok
+testDispersion(baitabundance.model.e1) # ok
+simulateResiduals(baitabundance.model.e1, plot = T) #  maybe ok
+testZeroInflation(simulateResiduals(fittedModel = baitabundance.model.e1)) # ok
 
 #
 
@@ -1391,6 +1393,9 @@ bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest.x+Stratum+Lianas.n_mean.log+s
 
 anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # interaction model with zi better
 
+bamboo.diversity.model3 <- glmmTMB((1+expH) ~ Forest.x+new.Treatment+Stratum+(1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian(link=log))
+
+
 summary(bamboo.diversity.model.e2)
 overdisp_fun(bamboo.diversity.model.e2) 
 #
@@ -1407,7 +1412,10 @@ plot(allEffects(bamboo.diversity.model.e2)) # model visualization
 
 # This part is just a selection of the most important models and the questions they address, and their interpretation
 
-# 1) Does bait occupancy change?
+# 1) Does the number of species per bait change?
+summary(bait.double.model2)
+
+# 2) Does bait occupancy change?
 summary(baitoccupancy.model1)
 summary(baitoccupancy.model.e2)
 
@@ -1417,29 +1425,29 @@ summary(baitoccupancy.model.e2)
 # interaction Lianas.n.log:StratumUN: higher chance of occupancy on understory trees w. many lianas, negative effects in the canopy in kausi but no effects in canopy in numba
 # more lianas, lower chance of occupancy?
 
-# 2) Does bait abundance change?
-summary(baitdiversity.stratum.model1)
-summary(baitdiversity.model.eve.e1)
+# 3) Does bait abundance change?
+summary(baitabundance.model2)
+summary(baitabundance.model.e1)
 
 # - higher baits, higher abundance 
 # - lower elevation, higher abundance
 
-# Does bait diversity change?
+# 4) Does bait diversity change?
 summary(baitdiversity.stratum.model1)
 summary(baitdiversity.stratum.model.e1)
 
 # - higher elevation, higher diversity
 # - higher diversity in understory
  
-# 3) Does bamboo occupancy change?
+# 5) Does bamboo occupancy change?
 summary(bamboo.occupancy.model2)
-summary(bamboooccupancy.model.e2)
+summary(bamboooccupancy.model.e1)
 
 # - higher elevation lower occupancy
 # - higher occupancy in canopy
 # - first phase treatment slightly lower occupancy
 
-# 4) Does bamboo diversity change?
+# 6) Does bamboo diversity change?
 summary(bamboo.diversity.model1)
 summary(bamboo.diversity.model.e2)
 # - higher elevation, lower nesting diversity
@@ -1450,6 +1458,44 @@ summary(bamboo.diversity.model.e2)
 # abundance of ants inside bamboo is not as interesting as bait abundance, so I would not present it in the main manuscript
 # evenness is probably not so interesting since its partly accounted for in Shannon diversity (expH)
 
+#----------------------------------------------------------#
+# Model summary export -----
+#----------------------------------------------------------#
+
+# Create list of models
+models_list <- list()
+models_list[[1]] <- bait.double.model2
+models_list[[2]] <- baitoccupancy.model1
+models_list[[3]] <- baitoccupancy.model.e2
+models_list[[4]] <- baitdiversity.stratum.model1
+models_list[[5]] <- baitdiversity.model.eve.e1
+models_list[[6]] <- baitabundance.model2
+models_list[[7]] <- baitabundance.model.e1
+models_list[[8]] <- bamboo.occupancy.model2
+models_list[[9]] <- bamboooccupancy.model.e1
+models_list[[10]] <- bamboo.diversity.model1
+models_list[[11]] <- bamboo.diversity.model.e2
+
+# Create Excel workbook
+wb <- createWorkbook()
+
+# Loop through models and generate model summaries
+for (i in 1:length(models_list)) {
+  # Generate model summary
+  model_summary <- broom.mixed::tidy(models_list[[i]], effects = "fixed")
+  
+  # Extract model formula and add to header
+  formula_text <- as.character(formula(models_list[[i]]))
+  header <- c(paste0("Model ", i, ": ", formula_text), rep("", ncol(model_summary)-1))
+  model_summary <- rbind(header, model_summary)
+  
+  # Write model summary to Excel sheet
+  addWorksheet(wb, sheetName = paste0("Model ", i))
+  writeData(wb, sheet = i, x = model_summary)
+}
+
+# Save Excel file
+saveWorkbook(wb, "model_summaries.xlsx", overwrite = TRUE)
 
 #----------------------------------------------------------#
 # Figure summaries -----
@@ -1479,5 +1525,3 @@ figure_baitsbamboos <- ggarrange(nests.diversity.phase.plot, baitdiversity.strat
                                ncol = 2, nrow = 2, common.legend = F
 )
 figure_baitsbamboos
-
-
