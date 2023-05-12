@@ -4,8 +4,8 @@
 # to do: 
 # optimize all models
 # include soil humidity in environmental data
-# calculate dbh?
 # delete survivals and see if sth changes
+# nesting abundance estimate only occupied nests
 
 rm(list=ls()) 
 
@@ -291,6 +291,10 @@ bait.occupancy.plot<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Fore
   theme_bw()
 bait.occupancy.plot
 
+# plot as glm prediction against elevation
+
+ggplot(baiting.incidence.e, aes(x=elevation, y=occupancy)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=TRUE)
 
 #----------------------------------------------------------#
 # 1.2 Bait diversity -----
@@ -458,6 +462,7 @@ bait.incidence2<- bait.incidence%>%
 # Plot it
 
 # Change order of levels
+bait.incidence2$AntSpCODE<-as.factor(bait.incidence2$AntSpCODE)
 bait.incidence2$AntSpCODE <- relevel(bait.incidence2$AntSpCODE, "CREM 014")
 bait.incidence2$AntSpCODE <- relevel(bait.incidence2$AntSpCODE, "CREM 003")
 bait.incidence2$AntSpCODE <- relevel(bait.incidence2$AntSpCODE, "other species")
@@ -867,6 +872,11 @@ abundance.proportion<-ggplot(nest.abundance, aes(x = Forest, y = percentage, fil
   theme_minimal()
 abundance.proportion
 
+# plot as glm prediction against elevation
+
+ggplot(bamboo.incidence.e, aes(x=elevation, y=occupancy)) + geom_point() + 
+  stat_smooth(method="glm", method.args=list(family="binomial"), se=TRUE)
+
 #----------------------------------------------------------#
 # 2.2 Nest diversity -----
 #----------------------------------------------------------#
@@ -1128,10 +1138,10 @@ testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e1)) # ok
 baiting.incidence.e<-merge(baiting.incidence, tree.meta)
 
 # Binominal regression
-baitoccupancy.model1 <- glmmTMB(occupancy~Forest*Lianas.n.log*Stratum+(1|Block/Plot),
+baitoccupancy.model1 <- glmmTMB(occupancy~Forest*Stratum+(1|Block/Plot),
                                data=baiting.incidence.e,
                                family=binomial)
-baitoccupancy.model2 <- glmmTMB(occupancy~Forest+Stratum+Lianas.n.log+(1|Block/Plot),
+baitoccupancy.model2 <- glmmTMB(occupancy~Forest+Stratum+(1|Block/Plot),
                                 data=baiting.incidence.e,
                                 family=binomial)
 anova(baitoccupancy.model1, baitoccupancy.model2) # interaction model better
@@ -1296,7 +1306,9 @@ testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e2
 # bamboo occupancy models
 
 # Get environmental metadata
-bamboo.incidence.e<-merge(phase.nests, tree.meta)
+bamboo.incidence.e<-merge(phase.nests, tree.meta, all.x = TRUE) # NOTE: this merging doesnt work correctly and needs to be fixed
+bamboo.incidence.e$new.Treatment<-as.factor(bamboo.incidence.e$new.Treatment)
+
 
 # binominal model of bamboo nesting using phase
 bamboo.occupancy.model1 <- glmmTMB(occupancy~Forest*Stratum+new.Treatment+(1|Block/Plot),
@@ -1324,7 +1336,7 @@ bamboooccupancy.model.e2 <- glmmTMB(occupancy~Forest+Lianas.n.log+Stratum+dw.per
                                     family=binomial)
 anova(bamboooccupancy.model.e1, bamboooccupancy.model.e2) # ns -  better using no interactions
 
-summary(bamboooccupancy.model.e1)
+summary(bamboooccupancy.model.e2)
 overdisp_fun(bamboooccupancy.model.e2)
 #
 testDispersion(bamboooccupancy.model.e2) # ok
@@ -1332,37 +1344,36 @@ simulateResiduals(bamboooccupancy.model.e2, plot = T) # all good
 testZeroInflation(simulateResiduals(fittedModel = bamboooccupancy.model.e2)) # ok 
 
 # with abundance 
-bamboo.occupancy.model3 <- glmmTMB(nesting.estimate~Forest*Stratum+new.Treatment+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
+bamboo.abundance.model3 <- glmmTMB(nesting.estimate~Forest*Stratum+new.Treatment+(1|Block/Plot),
+                                   data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                    family=nbinom2)
-bamboo.occupancy.model4 <- glmmTMB(nesting.estimate~Forest+Stratum+new.Treatment+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
+bamboo.abundance.model4 <- glmmTMB(nesting.estimate~Forest+Stratum+new.Treatment+(1|Block/Plot),
+                                   data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                    family=nbinom2)
-anova(bamboo.occupancy.model3,bamboo.occupancy.model4) # ns, no interaction
-summary(bamboo.occupancy.model4)
-overdisp_fun(bamboo.occupancy.model4)
+anova(bamboo.abundance.model3,bamboo.abundance.model4) # ns, no interaction
+summary(bamboo.abundance.model4)
+overdisp_fun(bamboo.abundance.model4)
 #
-testDispersion(bamboo.occupancy.model4) # ok
-simulateResiduals(bamboo.occupancy.model4, plot = T) # minor troubles
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model4)) # ok 
-
-# here both nbinom1 and nbinom2 work, residuals slightly better in nbinom2
+testDispersion(bamboo.abundance.model4) # ok
+simulateResiduals(bamboo.abundance.model4, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model4)) # ok 
+#  residuals better in nbinom2
 
 # with abundance and environmental
-bamboo.occupancy.model.e4 <- glmmTMB(nesting.estimate~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
-                                     data=bamboo.incidence.e,
-                                      family=nbinom2)
-bamboo.occupancy.model.e5 <- glmmTMB(nesting.estimate~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
-                                     data=bamboo.incidence.e,
+bamboo.abundance.model.e4 <- glmmTMB(nesting.estimate~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
+                                     data=subset(bamboo.incidence.e, nesting.estimate!=0),
+                                     family=nbinom2)
+bamboo.abundance.model.e5 <- glmmTMB(nesting.estimate~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
+                                     data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                      family=nbinom2) 
-anova(bamboo.occupancy.model.e4, bamboo.occupancy.model.e5) # ns, no interaction
+anova(bamboo.abundance.model.e4, bamboo.abundance.model.e5) # ns, no interaction
 
-summary(bamboo.occupancy.model.e4)
-overdisp_fun(bamboo.occupancy.model.e4)
+summary(bamboo.abundance.model.e4)
+overdisp_fun(bamboo.abundance.model.e4)
 #
-testDispersion(bamboo.occupancy.model.e4) # ok
-simulateResiduals(bamboo.occupancy.model.e4, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model.e4)) # ok 
+testDispersion(bamboo.abundance.model.e4) # ok
+simulateResiduals(bamboo.abundance.model.e4, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model.e4)) # ok 
 
 #####   Bamboo Species diversity
 # get environment
@@ -1429,7 +1440,7 @@ summary(baitoccupancy.model.e2)
 summary(baitabundance.model2)
 summary(baitabundance.model.e1)
 
-# - higher baits, higher abundance 
+# - lower baits, higher abundance 
 # - lower elevation, higher abundance
 
 # 4) Does bait diversity change?
