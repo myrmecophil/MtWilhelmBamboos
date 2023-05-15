@@ -708,14 +708,14 @@ phase1.n<-subset(phase.nests, phase=="phase 1")
 phase2.n<-subset(phase.nests, phase=="phase 2")
 
 # define plot-stratum
-phase.nests$plot_stratum<-paste(phase.nests$Plot, phase.nests$Stratum)
+phase.nests$plot.stratum<-paste(phase.nests$Plot, phase.nests$Stratum)
 
 #count total nests per plot and stratum
-nests.c<-count(phase.nests, plot_stratum)
+nests.c<-count(phase.nests, plot.stratum)
 
 # summarize occupied per plot
 nest1 <- phase.nests %>%
-  group_by(Forest, Plot, Stratum, plot_stratum) %>%
+  group_by(Forest, Plot, Stratum, plot.stratum) %>%
   summarize(occupancy = sum(occupancy))
 
 # merge with total baits
@@ -1306,19 +1306,22 @@ testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e2
 # bamboo occupancy models
 
 # Get environmental metadata
-bamboo.incidence.e<-merge(phase.nests, tree.meta, all.x = TRUE) # NOTE: this merging doesnt work correctly and needs to be fixed
+tree<-tree.meta %>%
+  dplyr::select(Code:height, Caco:slope.var.log)
+#
+bamboo.incidence.e<-merge(phase.nests, tree, by = "Code")
 bamboo.incidence.e$new.Treatment<-as.factor(bamboo.incidence.e$new.Treatment)
 
 
 # binominal model of bamboo nesting using phase
 bamboo.occupancy.model1 <- glmmTMB(occupancy~Forest*Stratum+new.Treatment+(1|Block/Plot),
-                                  data=bamboo.incidence.e,
+                                  data=phase.nests,
                                   family=binomial)
 bamboo.occupancy.model2 <- glmmTMB(occupancy~Forest+Stratum+new.Treatment+(1|Block/Plot),
-                                   data=bamboo.incidence.e,
+                                   data=phase.nests,
                                    family=binomial)
 anova(bamboo.occupancy.model2, bamboo.occupancy.model1)
-# ns, better without
+# ns, no interaction
 
 summary(bamboo.occupancy.model2)
 overdisp_fun(bamboo.occupancy.model2)
@@ -1362,25 +1365,28 @@ testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model4)) # ok
 # with abundance and environmental
 bamboo.abundance.model.e4 <- glmmTMB(nesting.estimate~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                      data=subset(bamboo.incidence.e, nesting.estimate!=0),
-                                     family=nbinom2)
+                                     family=nbinom2) #convergence troubles
 bamboo.abundance.model.e5 <- glmmTMB(nesting.estimate~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var.log+new.Treatment+(1|Block/Plot),
                                      data=subset(bamboo.incidence.e, nesting.estimate!=0),
-                                     family=nbinom2) 
-anova(bamboo.abundance.model.e4, bamboo.abundance.model.e5) # ns, no interaction
+                                     family=nbinom2)  #convergence troubles
+anova(bamboo.abundance.model.e4, bamboo.abundance.model.e5) 
 
 summary(bamboo.abundance.model.e4)
 overdisp_fun(bamboo.abundance.model.e4)
 #
-testDispersion(bamboo.abundance.model.e4) # ok
-simulateResiduals(bamboo.abundance.model.e4, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model.e4)) # ok 
+testDispersion(bamboo.abundance.model.e4) # 
+simulateResiduals(bamboo.abundance.model.e4, plot = T) # 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model.e4)) # 
 
 #####   Bamboo Species diversity
 # get environment
-diversity.nester.e<-merge(diversity.nester,plot.meta2, by.x = "plot.stratum", by.y = 'plot.stratum', all.x = TRUE)
+plot<- plot.meta2%>% 
+  dplyr::select(plot.stratum:height_mean, Caco:height_mean.log)
+
+diversity.nester.e<-merge(diversity.nester,plot, by = "plot.stratum", all.x = TRUE)
 #
-bamboo.diversity.model1 <- glmmTMB(expH ~ Forest.x+new.Treatment+Stratum+(1|Block.x/Plot.x), zi=~Forest.x*new.Treatment, data = diversity.nester.e, family=gaussian)
-bamboo.diversity.model2 <- glmmTMB(expH ~ Forest.x*Stratum*new.Treatment+(1|Block.x/Plot.x), zi=~Forest.x*Stratum, data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model1 <- glmmTMB(expH ~ Forest+new.Treatment+Stratum+(1|Block/Plot), zi=~Forest*new.Treatment, data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model2 <- glmmTMB(expH ~ Forest*Stratum*new.Treatment+(1|Block/Plot), zi=~Forest*Stratum, data = diversity.nester.e, family=gaussian)
 
 anova(bamboo.diversity.model2,bamboo.diversity.model1) # ns, no interaction
 #
@@ -1394,27 +1400,32 @@ testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model1)) # sl
 plot(allEffects(bamboo.diversity.model1)) # model visualization
 
 # bamboo diversity changes with environment metadata
-bamboo.diversity.model.e2 <- glmmTMB(expH ~Forest.x*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block.x/Plot.x),
-                                     zi=~Forest.x,
+bamboo.diversity.model.e2 <- glmmTMB(expH ~Forest*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot),
+                                     zi=~Forest,
                                      data = diversity.nester.e, family=gaussian)
 
-bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest.x+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block.x/Plot.x), 
-                                     zi=~Forest.x,
+bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot), 
+                                     zi=~Forest,
                                      data = diversity.nester.e, family=gaussian) # zi gives convergence troubles, not included
 
-anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # interaction model with zi better
+bamboo.diversity.model.e1 <- glmmTMB(expH ~Forest*Stratum*Lianas.n_mean.log+ trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot),
+                                     zi=~Forest,
+                                     data = diversity.nester.e, family=gaussian) # alternative without slope and caco?
 
-bamboo.diversity.model3 <- glmmTMB((1+expH) ~ Forest.x+new.Treatment+Stratum+(1|Block.x/Plot.x), data = diversity.nester.e, family=gaussian(link=log))
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # 
 
+bamboo.diversity.model3 <- glmmTMB((1+expH) ~ Forest+new.Treatment+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
+bamboo.diversity.model4 <- glmmTMB((1+expH) ~ Forest*new.Treatment*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
+anova(bamboo.diversity.model3, bamboo.diversity.model4) # ns, no interaction better
 
-summary(bamboo.diversity.model.e2)
+summary(bamboo.diversity.model3)
 overdisp_fun(bamboo.diversity.model.e2) 
 #
-testDispersion(bamboo.diversity.model.e2) # ok
-simulateResiduals(bamboo.diversity.model.e2, plot = T) # weird 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e2)) # slightly zero inflated (p=0.032)
+testDispersion(bamboo.diversity.model3) # ok
+simulateResiduals(bamboo.diversity.model3, plot = T) # weird 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model3)) # slightly zero inflated (p=0.024)
 
-plot(allEffects(bamboo.diversity.model.e2)) # model visualization
+plot(allEffects(bamboo.diversity.model3)) # model visualization
 
 
 #----------------------------------------------------------#
