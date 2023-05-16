@@ -1398,32 +1398,18 @@ testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model1)) # sl
 plot(allEffects(bamboo.diversity.model1)) # model visualization
 
 # bamboo diversity changes with environment metadata
-bamboo.diversity.model.e2 <- glmmTMB(expH ~Forest*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot),
-                                     zi=~Forest,
-                                     data = diversity.nester.e, family=gaussian)
+bamboo.diversity.model.e1 <- glmmTMB((1+expH) ~ Forest+new.Treatment+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
+bamboo.diversity.model.e2 <- glmmTMB((1+expH) ~ Forest*new.Treatment*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # ns, no interaction better
 
-bamboo.diversity.model.e1 <- glmmTMB(expH ~ Forest+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot), 
-                                     zi=~Forest,
-                                     data = diversity.nester.e, family=gaussian) # zi gives convergence troubles, not included
-
-bamboo.diversity.model.e1 <- glmmTMB(expH ~Forest*Stratum*Lianas.n_mean.log+ trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+new.Treatment+(1|Block/Plot),
-                                     zi=~Forest,
-                                     data = diversity.nester.e, family=gaussian) # alternative without slope and caco?
-
-anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # 
-
-bamboo.diversity.model3 <- glmmTMB((1+expH) ~ Forest+new.Treatment+Stratum+Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
-bamboo.diversity.model4 <- glmmTMB((1+expH) ~ Forest*new.Treatment*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log+(1|Block/Plot), data = diversity.nester.e, family=gaussian(link=log))
-anova(bamboo.diversity.model3, bamboo.diversity.model4) # ns, no interaction better
-
-summary(bamboo.diversity.model3)
-overdisp_fun(bamboo.diversity.model.e2) 
+summary(bamboo.diversity.model.e1)
+overdisp_fun(bamboo.diversity.model.e1) 
 #
-testDispersion(bamboo.diversity.model3) # ok
-simulateResiduals(bamboo.diversity.model3, plot = T) # weird 
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model3)) # slightly zero inflated (p=0.024)
+testDispersion(bamboo.diversity.model.e1) # ok
+simulateResiduals(bamboo.diversity.model.e1, plot = T) # weird 
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e1)) # slightly zero inflated (p=0.024)
 
-plot(allEffects(bamboo.diversity.model3)) # model visualization
+plot(allEffects(bamboo.diversity.model.e1)) # model visualization
 
 
 #----------------------------------------------------------#
@@ -1434,16 +1420,20 @@ plot(allEffects(bamboo.diversity.model3)) # model visualization
 
 # 1) Does the number of species per bait change?
 summary(bait.double.model2)
+summary(bait.double.model.e1)
+
+# more double occupancies in Numba
+# no stratum effect
 
 # 2) Does bait occupancy change?
 summary(baitoccupancy.model1)
-summary(baitoccupancy.model.e2)
+summary(baitoccupancy.model.e1)
 
-# - higher baits -> higher occupancy
+# - higher elevation baits -> less occupancy
+# - understory baits have slighly lower occupancy
 # - interaction: lower elevation has higher occupancy in canopy
-# bigger trees, higher chance of occupancy
-# interaction Lianas.n.log:StratumUN: higher chance of occupancy on understory trees w. many lianas, negative effects in the canopy in kausi but no effects in canopy in numba
-# more lianas, lower chance of occupancy?
+
+# env model: interaction with stratum:lianas. slight positive effects of understory lianas on occupancy
 
 # 3) Does bait abundance change?
 summary(baitabundance.model2)
@@ -1451,10 +1441,11 @@ summary(baitabundance.model.e1)
 
 # - lower baits, higher abundance 
 # - lower elevation, higher abundance
+# - slight negative effect of lianas on abundance
 
 # 4) Does bait diversity change?
 summary(baitdiversity.stratum.model1)
-summary(baitdiversity.stratum.model.e1)
+summary(baitdiversity.stratum.model.e2)
 
 # - higher elevation, higher diversity
 # - higher diversity in understory
@@ -1467,13 +1458,20 @@ summary(bamboooccupancy.model.e1)
 # - higher occupancy in canopy
 # - first phase treatment slightly lower occupancy
 
-# 6) Does bamboo diversity change?
-summary(bamboo.diversity.model1)
-summary(bamboo.diversity.model.e2)
-# - higher elevation, lower nesting diversity
-# - first phase lower diversity
-# - bigger trees, higher diversity
+# 6) Does nest size change?
+summary(bamboo.abundance.model4)
+summary(bamboo.abundance.model.e4)
 
+# - smaller nests in numba
+# - no stratum effects
+
+# 7) Does bamboo diversity change?
+summary(bamboo.diversity.model1)
+summary(bamboo.diversity.model.e1)
+
+# - in main model, same nester diversity between elevations, but in env model lower diversity in numba
+# - lower diversity in understory
+# - bigger trees, higher diversity
 
 # abundance of ants inside bamboo is not as interesting as bait abundance, so I would not present it in the main manuscript
 # evenness is probably not so interesting since its partly accounted for in Shannon diversity (expH)
@@ -1485,16 +1483,16 @@ summary(bamboo.diversity.model.e2)
 # Create list of models
 models_list <- list()
 models_list[[1]] <- bait.double.model2
-models_list[[2]] <- baitoccupancy.model1
-models_list[[3]] <- baitoccupancy.model.e2
-models_list[[4]] <- baitdiversity.stratum.model1
+models_list[[2]] <- bait.double.model.e1
+models_list[[3]] <- baitoccupancy.model1
+models_list[[4]] <- baitoccupancy.model.e1
 models_list[[5]] <- baitdiversity.model.eve.e1
 models_list[[6]] <- baitabundance.model2
 models_list[[7]] <- baitabundance.model.e1
 models_list[[8]] <- bamboo.occupancy.model2
 models_list[[9]] <- bamboooccupancy.model.e1
 models_list[[10]] <- bamboo.diversity.model1
-models_list[[11]] <- bamboo.diversity.model.e2
+models_list[[11]] <- bamboo.diversity.model.e1
 
 # Create Excel workbook
 wb <- createWorkbook()
