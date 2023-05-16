@@ -1096,42 +1096,40 @@ corrplot(mydata.cor,
 
 # get environmental data
 bait.double.e<-merge(bait.double, tree.meta)
+bait.double.e<-subset(bait.double.e, species.per.bait!=0) # remove empty baits
+bait.double.e$species.per.bait[bait.double.e$species.per.bait == 1] <- 0 # if there was one species on a bait, make it zero
+bait.double.e$species.per.bait[bait.double.e$species.per.bait == 2] <- 1 # if there were 2, make it 1
+
 #
 bait.double.model1 <- glmmTMB(species.per.bait~Forest*Stratum+(1|Block/Plot),
-                              zi=~Forest+Stratum,
-                               data=bait.double.e, family = gaussian)
+                              data=bait.double.e, 
+                              family = binomial)
+
 bait.double.model2 <- glmmTMB(species.per.bait~Forest+Stratum+(1|Block/Plot), 
-                              zi=~Forest+Stratum,
-                          data=bait.double.e, family = gaussian)
+                              data=bait.double.e,
+                              family = binomial)
 # 
-anova(bait.double.model1, bait.double.model2) # better without interactions
+anova(bait.double.model1, bait.double.model2) # ns, better without interactions
 summary(bait.double.model2)
 overdisp_fun(bait.double.model2)
 #
 testDispersion(bait.double.model2) # ok
-simulateResiduals(bait.double.model2, plot = T) # not good
+simulateResiduals(bait.double.model2, plot = T) # good
 testZeroInflation(simulateResiduals(fittedModel = bait.double.model2)) # ok
-
-plot(allEffects(bait.double.model2)) # model visualization
 
 # with environmental factors
 bait.double.model.e1 <- glmmTMB(species.per.bait~Forest+Lianas.n.log+Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var+(1|Block/Plot),
-                                zi=~Forest+Stratum,
-                                 data=bait.double.e, family= gaussian)
+                                 data=bait.double.e, family= binomial)
 bait.double.model.e2 <- glmmTMB(species.per.bait~Forest*Lianas.n.log*Stratum+dw.percent.log+dw.number.log+trunk.log+Caco+slope.var+(1|Block/Plot),
-                                zi=~Forest+Stratum,
-                                data=bait.double.e, family= gaussian)
+                                data=bait.double.e, family= binomial)
 anova(bait.double.model.e1, bait.double.model.e2) # ns, without interaction
 
 summary(bait.double.model.e1)
 overdisp_fun(bait.double.model.e1)
 #
 testDispersion(bait.double.model.e1) # ok
-simulateResiduals(bait.double.model.e1, plot = T) # not good
+simulateResiduals(bait.double.model.e1, plot = T) # good
 testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e1)) # ok
-
-
-## model residuals not good, what to do?
 
 ## Bait occupancy
 # get environmental data
