@@ -232,7 +232,6 @@ bait.double <-bait.double %>%
                                        .default = 1)) #
 
 
-### Plot bait occupancy as average proportion per plot-stratum
 
 # define plot-stratum
 baiting.incidence$plot.stratum <-paste(baiting.incidence$Plot,baiting.incidence$Stratum)
@@ -251,15 +250,17 @@ baits.final<-merge(bait1, baits.c)
 # proportion
 baits.final$proportion<-baits.final$occupancy/baits.final$n*100
 
+labs <- expression("lowland", "midelevation")
+
 # plot it
 bait.occupancy.stratum<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Stratum)) +
   ggtitle("Bait occupancy") +
   ylab("Occupancy [%]")+
   xlab("")+ 
-  #ylim(0,50)+
+  #ylim(0,100)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 bait.occupancy.stratum
 
@@ -287,7 +288,7 @@ bait.occupancy.plot<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Fore
   #ylim(0,50)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 bait.occupancy.plot
 
@@ -328,7 +329,7 @@ baitdiversity.plot<-ggplot(diversity, aes(x=Forest, y=expH, fill=Forest)) +
   ggtitle("Bait species diversity") +
   geom_boxplot()+
   ylim(0,20)+
-  scale_fill_manual(labels=labs, values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(labels=labs, values=c("#0072B2", "#E69F00"))+
   scale_x_discrete(labels=labs)+
   ylab("Species diversity [expH]")+
   xlab("")+ 
@@ -360,17 +361,15 @@ diversity.stratum<-merge(data3, plot_m2)
 # 
 
 ## Plot it
-#Labs
-labs <- expression("Kausi", "Numba")
 
 baitdiversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = Stratum)) +
   ggtitle("Bait diversity") +
-  ylab("Shannon diversity")+
+  ylab("Species diversity [expH]")+
   xlab("")+ 
   #ylim(0,50)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 baitdiversity.stratum
 
@@ -419,7 +418,7 @@ bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "CREM 014")
 bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "CREM 003")
 bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "other species")
 
-abundance.plot<-ggplot(bait.abundance2, aes(x = Forest, y = percentage, fill = AntSpCODE)) +
+abundance.proportion.bait<-ggplot(bait.abundance2, aes(x = Forest, y = percentage, fill = AntSpCODE)) +
   geom_bar(stat = "identity",position= position_fill(reverse = TRUE), color='black') +
   xlab("") +
   labs(fill = "Ant species")+
@@ -427,7 +426,7 @@ abundance.plot<-ggplot(bait.abundance2, aes(x = Forest, y = percentage, fill = A
   ylab("relative abundance [%]") +
   ggtitle("bait species composition") +
   theme_minimal()
-abundance.plot
+abundance.proportion.bait
 
  # summarize bait incidence counts
 bait.incidence <- baiting.data %>%
@@ -487,8 +486,6 @@ bait.incidence.plot
 ## Bait rank abundance (incidence) curves
 library(ggrepel)
 library("BiodiversityR")
-data(dune.env)
-data(dune)
 
 # forest x species incidence
 ant_m<-dcast(baiting.data, formula = Forest ~ AntSpCODE, length)
@@ -511,7 +508,7 @@ BioR.theme <- theme(
   legend.text = element_text(size = 14),
   legend.key = element_blank())
 
-uncorrected.rank.incidence <- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
+uncorrected.rank.incidence.baits <- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
   scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
   scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
   geom_line(aes(colour=Grouping), size=1) +
@@ -522,7 +519,7 @@ uncorrected.rank.incidence <- ggplot(data=RA.data, aes(x = rank, y = abundance))
   BioR.theme +
   scale_color_brewer(palette = "Set1") +
   labs(x = "rank", y = "incidence", colour = "Forest", shape = "Forest")
-uncorrected.rank.incidence
+uncorrected.rank.incidence.baits
 
 #----------------------------------------------------------#
 # 2.1 Nest occupancy -----
@@ -642,7 +639,7 @@ nest.occupancy.phase.plot<-ggplot(phase.final, aes(x=Forest, y=proportion, fill=
   ylim(0,50)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 nest.occupancy.phase.plot
 
@@ -729,10 +726,10 @@ nests.final.occupancy.plot<-ggplot(nests.final, aes(x=Forest, y=proportion, fill
   ggtitle("Nest occupancy") +
   ylab("Occupancy [%]")+
   xlab("")+ 
-  #ylim(0,50)+
+  ylim(0,100)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 nests.final.occupancy.plot
 
@@ -820,7 +817,7 @@ nest.occupancy.phase.plot<-ggplot(phase.final, aes(x=Forest, y=proportion, fill=
   ylim(0,50)+
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 nest.occupancy.phase.plot
 
@@ -861,7 +858,7 @@ nest.abundance<- nest.abundance%>%
 nest.abundance$AntSpCode <- as.factor(nest.abundance$AntSpCode)
 nest.abundance$AntSpCode <- relevel(nest.abundance$AntSpCode, "other species")
 
-abundance.proportion<-ggplot(nest.abundance, aes(x = Forest, y = percentage, fill = AntSpCode)) +
+abundance.proportion.nest<-ggplot(nest.abundance, aes(x = Forest, y = percentage, fill = AntSpCode)) +
   geom_bar(stat = "identity", position = position_fill(reverse = TRUE), color='black') +
   xlab("") +
   labs(fill = "Ant species")+
@@ -870,12 +867,42 @@ abundance.proportion<-ggplot(nest.abundance, aes(x = Forest, y = percentage, fil
   ggtitle("bamboo species composition") +
   #scale_fill_brewer(palette="Dark2")+
   theme_minimal()
-abundance.proportion
+abundance.proportion.nest
 
-# plot as glm prediction against elevation
+## Bait rank abundance (incidence) curves
+# forest x species incidence
+ant_m<-dcast(phase.nests, formula = Forest ~ AntSpCode, length)
+rownames(ant_m)<-ant_m[,1] # Plot as rownames
+ant_m<-ant_m[,c(-2)]
 
-ggplot(bamboo.incidence.e, aes(x=elevation, y=occupancy)) + geom_point() + 
-  stat_smooth(method="glm", method.args=list(family="binomial"), se=TRUE)
+ant_m.env<-data.frame(forest  = c("Kausi Primary", "Numba Primary"))
+ant_m.env$forest<-as.factor(ant_m.env$forest)
+
+RA.data <- rankabuncomp(ant_m[,-1], y=ant_m.env, factor='forest', 
+                        return.data=TRUE, specnames=c(1:2), legend=FALSE)
+BioR.theme <- theme(
+  panel.background = element_blank(),
+  panel.border = element_blank(),
+  panel.grid = element_blank(),
+  axis.line = element_line("gray25"),
+  axis.text = element_text(size = 10, colour = "gray25"),
+  axis.title = element_text(size = 14, colour = "gray25"),
+  legend.title = element_text(size = 14),
+  legend.text = element_text(size = 14),
+  legend.key = element_blank())
+
+uncorrected.rank.incidence.bamboo <- ggplot(data=RA.data, aes(x = rank, y = abundance)) + 
+  scale_x_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+  scale_y_continuous(expand=c(0, 1), sec.axis = dup_axis(labels=NULL, name=NULL)) +
+  geom_line(aes(colour=Grouping), size=1) +
+  geom_point(aes(colour=Grouping, shape=Grouping), size=1, alpha=0.7) +
+  geom_text_repel(data=subset(RA.data, labelit == TRUE), 
+                  aes(colour=Grouping, label=species), 
+                  angle=0, nudge_x=1, nudge_y=1, show.legend=FALSE) +
+  BioR.theme +
+  scale_color_brewer(palette = "Set1") +
+  labs(x = "rank", y = "incidence", colour = "Forest", shape = "Forest")
+uncorrected.rank.incidence.bamboo
 
 #----------------------------------------------------------#
 # 2.2 Nest diversity -----
@@ -937,7 +964,7 @@ nests.phase1<-ggplot(phase1.diversity, aes(x=Forest, y=expH, fill=Stratum)) +
   ggtitle("Phase 1 Bamboo nester diversity") +
   geom_boxplot()+
   ylim(0,5)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   ylab("Species diversity")+
   xlab("")+ 
   theme(axis.text.x = element_text(size=12))
@@ -947,7 +974,7 @@ nests.phase2 <-ggplot(phase2.diversity, aes(x=Forest, y=expH, fill=Stratum)) +
   ggtitle("Phase 2 Bamboo nester diversity") +
   geom_boxplot()+
   #ylim(0,5)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   ylab("Species diversity")+
   xlab("")+ 
   theme(axis.text.x = element_text(size=12))
@@ -963,23 +990,25 @@ nests.diversity.phase.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=
   xlab("")+ 
   geom_boxplot()+
   scale_x_discrete(labels=labs)+
-  scale_fill_manual(values=c("#009E73", "#D55E00"))+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_bw()
 nests.diversity.phase.plot
+
+# Plot nester diversity, stratum dependent
+nests.diversity.stratum.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=Stratum)) +
+  ggtitle("Bamboo nester diversity") +
+  labs(fill = "Stratum")+  
+  ylab("Species diversity [expH]")+
+  xlab("")+ 
+  geom_boxplot()+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
+  theme_bw()
+nests.diversity.stratum.plot
 
 #----------------------------------------------------------#
 # 3.1 Statistic: Environment  -----
 #----------------------------------------------------------#
-
-# test for overdispersion
-overdisp_fun<-function(model) {
-  rdf <- df.residual(model)
-  rp <- residuals(model,type="pearson")
-  Pearson.chisq <- sum(rp^2)
-  prat <- Pearson.chisq/rdf
-  pval <- pchisq(Pearson.chisq, df=rdf, lower.tail=FALSE)
-  c(chisq=Pearson.chisq,ratio=prat,rdf=rdf,p=pval)
-}
 
 # Plot attribute transformations: Are environmental factors skewed?
 hist(tree.meta$trunk) #right skewed, log+1 transformation fine
@@ -1493,6 +1522,9 @@ models_list[[8]] <- bamboo.occupancy.model2
 models_list[[9]] <- bamboooccupancy.model.e1
 models_list[[10]] <- bamboo.diversity.model1
 models_list[[11]] <- bamboo.diversity.model.e1
+models_list[[12]] <- bamboo.abundance.model4
+models_list[[13]] <- bamboo.abundance.model.e4
+
 
 # Create Excel workbook
 wb <- createWorkbook()
@@ -1519,27 +1551,24 @@ saveWorkbook(wb, "model_summaries.xlsx", overwrite = TRUE)
 # Figure summaries -----
 #----------------------------------------------------------#
 
-#Bamboo diversity
-nests.diversity.phase.plot
-
-#Bait diversity
+# Main figures
+# diversity
+nests.diversity.stratum.plot
 baitdiversity.stratum
 
-#bamboo occupied
-nest.occupancy.phase.plot
+# occupancy
+nests.final.occupancy.plot
+bait.occupancy.stratum
 
-#Bamboo 
-nesting.proportion
+# SAD 
+uncorrected.rank.incidence.baits
+uncorrected.rank.incidence.bamboo
+# or proportional nesting
+abundance.proportion.bait
+abundance.proportion.nest
 
-# Bait composition
-# as proportion of incidence
-bait.incidence.plot
-# as proportion of abundance
-abundance.plot
-
-
-figure_baitsbamboos <- ggarrange(nests.diversity.phase.plot, baitdiversity.stratum, nesting.proportion, abundance.plot,
-                               labels = c("A", "B", "C", "D"),
-                               ncol = 2, nrow = 2, common.legend = F
+main_figure <- ggarrange(bait.occupancy.stratum, nests.final.occupancy.plot, baitdiversity.stratum, nests.diversity.stratum.plot,abundance.proportion.bait, abundance.proportion.nest,
+                               labels = c("A", "B", "C", "D", "E", "F"),
+                               ncol = 2, nrow = 3, common.legend = F
 )
-figure_baitsbamboos
+main_figure
