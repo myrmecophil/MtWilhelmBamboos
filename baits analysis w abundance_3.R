@@ -258,16 +258,17 @@ labs <- expression("lowland", "midelevation")
 
 # plot it
 bait.occupancy.stratum<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Stratum)) +
-  ggtitle("Bait occupancy") +
-  ylab("Occupancy [%]")+
+  ggtitle("Bait occupancy [%]") +
+  ylab("")+
   xlab("")+ 
-  #ylim(0,100)+
-  geom_boxplot(outlier.colour=NA)+
+  ylim(0,100)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
-             position=position_jitterdodge(), alpha=0.5)+
+             position=position_jitterdodge(0.1), alpha=0.8)+
+  
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal()
+  theme_minimal(15)
 bait.occupancy.stratum
 
 #----------------------------------------------------------#
@@ -300,16 +301,17 @@ diversity.stratum<-merge(data3, plot_m2)
 ## Plot it
 
 bait.diversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = Stratum)) +
-  ggtitle("Bait diversity") +
-  ylab("Species diversity [expH]")+
+  ggtitle("Bait species diversity [expH]") +
+  ylab("")+
   xlab("")+ 
-  #ylim(0,50)+
-  geom_boxplot()+
+  ylim(0,15)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
-             position=position_jitterdodge(), alpha=0.5)+
+             position=position_jitterdodge(0.1), alpha=0.8)+
+  
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal()
+  theme_minimal(15)
 bait.diversity.stratum
 
 #----------------------------------------------------------#
@@ -541,14 +543,14 @@ bait.incidence <- baiting.data %>%
 
 # Bait abundance plot
 bait.abundance.stratum<-ggplot(baiting.incidence, aes(x=Forest, y=log(Abundance+1), fill = Stratum)) +
-  ggtitle("Bait abundance") +
-  ylab("Bait abundance [log+1]")+
+  ggtitle("Bait abundance [log+1]") +
+  ylab("")+
   xlab("")+ 
   #ylim(0,50)+
-  geom_violin()+
+  geom_violin(lwd=1)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal()
+  theme_minimal(15)
 bait.abundance.stratum
 
 #----------------------------------------------------------#
@@ -675,16 +677,17 @@ nests.final$proportion<-nests.final$occupancy/nests.final$n*100
 
 # plot it
 nests.final.occupancy.plot<-ggplot(nests.final, aes(x=Forest, y=proportion, fill = Stratum)) +
-  ggtitle("Nest occupancy") +
-  ylab("Occupancy [%]")+
+  ggtitle("Nest occupancy [%]") +
+  ylab("")+
   xlab("")+ 
   ylim(0,50)+
-  geom_boxplot(outlier.color=NA,lwd=1)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
-             position=position_jitterdodge(),alpha=0.5)+
+             position=position_jitterdodge(0.1), alpha=0.8)+
+  
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(20)
+  theme_minimal(15)
 nests.final.occupancy.plot
 
 ##### ignoring phase and empty bamboos: Proportion of abundance
@@ -699,16 +702,17 @@ nest.abundance1 <- phase.nests %>%
 nest.abundance1 <- subset(nest.abundance1, Abundance!=0)
 
 nest.abundance.stratum<-ggplot(nest.abundance1, aes(x=Forest, y=log(Abundance), fill = Stratum)) +
-  ggtitle("Nest size") +
-  ylab("Nest size [log]")+
+  ggtitle("Nest size [log]") +
+  ylab("")+
   xlab("")+ 
   #ylim(0,50)+
-  geom_boxplot(outlier.colour=NA, lwd=1)+
-  geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
-             position=position_jitterdodge(), alpha=0.5)+
-  scale_x_discrete(labels=labs)+
+ geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
+             position=position_jitterdodge(0.1))+
+  
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
+ scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(20)
+  theme_minimal(15)
 nest.abundance.stratum
 
 # plot nest abundance as proportion
@@ -829,17 +833,32 @@ nest.diversity.phase.plot
 
 # Plot nester diversity, stratum dependent
 nest.diversity.stratum.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=Stratum)) +
-  ggtitle("Bamboo nester diversity") +
+  ggtitle("Nest species diversity [expH]") +
   labs(fill = "Stratum")+  
-  ylab("Species diversity [expH]")+
+  ylab("")+
   xlab("")+ 
-  geom_boxplot(outlier.color=NA, lwd=1)+
-  geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
-             position=position_jitterdodge(), alpha=0.5)+
+  geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20", position=position_jitterdodge(0.1), alpha=0.8)+
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
 nest.diversity.stratum.plot
+
+
+nest.diversity.stratum.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=Stratum)) +
+  ggtitle("Bamboo nester diversity") +
+  labs(fill = "Stratum")+  
+  ylab("Species diversity [expH]")+
+  xlab("")+ 
+  geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
+             position=position_jitterdodge(0.1), alpha=0.8)+
+  
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
+  scale_x_discrete(labels=labs)+
+  scale_fill_manual(values=c("#0072B2", "#E69F00"))+
+  theme_minimal(15)
+nest.diversity.stratum.plot
+
 
 #----------------------------------------------------------#
 # 2.2 Nest composition -----
@@ -1293,7 +1312,7 @@ testZeroInflation(simulateResiduals(fittedModel = bamboooccupancy.model.e2)) # o
 bamboo.abundance.model3 <- glmmTMB(nesting.estimate~Forest*Stratum+new.Treatment+(1|Block/Plot),
                                    data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                    family=nbinom2)
-bamboo.abundance.model4 <- glmmTMB(nesting.estimate~Fores t+Stratum+new.Treatment+(1|Block/Plot),
+bamboo.abundance.model4 <- glmmTMB(nesting.estimate~Forest+Stratum+new.Treatment+(1|Block/Plot),
                                    data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                    family=nbinom2)
 anova(bamboo.abundance.model3,bamboo.abundance.model4) # ns, no interaction
@@ -1533,10 +1552,6 @@ main_figure <- ggarrange(bait.occupancy.stratum, nests.final.occupancy.plot, bai
 )
 main_figure
 
-species_composition <- ggarrange(abundance.proportion.bait, abundance.proportion.nest,
-                         labels = c("A", "B"),
-                         ncol = 2, nrow = 1, common.legend = F
-)
 species_composition
 
 temp.lianas<- ggarrange(temp_stratum,lianas.plot,

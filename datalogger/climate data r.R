@@ -270,14 +270,14 @@ labs <- expression("lowland", "midelevation")
 
 # stratum 
 temp_stratum<-ggplot(datalogger.templong, aes(x=Location, y=temperature, fill=Stratum)) +
-  ggtitle("Temperature") +
-  geom_violin()+
+  ggtitle("Temperature [°C]") +
+  geom_violin(lwd=1)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(labels=c("Understory", "Canopy"), values=c("#E69F00", "#0072B2"))+
-  ylab("Temperature [C]")+
+  ylab("")+
   #ylim(0,35)+
   xlab("")+
-  theme_hc()
+  theme_minimal(15)
 temp_stratum
 
 # average temp
@@ -287,3 +287,4 @@ means_by_location <- datalogger.templong %>%
 
 
 aov(datalogger.templong$Location ~  datalogger.templong$temperature)
+
