@@ -28,35 +28,38 @@ sapply(package_list, library, character.only = TRUE)
 
 KP1.top.raw<-read.csv(file="./Datalogger/KP1/data_91221507_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 KP1.bottom.raw<-read.csv(file="./Datalogger/KP1/data_94231387_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-
+#
 KP2.top.raw<-read.csv(file=".//Datalogger/KP2/data_91221508_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 KP2.bottom.raw<-read.csv(file=".//Datalogger/KP2/data_94231388_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-
+#
 KP4.top.raw<-read.csv(file=".//Datalogger/KP4/data_91221509_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 KP4.bottom.raw<-read.csv(file=".//Datalogger/KP4/data_94231390_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-
+#
 KP6.top.raw<-read.csv(file=".//Datalogger/KP6/data_91221510_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 KP6.bottom.raw<-read.csv(file=".//Datalogger/KP6/data_94231389_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-
+#
 NP1A.top.raw<-read.csv(file=".//Datalogger/NP1/data_91221502_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 #NP1B.top.raw<-read.csv(file="./Datalogger/NP1/data_91221505_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP1B.top.raw<-read.csv(file=".//Datalogger/NP1/data_91221512_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 
-NP1A.bottom.raw<-read.csv(file=".//Datalogger/NP1/data_94213981_2022_04_20_0.csv", header=F, sep = ';', dec = ",")
+NP1A.bottom.raw<-read.csv(file=".//Datalogger/NP1/data_94231381_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP1B.bottom.raw<-read.csv(file=".//Datalogger/NP1/data_94231383_2022_11_30_0.csv", header=F, sep = ';', dec = ",")
-
-NP2A.top.raw<-read.csv(file=".//Datalogger/NP2/data_91221501_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
+#
+NP2A.top.raw<-read.csv(file=".//Datalogger/NP2/data_94231382_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP2B.top.raw<-read.csv(file=".//Datalogger/NP2/data_91221505_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-NP2A.bottom.raw<-read.csv(file=".//Datalogger/NP2/data_94213982_2022_04_20_0.csv", header=F, sep = ';', dec = ",")
-NP2B.bottom.raw<-read.csv(file=".//Datalogger/NP2/data_94231385_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 
+NP2A.bottom.raw<-read.csv(file=".//Datalogger/NP2/data_94231382_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
+NP2B.bottom.raw<-read.csv(file=".//Datalogger/NP2/data_94231385_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
+#
 NP4A.top.raw<-read.csv(file=".//Datalogger/NP4/data_91221504_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP4B.top.raw<-read.csv(file=".//Datalogger/NP4/data_91221511_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
+
 NP4A.bottom.raw<-read.csv(file=".//Datalogger/NP4/data_94231386_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP4B.bottom.raw<-read.csv(file=".//Datalogger/NP4/data_94231392_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
-
+#
 NP5A.top.raw<-read.csv(file=".//Datalogger/NP5/data_91221503_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP5B.top.raw<-read.csv(file=".//Datalogger/NP5/data_91221506_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
+
 NP5A.bottom.raw<-read.csv(file=".//Datalogger/NP5/data_94231384_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 NP5B.bottom.raw<-read.csv(file="./Datalogger/NP5/data_94231391_2022_09_23_0.csv", header=F, sep = ';', dec = ",")
 
@@ -129,7 +132,7 @@ KP6.logger$Location<-"Kausi"
 KP6.logger<-KP6.logger[c(11464:20869),]
 
 ### Numba
-# NP 1 - using B since A has wrong dates
+# NP 1 - using B
 NP1.top<- NP1B.top.raw %>% dplyr::select(V2,V4)%>%
   rename(time = V2,
          temp.top = V4)
@@ -146,7 +149,7 @@ NP1.logger$Location<-"Numba"
 # date subset- approximate time of data loggers: 2022.06.23 03:30 -2022.09.17 01:30
 NP1.logger<-NP1.logger[c(12237:20485),]
 
-# NP2 - using B since A has date wrong
+# NP2 - using B
 NP2.top<- NP2B.top.raw %>% dplyr::select(V2,V4)%>%
   rename(time = V2,
          temp.top = V4)

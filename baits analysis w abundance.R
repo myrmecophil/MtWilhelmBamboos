@@ -38,7 +38,8 @@ package_list <-
     "emmeans",
     "effects",
     "broom.mixed",
-    "openxlsx")
+    "openxlsx",
+    "report")
 
 # install all packages
 #sapply(package_list, install.packages, character.only = TRUE)
@@ -232,7 +233,6 @@ bait.double <-bait.double %>%
                                        .default = 1)) #
 
 
-
 # define plot-stratum
 baiting.incidence$plot.stratum <-paste(baiting.incidence$Plot,baiting.incidence$Stratum)
 
@@ -314,7 +314,7 @@ data2$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon di
 data2$Richness <- specnumber(ant_m)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data2$evenness <- data2$Shannon/log(specnumber(ant_m)) # evenness per plot
+data2$evenness <- data2$expH/specnumber(ant_m) # evenness per plot - changed to Hill evenness, earlier defined H/log(specnumber)
 str(data2)
 
 # add Plot location
@@ -352,7 +352,7 @@ data3$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon di
 data3$Richness <- specnumber(ant_m)                          # Richness per plot
 data3$expH <- exp(data3$Shannon)                                         # exponential Shannon diversity per plot
 data3$expH[data3$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data3$evenness <- data3$Shannon/log(specnumber(ant_m)) # evenness per plot
+data3$evenness <- data3$expH/specnumber(ant_m) # evenness per plot
 str(data3)
 
 # add Plot location
@@ -936,7 +936,7 @@ data2$Shannon <- diversity(ant_n.phase1, index = "shannon", base = exp(1)) # Sha
 data2$Richness <- specnumber(ant_n.phase1)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                  # define exp(Shannon) = 0
-data2$evenness <- data2$Shannon/log(specnumber(ant_n.phase1)) # evenness per plot
+data2$evenness <- data2$expH/specnumber(ant_n.phase1) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -951,7 +951,7 @@ data2$Shannon <- diversity(ant_n.phase2, index = "shannon", base = exp(1)) # Sha
 data2$Richness <- specnumber(ant_n.phase2)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data2$evenness <- data2$Shannon/log(specnumber(ant_n.phase2)) # evenness per plot
+data2$evenness <- data2$expH/specnumber(ant_n.phase2) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -1269,7 +1269,7 @@ testDispersion(baitdiversity.model.e1) # ok
 simulateResiduals(baitdiversity.model.e1, plot = T) # ok 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.e1)) # ok
 
-# evenness (will maybe be removed?)
+# evenness
 baitdiversity.model.eve <- glmmTMB(evenness ~ Forest + (1|Block), data = baiting.diversity.e, family = gaussian)
 summary(baitdiversity.model.eve)
 overdisp_fun(baitdiversity.model.eve)
@@ -1324,6 +1324,30 @@ overdisp_fun(baitdiversity.stratum.model.e2) #
 testDispersion(baitdiversity.stratum.model.e2) # ok
 simulateResiduals(baitdiversity.stratum.model.e2, plot = T) # ok-ish
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e2)) # ok
+
+# evenness
+baitdiversity.model.eve1 <- glmmTMB(evenness ~ Forest.x + Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
+baitdiversity.model.eve2 <- glmmTMB(evenness ~ Forest.x * Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
+anova(baitdiversity.model.eve1, baitdiversity.model.eve2) # no interaction
+
+summary(baitdiversity.model.eve1)
+#
+testDispersion(baitdiversity.model.eve1) # ok
+simulateResiduals(baitdiversity.model.eve1, plot = T) # little bit deviance 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve1)) # ok
+
+# evenness with environmental factors
+baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest.x+Stratum+slope.var+Caco.log+trunk_mean.log+Lianas.n_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
+                                          data = diversity.stratum.e, family = gaussian)
+baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest.x*Stratum*Lianas.n_mean.log+slope.var+Caco.log+trunk_mean.log+dw.number_mean.log+dw.percent_mean.log + (1|Block.x/Plot.x),
+                                          data = diversity.stratum.e, family = gaussian)
+anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # no interaction
+
+summary(baitdiversity.stratum.model.e1)
+#
+testDispersion(baitdiversity.stratum.model.e1) # ok
+simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # little bit deviance 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
 
 
 #----------------------------------------------------------#
@@ -1451,6 +1475,7 @@ plot(allEffects(bamboo.diversity.model.e1)) # model visualization
 summary(bait.double.model2)
 summary(bait.double.model.e1)
 
+
 # more double occupancies in Numba
 # no stratum effect
 
@@ -1515,15 +1540,16 @@ models_list[[1]] <- bait.double.model2
 models_list[[2]] <- bait.double.model.e1
 models_list[[3]] <- baitoccupancy.model1
 models_list[[4]] <- baitoccupancy.model.e1
-models_list[[5]] <- baitdiversity.model.eve.e1
-models_list[[6]] <- baitabundance.model2
-models_list[[7]] <- baitabundance.model.e1
-models_list[[8]] <- bamboo.occupancy.model2
-models_list[[9]] <- bamboooccupancy.model.e1
-models_list[[10]] <- bamboo.diversity.model1
-models_list[[11]] <- bamboo.diversity.model.e1
-models_list[[12]] <- bamboo.abundance.model4
-models_list[[13]] <- bamboo.abundance.model.e4
+models_list[[5]] <- baitabundance.model2
+models_list[[6]] <- baitabundance.model.e1
+models_list[[7]] <- bamboo.occupancy.model2
+models_list[[8]] <- bamboooccupancy.model.e1
+models_list[[9]] <- bamboo.diversity.model1
+models_list[[10]] <- bamboo.diversity.model.e1
+models_list[[11]] <- bamboo.abundance.model4
+models_list[[12]] <- bamboo.abundance.model.e4
+models_list[[13]] <- baitdiversity.model.eve1
+models_list[[14]] <- baitdiversity.model.eve.e1
 
 
 # Create Excel workbook
@@ -1532,7 +1558,7 @@ wb <- createWorkbook()
 # Loop through models and generate model summaries
 for (i in 1:length(models_list)) {
   # Generate model summary
-  model_summary <- broom.mixed::tidy(models_list[[i]], effects = "fixed")
+  model_summary <- models_list[[i]] %>% report() %>% as.data.frame()
   
   # Extract model formula and add to header
   formula_text <- as.character(formula(models_list[[i]]))

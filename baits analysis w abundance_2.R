@@ -1,5 +1,3 @@
-<<<<<<< HEAD
-
 ## Numba-Kausi Baits & nests - R script by Phil 18 April 2023
 
 # to do: 
@@ -454,20 +452,20 @@ mean(colMeans(m_vs_l.un))
 
 
 
-#### beta partitioning
+#### beta partitioning, abundance based
 
-# make occurrence matrix
-baits.matrix.un.oc <-ifelse(baits.matrix.un >0, 1, 0)
-baits.matrix.ca.oc <-ifelse(baits.matrix.ca >0, 1, 0)
+#  abundance matrix
+baits.matrix.un.oc <-baits.matrix.un
+baits.matrix.ca.oc <-baits.matrix.ca
 
-beta.sim_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sim)
-beta.sne_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sne)
-beta.total_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sor)
+beta.sim_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray.bal)
+beta.sne_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray.gra)
+beta.total_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray)
 
 
-beta.sim_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sim)
-beta.sne_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sne)
-beta.total_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sor)
+beta.sim_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray.bal)
+beta.sne_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray.gra)
+beta.total_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray)
 
 # species replacement midelevation vs lowland, UN
 beta.sim_un <- beta.sim_un[c(1:12), c(13:32)]
@@ -478,8 +476,6 @@ beta_un.sim.means$Stratum<-'UN'
 beta_un.sim.means$plot<-rownames(beta_un.sim.means)
 beta_un.sim.means$plot.stratum<-paste(beta_un.sim.means$plot,beta_un.sim.means$Stratum)
 mean(beta_un.sim.means$sim)
-
-
 
 # species replacement midelevation vs lowland, CA
 beta.sim_ca <- beta.sim_ca[c(1:12), c(13:32)]
@@ -539,7 +535,127 @@ df2<-rbind(beta_ca.total.means, beta_un.total.means)
 beta.all<-merge(df, df1, by="plot.stratum")
 beta.all<-merge(beta.all, df2, by="plot.stratum")
 
-beta.all<-beta.all[,-c(3,4,6,7)]
+beta.all.abund<-beta.all[,-c(3,4,6,7)]
+
+# plot abundance based
+
+bray_plot<-ggplot(beta.all.abund, aes(x=Stratum, y=total, colour = Stratum)) +
+  ggtitle("Elevational Species Turnover") +
+  ylab("Average Bray Curits Distance")+
+  xlab("Stratum")+ 
+  ylim(0.5,1.01)+
+  geom_boxplot(outlier.colour=NA, lwd=1)+
+  geom_jitter(data = beta.all.abund, aes(x = Stratum, y = total, colour = Stratum), alpha = 0.5, size = 3)+
+  scale_color_manual(values=c("#0072B2", "#E69F00"))+
+  guides(colour = "none")+
+  theme_minimal(20)
+bray_plot
+
+
+#### Beta partitioning, occurrence based
+
+# make occurrence matrix
+baits.matrix.un.oc <-ifelse(baits.matrix.un >0, 1, 0)
+baits.matrix.ca.oc <-ifelse(baits.matrix.ca >0, 1, 0)
+
+beta.sim_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray.bal)
+
+beta.sim_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sim)
+beta.sne_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sne)
+beta.total_un <- as.matrix(beta.pair(baits.matrix.un.oc, index.family = "sorensen")$beta.sor)
+
+
+beta.sim_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sim)
+beta.sne_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sne)
+beta.total_ca <- as.matrix(beta.pair(baits.matrix.ca.oc, index.family = "sorensen")$beta.sor)
+
+# species replacement midelevation vs lowland, UN
+beta.sim_un <- beta.sim_un[c(1:12), c(13:32)]
+
+beta_un.sim.means <- as.data.frame(rowMeans(beta.sim_un))
+colnames(beta_un.sim.means)<-"sim"
+beta_un.sim.means$Stratum<-'UN'
+beta_un.sim.means$plot<-rownames(beta_un.sim.means)
+beta_un.sim.means$plot.stratum<-paste(beta_un.sim.means$plot,beta_un.sim.means$Stratum)
+mean(beta_un.sim.means$sim)
+
+# species replacement midelevation vs lowland, CA
+beta.sim_ca <- beta.sim_ca[c(1:12), c(13:32)]
+
+beta_ca.sim.means <- as.data.frame(rowMeans(beta.sim_ca))
+colnames(beta_ca.sim.means)<-"sim"
+beta_ca.sim.means$Stratum<-"CA"
+beta_ca.sim.means$plot<-rownames(beta_ca.sim.means)
+beta_ca.sim.means$plot.stratum<-paste(beta_ca.sim.means$plot,beta_ca.sim.means$Stratum)
+mean(beta_ca.sim.means$sim)
+
+# nestedness midelevation vs lowland, UN
+beta.sne_un <- beta.sne_un[c(1:12), c(13:32)]
+
+beta_un.sne.means <- as.data.frame(rowMeans(beta.sne_un))
+colnames(beta_un.sne.means)<-"sne"
+beta_un.sne.means$Stratum<-"UN"
+beta_un.sne.means$plot<-rownames(beta_un.sne.means)
+beta_un.sne.means$plot.stratum<-paste(beta_un.sne.means$plot,beta_un.sne.means$Stratum)
+mean(beta_un.sne.means$sne)
+
+# nestedness midelevation vs lowland, CA
+beta.sne_ca <- beta.sne_ca[c(1:12), c(13:32)]
+
+beta_ca.sne.means <- as.data.frame(rowMeans(beta.sne_ca))
+colnames(beta_ca.sne.means)<-"sne"
+beta_ca.sne.means$Stratum<-"CA"
+beta_ca.sne.means$plot<-rownames(beta_ca.sne.means)
+beta_ca.sne.means$plot.stratum<-paste(beta_ca.sne.means$plot,beta_ca.sne.means$Stratum)
+mean(beta_ca.sne.means$sne)
+
+# total turnover, midelevation vs lowland, UN
+beta.total_un <- beta.total_un[c(1:12), c(13:32)]
+
+beta_un.total.means <- as.data.frame(rowMeans(beta.total_un))
+colnames(beta_un.total.means)<-"total"
+beta_un.total.means$Stratum<-"UN"
+beta_un.total.means$plot<-rownames(beta_un.total.means)
+beta_un.total.means$plot.stratum<-paste(beta_un.total.means$plot,beta_un.total.means$Stratum)
+mean(beta_un.total.means$total)
+
+# total turnover, midelevation vs lowland, CA
+beta.total_ca <- beta.total_ca[c(1:12), c(13:32)]
+
+beta_ca.total.means <- as.data.frame(rowMeans(beta.total_ca))
+colnames(beta_ca.total.means)<-"total"
+beta_ca.total.means$Stratum<-"CA"
+beta_ca.total.means$plot<-rownames(beta_ca.total.means)
+beta_ca.total.means$plot.stratum<-paste(beta_ca.total.means$plot,beta_ca.total.means$Stratum)
+mean(beta_ca.total.means$total)
+
+# combine all values
+df<-rbind(beta_ca.sne.means, beta_un.sne.means)
+df1<-rbind(beta_ca.sim.means, beta_un.sim.means)
+df2<-rbind(beta_ca.total.means, beta_un.total.means)
+
+beta.all<-merge(df, df1, by="plot.stratum")
+beta.all<-merge(beta.all, df2, by="plot.stratum")
+
+beta.all.occurrence<-beta.all[,-c(3,4,6,7)]
+
+
+# plot occurrence based
+
+soerensen_plot<-ggplot(beta.all.occurrence, aes(x=Stratum, y=total, colour = Stratum)) +
+  ggtitle("Elevational Species Turnover") +
+  ylab("Soerensen Dissimilarity")+
+  xlab("Stratum")+ 
+  ylim(0.5,1.01)+
+  geom_boxplot(outlier.colour=NA, lwd=1)+
+  geom_jitter(data = beta.all.occurrence, aes(x = Stratum, y = total, colour = Stratum), alpha = 0.5, size = 3)+
+  scale_color_manual(values=c("#0072B2", "#E69F00"))+
+  guides(colour = "none")+
+  theme_minimal(20)
+soerensen_plot
+
+
+#### Species identity figure
 
 # summarize bait incidence counts
 bait.abundance <- baiting.data %>%
@@ -1577,15 +1693,16 @@ testDispersion(baitdiversity.stratum.model.e1) # ok
 simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # little bit deviance 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
 
-### Bait species beta diversity
+
+### Bait species beta diversity, abundance-based
 
 # NOTE: Here, we look at stratum-level, i.e. twice for each plot (understory+canopy)
 
 # get environmental data: plot.meta2 has averages for variables on Stratum-level (2 strata per plot)
-beta.stratum.e<-merge(beta.all, plot.meta2, by.x = 'plot.stratum', by.y = 'plot.stratum', all.x = T)
+beta.stratum.a<-merge(beta.all.abund, plot.meta2, by.x = 'plot.stratum', by.y = 'plot.stratum', all.x = T)
 
 # Fit a model for species turnover (Beta sim). 
-bait.sim.model1 <- glmmTMB(sim ~ Stratum+ (1|Block/Plot), data = beta.stratum.e, family = gaussian)
+bait.sim.model1 <- glmmTMB(sim ~ Stratum+ (1|Block/Plot), data = beta.stratum.a, family = gaussian)
 
 summary(bait.sim.model1) # *** UN more turnover
 #
@@ -1594,7 +1711,7 @@ simulateResiduals(bait.sim.model1, plot = T) # some heterogeneity in variance, b
 testZeroInflation(simulateResiduals(fittedModel = bait.sim.model1)) # ok
 
 # Fit a model for nestedness
-bait.sne.model1 <- glmmTMB(sne ~ Stratum+ (1|Block/Plot), data = beta.stratum.e, family = gaussian)
+bait.sne.model1 <- glmmTMB(sne ~ Stratum+ (1|Block/Plot), data = beta.stratum.a, family = gaussian)
 
 summary(bait.sne.model1) # *** UN lower nestedness
 #
@@ -1603,7 +1720,37 @@ simulateResiduals(bait.sne.model1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = bait.sne.model1)) # not good, lots of zero inflation (but no way around it?)
 
 # Fit a model for total turnover (Soerensen)
-bait.total.model1 <- glmmTMB(total ~ Stratum+ (1|Block/Plot), data = beta.stratum.e, family = gaussian)
+bait.total.model1 <- glmmTMB(total ~ Stratum+ (1|Block/Plot), data = beta.stratum.a, family = gaussian)
+
+summary(bait.total.model1) # *** UN higher turnover
+#
+testDispersion(bait.total.model1) # ok
+simulateResiduals(bait.total.model1, plot = T) # some heterogeneity in variance, but ok
+testZeroInflation(simulateResiduals(fittedModel = bait.total.model1)) # ok
+
+### Bait species beta diversity, occurrence-based
+
+# NOTE: Here, we look at stratum-level, i.e. twice for each plot (understory+canopy)
+# Fit a model for species turnover (Beta sim). 
+bait.sim.model1 <- glmmTMB(sim ~ Stratum+ (1|Block/Plot), data = beta.stratum.o, family = gaussian)
+
+summary(bait.sim.model1) # *** UN more turnover
+#
+testDispersion(bait.sim.model1) # ok
+simulateResiduals(bait.sim.model1, plot = T) # some heterogeneity in variance, but ok
+testZeroInflation(simulateResiduals(fittedModel = bait.sim.model1)) # ok
+
+# Fit a model for nestedness
+bait.sne.model1 <- glmmTMB(sne ~ Stratum+ (1|Block/Plot), data = beta.stratum.o, family = gaussian)
+
+summary(bait.sne.model1) # *** UN lower nestedness
+#
+testDispersion(bait.sne.model1) # ok
+simulateResiduals(bait.sne.model1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bait.sne.model1)) # not good, lots of zero inflation (but no way around it?)
+
+# Fit a model for total turnover (Soerensen)
+bait.total.model1 <- glmmTMB(total ~ Stratum+ (1|Block/Plot), data = beta.stratum.o, family = gaussian)
 
 summary(bait.total.model1) # *** UN higher turnover
 #
@@ -1911,15 +2058,15 @@ temp.lianas<- ggarrange(temp_stratum,lianas.plot,
 temp.lianas
 
 obs.sim.model = ggplot()+
-  geom_boxplot(data = beta.stratum.e, aes(x = Stratum, y = sim, colour = Stratum))+
-  geom_jitter(data = beta.stratum.e, aes(x = Stratum, y = sim, colour = Stratum), stroke = 1.2, alpha = 0.6, size = 2)+
+  geom_boxplot(data = beta.all.abund, aes(x = Stratum, y = total, colour = Stratum))+
+  geom_jitter(data = beta.all.abund, aes(x = Stratum, y = total, colour = Stratum), stroke = 1.2, alpha = 0.6, size = 2)+
   scale_color_manual(values = c("#56B4E9", "#E69F00"))+
-  ylab(expression(Species~turnover~-~beta[sim]))+ xlab("Stratum")+labs(shape = "")+
+  ylab(expression(Species~turnover~-~beta[total]))+ xlab("Stratum")+labs(shape = "")+
   ylim(0.5,1.01)+
   theme_classic(20)+
   theme(legend.position = "none")
 obs.sim.model
-=======
+
 
 ## Numba-Kausi Baits & nests - R script by Phil 18 April 2023
 
@@ -3640,4 +3787,3 @@ temp.lianas<- ggarrange(temp_stratum,lianas.plot,
                         labels = c("A", "B"),
                         ncol = 2, nrow = 1, legend="right", common.legend = T)
 temp.lianas
->>>>>>> 030bf94e243446254bb6666c217bc85c129c58c0

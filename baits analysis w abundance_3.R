@@ -18,7 +18,7 @@ rm(list=ls())
 #----------------------------------------------------------#
 ### List of R-packages
 #----------------------------------------------------------#
-
+ 
 
 package_list <- 
   c("dplyr",
@@ -37,9 +37,10 @@ package_list <-
     "emmeans",
     "effects",
     "broom.mixed", 
-    "openxlsx",
+#    "openxlsx",
     "report",
-    "corrplot")
+    "corrplot",
+    "plotrix")
 
 # install all packages
 #sapply(package_list, install.packages, character.only = TRUE)
@@ -339,6 +340,7 @@ m_vs_l <- dist.baits[c(1:12), c(13:32)]
 
 distance.baits.elev <- as.data.frame(rowMeans(m_vs_l))
 mean(colMeans(m_vs_l))
+std.error(colMeans(m_vs_l))
 
 ## Species overlap, canopy only
 # make matrices
@@ -361,6 +363,7 @@ m_vs_l.ca <- dist.baits[c(1:12), c(13:32)]
 
 distance.baits.elev.ca <- as.data.frame(rowMeans(m_vs_l.ca))
 mean(colMeans(m_vs_l.ca))
+std.error(colMeans(m_vs_l.ca))
 
 
 ## Species overlap, understorey only
@@ -384,6 +387,12 @@ m_vs_l.un <- dist.baits[c(1:12), c(13:32)]
 
 distance.baits.elev.un <- as.data.frame(rowMeans(m_vs_l.un))
 mean(colMeans(m_vs_l.un))
+std.error(colMeans(m_vs_l.un))
+
+## Species overlap, understorey vs canopy
+# in midelevation
+
+
 
 #### beta partitioning, abundance based
 
@@ -910,7 +919,7 @@ nesting.proportion<-ggplot(nest.proportion3, aes(x = Forest, y = percentage, fil
 nesting.proportion
 
 
-## Species overlap between baits and bamboos
+## Species overlap between baits and bamboos  
 
 # Bait species overlap by Forest
 baits.matrix <- dcast(baiting.data, formula = Forest ~ AntSpCODE, length)
@@ -939,6 +948,76 @@ dist.kausi.numba.bray <- vegdist(bamboo.baits.matrix, method = "bray")
 
 # global matrix of forest dissimilarities
 dist.kausi.numba.bray <- as.matrix(dist.kausi.numba.bray)
+dist.kausi.numba.bray
+
+#### beta partitioning, abundance based
+
+## Species overlap, canopy only
+# make matrices
+bamboo.matrix.ca <- dcast(subset(nesters, Stratum=="CA"), formula = Plot ~ AntSpCode, length)
+bamboo.matrix.ca
+
+# set rownames
+rownames(bamboo.matrix.ca) <- bamboo.matrix.ca[, 1]
+bamboo.matrix.ca <- bamboo.matrix.ca[, -c(1,2)]
+
+# Bray-Curtis Dissimilarity
+dist.bamboo <- vegdist(bamboo.matrix.ca, method = "bray")
+
+# global matrix of plot dissimiliarities
+dist.bamboo <- as.matrix(dist.bamboo)
+
+## select subsets
+# midelevation vs lowland
+b.m_vs_l.ca <- dist.bamboo[c(1:8), c(9:24)]
+
+distance.bamboo.elev.ca <- as.data.frame(rowMeans(b.m_vs_l.ca))
+mean(colMeans(b.m_vs_l.ca))
+std.error(b.m_vs_l.ca)
+
+## Species overlap, understorey only
+# make matrices
+bamboo.matrix.un <- dcast(subset(nesters, Stratum=="UN"), formula = Plot ~ AntSpCode, length)
+bamboo.matrix.un
+
+# set rownames
+rownames(bamboo.matrix.un) <- bamboo.matrix.un[, 1]
+bamboo.matrix.un <- bamboo.matrix.un[, -c(1,2)]
+
+# Bray-Curtis Dissimilarity
+dist.bamboo <- vegdist(bamboo.matrix.un, method = "bray")
+
+# global matrix of plot dissimiliarities
+dist.bamboo <- as.matrix(dist.bamboo)
+
+## select subsets
+# midelevation vs lowland
+b.m_vs_l.un <- dist.bamboo[c(1:8), c(9:24)]
+
+distance.bamboo.elev.un <- as.data.frame(rowMeans(b.m_vs_l.un))
+mean(colMeans(b.m_vs_l.un))
+
+## Species overlap, total
+# make matrices
+bamboo.matrix <- dcast(nesters, formula = Plot ~ AntSpCode, length)
+bamboo.matrix
+
+# set rownames
+rownames(bamboo.matrix) <- bamboo.matrix[, 1]
+bamboo.matrix <- bamboo.matrix[, -c(1,2)]
+
+# Bray-Curtis Dissimilarity
+dist.bamboo <- vegdist(bamboo.matrix, method = "bray")
+
+# global matrix of plot dissimiliarities
+dist.bamboo <- as.matrix(dist.bamboo)
+
+## select subsets
+# midelevation vs lowland
+b.m_vs_l <- dist.bamboo[c(1:8), c(9:24)]
+
+distance.bamboo.elev.un <- as.data.frame(rowMeans(b.m_vs_l))
+mean(colMeans(b.m_vs_l))
 
 #----------------------------------------------------------#
 # 3.1 Statistic: Environment  -----
@@ -1386,14 +1465,14 @@ anova(bamboo.diversity.model1, bamboo.diversity.model.e1)
 
 # plot lianas
 lianas.plot<-ggplot(baiting.incidence.e, aes(x=Forest, y=log(Lianas.n+1), fill = Stratum)) +
-  ggtitle("Number of Lianas") +
-  ylab("Number of Lianas [log+1]")+
+  ggtitle("Number of Lianas [log+1]") +
+  ylab("")+
   xlab("")+ 
   ylim(0,4)+
-  geom_violin()+
+  geom_violin(lwd=1)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_hc()
+  theme_minimal(15)
 lianas.plot
 
 
