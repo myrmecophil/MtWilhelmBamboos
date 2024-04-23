@@ -270,15 +270,15 @@ datalogger.templong <- tidyr::gather(datalogger.temp, key = "Stratum", value = "
 
 labs <- expression("lowland", "midelevation")
 
-
 # stratum 
 temp_stratum<-ggplot(datalogger.templong, aes(x=Location, y=temperature, fill=Stratum)) +
   ggtitle("Temperature [°C]") +
   geom_violin(lwd=1)+
+  geom_boxplot(outlier.color=NA, alpha=0.6, position=position_dodge(0.9), width=0.15)+
+  
   scale_x_discrete(labels=labs)+
   scale_fill_manual(labels=c("Understory", "Canopy"), values=c("#E69F00", "#0072B2"))+
   ylab("")+
-  #ylim(0,35)+
   xlab("")+
   theme_minimal(15)
 temp_stratum
@@ -287,7 +287,4 @@ temp_stratum
 means_by_location <- datalogger.templong %>%
   group_by(Location, Stratum) %>%
   summarise(T_mean = mean(temperature), sd = sd(temperature))
-
-
-aov(datalogger.templong$Location ~  datalogger.templong$temperature)
-
+means_by_location
