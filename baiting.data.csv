@@ -1,0 +1,1066 @@
+"Block","Plot","Subplot","Stratum","Code","Forest","Season","AntSpCODE","Abundance","Bait.missing"
+"NP1","NP1-S1","A1","CA","NP1-S1-A1-CA","Numba Primary","Baiting","PHEI 007",20,FALSE
+"NP1","NP1-S1","A2","CA","NP1-S1-A2-CA","Numba Primary","Baiting","PHIL 001",25,FALSE
+"NP1","NP1-S1","A3","CA","NP1-S1-A3-CA","Numba Primary","Baiting","POLY 047",2,FALSE
+"NP1","NP1-S1","A4","CA","NP1-S1-A4-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S1","A1","UN","NP1-S1-A1-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP1","NP1-S1","A2","UN","NP1-S1-A2-UN","Numba Primary","Baiting","CAMP 001",50,FALSE
+"NP1","NP1-S1","A3","UN","NP1-S1-A3-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S1","A4","UN","NP1-S1-A4-UN","Numba Primary","Baiting","ANON 012",20,FALSE
+"NP1","NP1-S1","B1","CA","NP1-S1-B1-CA","Numba Primary","Baiting","ANON 001",4,FALSE
+"NP1","NP1-S1","B2","CA","NP1-S1-B2-CA","Numba Primary","Baiting","ANON 001",10,FALSE
+"NP1","NP1-S1","B3","CA","NP1-S1-B3-CA","Numba Primary","Baiting","CREM 003",7,FALSE
+"NP1","NP1-S1","B4","CA","NP1-S1-B4-CA","Numba Primary","Baiting","PARA 003",3,FALSE
+"NP1","NP1-S1","B1","UN","NP1-S1-B1-UN","Numba Primary","Baiting","CARE 001",30,FALSE
+"NP1","NP1-S1","B2","UN","NP1-S1-B2-UN","Numba Primary","Baiting","PHEI 040",3,FALSE
+"NP1","NP1-S1","B3","UN","NP1-S1-B3-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP1","NP1-S1","B4","UN","NP1-S1-B4-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP1","NP1-S1","C1","CA","NP1-S1-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S1","C2","CA","NP1-S1-C2-CA","Numba Primary","Baiting","ANON 001",75,FALSE
+"NP1","NP1-S1","C3","CA","NP1-S1-C3-CA","Numba Primary","Baiting","ANON 001",35,FALSE
+"NP1","NP1-S1","C4","CA","NP1-S1-C4-CA","Numba Primary","Baiting","PARA 001",3,FALSE
+"NP1","NP1-S1","C1","UN","NP1-S1-C1-UN","Numba Primary","Baiting","TETR 012",10,FALSE
+"NP1","NP1-S1","C2","UN","NP1-S1-C2-UN","Numba Primary","Baiting","TETR 012",10,FALSE
+"NP1","NP1-S1","C3","UN","NP1-S1-C3-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S1","C4","UN","NP1-S1-C4-UN","Numba Primary","Baiting","PHEI 001",10,FALSE
+"NP1","NP1-S1","D1","CA","NP1-S1-D1-CA","Numba Primary","Baiting","PHIL 001",25,FALSE
+"NP1","NP1-S1","D2","CA","NP1-S1-D2-CA","Numba Primary","Baiting","PHIL 001",8,FALSE
+"NP1","NP1-S1","D3","CA","NP1-S1-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S1","D4","CA","NP1-S1-D4-CA","Numba Primary","Baiting","ANON 001",75,FALSE
+"NP1","NP1-S1","D1","UN","NP1-S1-D1-UN","Numba Primary","Baiting","PARA 007",100,FALSE
+"NP1","NP1-S1","D2","UN","NP1-S1-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S1","D3","UN","NP1-S1-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S1","D4","UN","NP1-S1-D4-UN","Numba Primary","Baiting","PHEI 001",15,FALSE
+"NP1","NP1-S2","A1","CA","NP1-S2-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","A2","CA","NP1-S2-A2-CA","Numba Primary","Baiting","POLY 002",1,FALSE
+"NP1","NP1-S2","A3","CA","NP1-S2-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","A4","CA","NP1-S2-A4-CA","Numba Primary","Baiting","POLY 002",15,FALSE
+"NP1","NP1-S2","A1","UN","NP1-S2-A1-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S2","A2","UN","NP1-S2-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","A3","UN","NP1-S2-A3-UN","Numba Primary","Baiting","CARE 007",200,FALSE
+"NP1","NP1-S2","A4","UN","NP1-S2-A4-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S2","B1","CA","NP1-S2-B1-CA","Numba Primary","Baiting","ANON 001",75,FALSE
+"NP1","NP1-S2","B2","CA","NP1-S2-B2-CA","Numba Primary","Baiting","PARA 001",5,FALSE
+"NP1","NP1-S2","B3","CA","NP1-S2-B3-CA","Numba Primary","Baiting","PODO 001",40,FALSE
+"NP1","NP1-S2","B4","CA","NP1-S2-B4-CA","Numba Primary","Baiting","PARA 007",8,FALSE
+"NP1","NP1-S2","B1","UN","NP1-S2-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","B2","UN","NP1-S2-B2-UN","Numba Primary","Baiting","PHEI 004",10,FALSE
+"NP1","NP1-S2","B3","UN","NP1-S2-B3-UN","Numba Primary","Baiting","PARA 007",50,FALSE
+"NP1","NP1-S2","B4","UN","NP1-S2-B4-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP1","NP1-S2","C1","CA","NP1-S2-C1-CA","Numba Primary","Baiting","PHEI 007",35,FALSE
+"NP1","NP1-S2","C2","CA","NP1-S2-C2-CA","Numba Primary","Baiting","ANON 002",75,FALSE
+"NP1","NP1-S2","C3","CA","NP1-S2-C3-CA","Numba Primary","Baiting","CAMP 028",8,FALSE
+"NP1","NP1-S2","C4","CA","NP1-S2-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","C1","UN","NP1-S2-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","C2","UN","NP1-S2-C2-UN","Numba Primary","Baiting","ANON 012",35,FALSE
+"NP1","NP1-S2","C3","UN","NP1-S2-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","C4","UN","NP1-S2-C4-UN","Numba Primary","Baiting","PSEU 001",25,FALSE
+"NP1","NP1-S2","D1","CA","NP1-S2-D1-CA","Numba Primary","Baiting","PHEI 007",15,FALSE
+"NP1","NP1-S2","D2","CA","NP1-S2-D2-CA","Numba Primary","Baiting","PHEI 024",3,FALSE
+"NP1","NP1-S2","D3","CA","NP1-S2-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","D4","CA","NP1-S2-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","D1","UN","NP1-S2-D1-UN","Numba Primary","Baiting","PARA 007",75,FALSE
+"NP1","NP1-S2","D2","UN","NP1-S2-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S2","D3","UN","NP1-S2-D3-UN","Numba Primary","Baiting","PRIS 004",5,FALSE
+"NP1","NP1-S2","D4","UN","NP1-S2-D4-UN","Numba Primary","Baiting","RHYT 004",2,FALSE
+"NP1","NP1-S3","A1","CA","NP1-S3-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","A2","CA","NP1-S3-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","A3","CA","NP1-S3-A3-CA","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP1","NP1-S3","A4","CA","NP1-S3-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","A1","UN","NP1-S3-A1-UN","Numba Primary","Baiting","PARA 007",30,FALSE
+"NP1","NP1-S3","A2","UN","NP1-S3-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","A3","UN","NP1-S3-A3-UN","Numba Primary","Baiting","PARA 007",4,FALSE
+"NP1","NP1-S3","A4","UN","NP1-S3-A4-UN","Numba Primary","Baiting","RHYT 004",10,FALSE
+"NP1","NP1-S3","B1","CA","NP1-S3-B1-CA","Numba Primary","Baiting","PHEI 007",30,FALSE
+"NP1","NP1-S3","B2","CA","NP1-S3-B2-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S3","B3","CA","NP1-S3-B3-CA","Numba Primary","Baiting","PHIL 001",30,FALSE
+"NP1","NP1-S3","B4","CA","NP1-S3-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","B1","UN","NP1-S3-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","B2","UN","NP1-S3-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","B3","UN","NP1-S3-B3-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S3","B4","UN","NP1-S3-B4-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S3","C1","CA","NP1-S3-C1-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP1","NP1-S3","C2","CA","NP1-S3-C2-CA","Numba Primary","Baiting","ANON 002",100,FALSE
+"NP1","NP1-S3","C3","CA","NP1-S3-C3-CA","Numba Primary","Baiting","CARE 002",1,FALSE
+"NP1","NP1-S3","C4","CA","NP1-S3-C4-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S3","C1","UN","NP1-S3-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","C2","UN","NP1-S3-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","C3","UN","NP1-S3-C3-UN","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP1","NP1-S3","C4","UN","NP1-S3-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","D1","CA","NP1-S3-D1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","D2","CA","NP1-S3-D2-CA","Numba Primary","Baiting","CAMP 001",1,FALSE
+"NP1","NP1-S3","D3","CA","NP1-S3-D3-CA","Numba Primary","Baiting","CREM 007",75,FALSE
+"NP1","NP1-S3","D4","CA","NP1-S3-D4-CA","Numba Primary","Baiting","ANON 014",4,FALSE
+"NP1","NP1-S3","D1","UN","NP1-S3-D1-UN","Numba Primary","Baiting","PARA 007",2,FALSE
+"NP1","NP1-S3","D2","UN","NP1-S3-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S3","D3","UN","NP1-S3-D3-UN","Numba Primary","Baiting","POLY 036",2,FALSE
+"NP1","NP1-S3","D4","UN","NP1-S3-D4-UN","Numba Primary","Baiting","POLY 036",4,FALSE
+"NP1","NP1-S4","A1","CA","NP1-S4-A1-CA","Numba Primary","Baiting","OECO 001",75,FALSE
+"NP1","NP1-S4","A2","CA","NP1-S4-A2-CA","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP1","NP1-S4","A3","CA","NP1-S4-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","A4","CA","NP1-S4-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","A1","UN","NP1-S4-A1-UN","Numba Primary","Baiting","RHYT 004",1,FALSE
+"NP1","NP1-S4","A2","UN","NP1-S4-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","A3","UN","NP1-S4-A3-UN","Numba Primary","Baiting","POLY 016",1,FALSE
+"NP1","NP1-S4","A4","UN","NP1-S4-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","B1","CA","NP1-S4-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","B2","CA","NP1-S4-B2-CA","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP1","NP1-S4","B3","CA","NP1-S4-B3-CA","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP1","NP1-S4","B4","CA","NP1-S4-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","B1","UN","NP1-S4-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","B2","UN","NP1-S4-B2-UN","Numba Primary","Baiting","RHYT 005",3,FALSE
+"NP1","NP1-S4","B3","UN","NP1-S4-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","B4","UN","NP1-S4-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","C1","CA","NP1-S4-C1-CA","Numba Primary","Baiting","PHEI 024",30,FALSE
+"NP1","NP1-S4","C2","CA","NP1-S4-C2-CA","Numba Primary","Baiting","PACH 006",1,FALSE
+"NP1","NP1-S4","C3","CA","NP1-S4-C3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","C4","CA","NP1-S4-C4-CA","Numba Primary","Baiting","OECO 001",30,FALSE
+"NP1","NP1-S4","C1","UN","NP1-S4-C1-UN","Numba Primary","Baiting","PARA 007",6,FALSE
+"NP1","NP1-S4","C2","UN","NP1-S4-C2-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S4","C3","UN","NP1-S4-C3-UN","Numba Primary","Baiting","MERA 002",3,FALSE
+"NP1","NP1-S4","C4","UN","NP1-S4-C4-UN","Numba Primary","Baiting","TETR 012",4,FALSE
+"NP1","NP1-S4","D1","CA","NP1-S4-D1-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","D2","CA","NP1-S4-D2-CA","Numba Primary","Baiting","PARA 003",7,FALSE
+"NP1","NP1-S4","D3","CA","NP1-S4-D3-CA","Numba Primary","Baiting","OECO 001",30,FALSE
+"NP1","NP1-S4","D4","CA","NP1-S4-D4-CA","Numba Primary","Baiting","OECO 001",75,FALSE
+"NP1","NP1-S4","D1","UN","NP1-S4-D1-UN","Numba Primary","Baiting","RHYT 004",1,FALSE
+"NP1","NP1-S4","D2","UN","NP1-S4-D2-UN","Numba Primary","Baiting","STRU 001",5,FALSE
+"NP1","NP1-S4","D3","UN","NP1-S4-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S4","D4","UN","NP1-S4-D4-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","A1","CA","NP1-S5-A1-CA","Numba Primary","Baiting","POLY 015",4,FALSE
+"NP1","NP1-S5","A2","CA","NP1-S5-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","A3","CA","NP1-S5-A3-CA","Numba Primary","Baiting","ANON 012",20,FALSE
+"NP1","NP1-S5","A4","CA","NP1-S5-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","A1","UN","NP1-S5-A1-UN","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP1","NP1-S5","A2","UN","NP1-S5-A2-UN","Numba Primary","Baiting","POLY 047",2,FALSE
+"NP1","NP1-S5","A3","UN","NP1-S5-A3-UN","Numba Primary","Baiting","ANON 012",5,FALSE
+"NP1","NP1-S5","A4","UN","NP1-S5-A4-UN","Numba Primary","Baiting","PSEU 001",3,FALSE
+"NP1","NP1-S5","B1","CA","NP1-S5-B1-CA","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP1","NP1-S5","B2","CA","NP1-S5-B2-CA","Numba Primary","Baiting","ANON 012",35,FALSE
+"NP1","NP1-S5","B3","CA","NP1-S5-B3-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S5","B4","CA","NP1-S5-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","B1","UN","NP1-S5-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","B2","UN","NP1-S5-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","B3","UN","NP1-S5-B3-UN","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP1","NP1-S5","B4","UN","NP1-S5-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","C1","CA","NP1-S5-C1-CA","Numba Primary","Baiting","CARE 006",15,FALSE
+"NP1","NP1-S5","C2","CA","NP1-S5-C2-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP1","NP1-S5","C3","CA","NP1-S5-C3-CA","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP1","NP1-S5","C4","CA","NP1-S5-C4-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S5","C1","UN","NP1-S5-C1-UN","Numba Primary","Baiting","ANON 012",1,FALSE
+"NP1","NP1-S5","C2","UN","NP1-S5-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","C3","UN","NP1-S5-C3-UN","Numba Primary","Baiting","POLY 036",2,FALSE
+"NP1","NP1-S5","C4","UN","NP1-S5-C4-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S5","D1","CA","NP1-S5-D1-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S5","D2","CA","NP1-S5-D2-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP1","NP1-S5","D3","CA","NP1-S5-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP1","NP1-S5","D4","CA","NP1-S5-D4-CA","Numba Primary","Baiting","CREM 014",15,FALSE
+"NP1","NP1-S5","D1","UN","NP1-S5-D1-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP1","NP1-S5","D2","UN","NP1-S5-D2-UN","Numba Primary","Baiting","POLY 036",2,FALSE
+"NP1","NP1-S5","D3","UN","NP1-S5-D3-UN","Numba Primary","Baiting","PARA 007",35,FALSE
+"NP1","NP1-S5","D4","UN","NP1-S5-D4-UN","Numba Primary","Baiting","PHIL 001",7,FALSE
+"NP2","NP2-S1","A1","CA","NP2-S1-A1-CA","Numba Primary","Baiting","ANON 014",10,FALSE
+"NP2","NP2-S1","A2","CA","NP2-S1-A2-CA","Numba Primary","Baiting","ANON 014",10,FALSE
+"NP2","NP2-S1","A3","CA","NP2-S1-A3-CA","Numba Primary","Baiting","ANON 014",10,FALSE
+"NP2","NP2-S1","A4","CA","NP2-S1-A4-CA","Numba Primary","Baiting","ANON 014",10,FALSE
+"NP2","NP2-S1","A1","UN","NP2-S1-A1-UN","Numba Primary","Baiting","PROL 002",10,FALSE
+"NP2","NP2-S1","A2","UN","NP2-S1-A2-UN","Numba Primary","Baiting","POLY 029",3,FALSE
+"NP2","NP2-S1","A3","UN","NP2-S1-A3-UN","Numba Primary","Baiting","TECH 004",3,FALSE
+"NP2","NP2-S1","A4","UN","NP2-S1-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","B1","CA","NP2-S1-B1-CA","Numba Primary","Baiting","ANON 012",15,FALSE
+"NP2","NP2-S1","B2","CA","NP2-S1-B2-CA","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP2","NP2-S1","B3","CA","NP2-S1-B3-CA","Numba Primary","Baiting","PHEI 003",1,FALSE
+"NP2","NP2-S1","B4","CA","NP2-S1-B4-CA","Numba Primary","Baiting","ANON 014",50,FALSE
+"NP2","NP2-S1","B1","UN","NP2-S1-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","B2","UN","NP2-S1-B2-UN","Numba Primary","Baiting","ANON 009",10,FALSE
+"NP2","NP2-S1","B3","UN","NP2-S1-B3-UN","Numba Primary","Baiting","TECH 004",30,FALSE
+"NP2","NP2-S1","B4","UN","NP2-S1-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C1","CA","NP2-S1-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C2","CA","NP2-S1-C2-CA","Numba Primary","Baiting","OECO 001",20,FALSE
+"NP2","NP2-S1","C3","CA","NP2-S1-C3-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C4","CA","NP2-S1-C4-CA","Numba Primary","Baiting","OECO 001",3,FALSE
+"NP2","NP2-S1","C1","UN","NP2-S1-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C2","UN","NP2-S1-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C3","UN","NP2-S1-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","C4","UN","NP2-S1-C4-UN","Numba Primary","Baiting","PHEI 003",20,FALSE
+"NP2","NP2-S1","D1","CA","NP2-S1-D1-CA","Numba Primary","Baiting","PHEI 003",1,FALSE
+"NP2","NP2-S1","D2","CA","NP2-S1-D2-CA","Numba Primary","Baiting","ANON 014",10,FALSE
+"NP2","NP2-S1","D3","CA","NP2-S1-D3-CA","Numba Primary","Baiting","ANON 012",40,FALSE
+"NP2","NP2-S1","D4","CA","NP2-S1-D4-CA","Numba Primary","Baiting","OECO 001",10,FALSE
+"NP2","NP2-S1","D1","UN","NP2-S1-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","D2","UN","NP2-S1-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S1","D3","UN","NP2-S1-D3-UN","Numba Primary","Baiting","PHEI 003",20,FALSE
+"NP2","NP2-S1","D4","UN","NP2-S1-D4-UN","Numba Primary","Baiting","RHYT 005",25,FALSE
+"NP2","NP2-S2","A1","CA","NP2-S2-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","A2","CA","NP2-S2-A2-CA","Numba Primary","Baiting","CREM 014",45,FALSE
+"NP2","NP2-S2","A3","CA","NP2-S2-A3-CA","Numba Primary","Baiting","CAMP 013",5,FALSE
+"NP2","NP2-S2","A4","CA","NP2-S2-A4-CA","Numba Primary","Baiting","CREM 013",10,FALSE
+"NP2","NP2-S2","A1","UN","NP2-S2-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","A2","UN","NP2-S2-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","A3","UN","NP2-S2-A3-UN","Numba Primary","Baiting","CARE 001",40,FALSE
+"NP2","NP2-S2","A4","UN","NP2-S2-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","B1","CA","NP2-S2-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","B2","CA","NP2-S2-B2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","B3","CA","NP2-S2-B3-CA","Numba Primary","Baiting","PODO 003",10,FALSE
+"NP2","NP2-S2","B4","CA","NP2-S2-B4-CA","Numba Primary","Baiting","ANON 012",20,FALSE
+"NP2","NP2-S2","B1","UN","NP2-S2-B1-UN","Numba Primary","Baiting","CARE 001",50,FALSE
+"NP2","NP2-S2","B2","UN","NP2-S2-B2-UN","Numba Primary","Baiting","PHEI 003",50,FALSE
+"NP2","NP2-S2","B3","UN","NP2-S2-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","B4","UN","NP2-S2-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","C1","CA","NP2-S2-C1-CA","Numba Primary","Baiting","PLAG 002",1,FALSE
+"NP2","NP2-S2","C2","CA","NP2-S2-C2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","C3","CA","NP2-S2-C3-CA","Numba Primary","Baiting","PODO 003",2,FALSE
+"NP2","NP2-S2","C4","CA","NP2-S2-C4-CA","Numba Primary","Baiting","OECO 001",50,FALSE
+"NP2","NP2-S2","C1","UN","NP2-S2-C1-UN","Numba Primary","Baiting","PHEI 004",20,FALSE
+"NP2","NP2-S2","C2","UN","NP2-S2-C2-UN","Numba Primary","Baiting","PROL 002",10,FALSE
+"NP2","NP2-S2","C3","UN","NP2-S2-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","C4","UN","NP2-S2-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","D1","CA","NP2-S2-D1-CA","Numba Primary","Baiting","OECO 001",30,FALSE
+"NP2","NP2-S2","D2","CA","NP2-S2-D2-CA","Numba Primary","Baiting","OECO 001",10,FALSE
+"NP2","NP2-S2","D3","CA","NP2-S2-D3-CA","Numba Primary","Baiting","OECO 001",5,FALSE
+"NP2","NP2-S2","D4","CA","NP2-S2-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","D1","UN","NP2-S2-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S2","D2","UN","NP2-S2-D2-UN","Numba Primary","Baiting","TETR 012",3,FALSE
+"NP2","NP2-S2","D3","UN","NP2-S2-D3-UN","Numba Primary","Baiting","PARA 007",10,FALSE
+"NP2","NP2-S2","D4","UN","NP2-S2-D4-UN","Numba Primary","Baiting","TECH 004",20,FALSE
+"NP2","NP2-S3","A1","CA","NP2-S3-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","A2","CA","NP2-S3-A2-CA","Numba Primary","Baiting","ANON 001",100,FALSE
+"NP2","NP2-S3","A3","CA","NP2-S3-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","A4","CA","NP2-S3-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","A1","UN","NP2-S3-A1-UN","Numba Primary","Baiting","HYPO 003",8,FALSE
+"NP2","NP2-S3","A2","UN","NP2-S3-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","A3","UN","NP2-S3-A3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","A4","UN","NP2-S3-A4-UN","Numba Primary","Baiting","GNAM 003",1,FALSE
+"NP2","NP2-S3","B1","CA","NP2-S3-B1-CA","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP2","NP2-S3","B2","CA","NP2-S3-B2-CA","Numba Primary","Baiting","ANON 001",30,FALSE
+"NP2","NP2-S3","B3","CA","NP2-S3-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","B4","CA","NP2-S3-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","B1","UN","NP2-S3-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","B2","UN","NP2-S3-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","B3","UN","NP2-S3-B3-UN","Numba Primary","Baiting","MONO 002",30,FALSE
+"NP2","NP2-S3","B4","UN","NP2-S3-B4-UN","Numba Primary","Baiting","PRIS 001",1,FALSE
+"NP2","NP2-S3","C1","CA","NP2-S3-C1-CA","Numba Primary","Baiting","ANON 001",30,FALSE
+"NP2","NP2-S3","C2","CA","NP2-S3-C2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","C3","CA","NP2-S3-C3-CA","Numba Primary","Baiting","ANON 001",30,FALSE
+"NP2","NP2-S3","C4","CA","NP2-S3-C4-CA","Numba Primary","Baiting","OECO 001",30,FALSE
+"NP2","NP2-S3","C1","UN","NP2-S3-C1-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP2","NP2-S3","C2","UN","NP2-S3-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","C3","UN","NP2-S3-C3-UN","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP2","NP2-S3","C4","UN","NP2-S3-C4-UN","Numba Primary","Baiting","LORD 004",35,FALSE
+"NP2","NP2-S3","D1","CA","NP2-S3-D1-CA","Numba Primary","Baiting","ANON 001",75,FALSE
+"NP2","NP2-S3","D2","CA","NP2-S3-D2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","D3","CA","NP2-S3-D3-CA","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP2","NP2-S3","D4","CA","NP2-S3-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S3","D1","UN","NP2-S3-D1-UN","Numba Primary","Baiting","PARA 007",100,FALSE
+"NP2","NP2-S3","D2","UN","NP2-S3-D2-UN","Numba Primary","Baiting","GNAM 003",1,FALSE
+"NP2","NP2-S3","D3","UN","NP2-S3-D3-UN","Numba Primary","Baiting","PHEI 043",35,FALSE
+"NP2","NP2-S3","D4","UN","NP2-S3-D4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","A1","CA","NP2-S4-A1-CA","Numba Primary","Baiting","CAMP 001",30,FALSE
+"NP2","NP2-S4","A2","CA","NP2-S4-A2-CA","Numba Primary","Baiting","OECO 001",1,FALSE
+"NP2","NP2-S4","A3","CA","NP2-S4-A3-CA","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP2","NP2-S4","A4","CA","NP2-S4-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","A1","UN","NP2-S4-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","A2","UN","NP2-S4-A2-UN","Numba Primary","Baiting","LORD 004",1,FALSE
+"NP2","NP2-S4","A3","UN","NP2-S4-A3-UN","Numba Primary","Baiting","PHEI 004",3,FALSE
+"NP2","NP2-S4","A4","UN","NP2-S4-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","B1","CA","NP2-S4-B1-CA","Numba Primary","Baiting","ANON 012",76,FALSE
+"NP2","NP2-S4","B2","CA","NP2-S4-B2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","B3","CA","NP2-S4-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","B4","CA","NP2-S4-B4-CA","Numba Primary","Baiting","CREM 013",75,FALSE
+"NP2","NP2-S4","B1","UN","NP2-S4-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","B2","UN","NP2-S4-B2-UN","Numba Primary","Baiting","RHYT 004",1,FALSE
+"NP2","NP2-S4","B3","UN","NP2-S4-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","B4","UN","NP2-S4-B4-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP2","NP2-S4","C1","CA","NP2-S4-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","C2","CA","NP2-S4-C2-CA","Numba Primary","Baiting","PARA 001",1,FALSE
+"NP2","NP2-S4","C3","CA","NP2-S4-C3-CA","Numba Primary","Baiting","PARA 001",3,FALSE
+"NP2","NP2-S4","C4","CA","NP2-S4-C4-CA","Numba Primary","Baiting","ANON 001",100,FALSE
+"NP2","NP2-S4","C1","UN","NP2-S4-C1-UN","Numba Primary","Baiting","TETR 003",6,FALSE
+"NP2","NP2-S4","C2","UN","NP2-S4-C2-UN","Numba Primary","Baiting","CARE 006",30,FALSE
+"NP2","NP2-S4","C3","UN","NP2-S4-C3-UN","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP2","NP2-S4","C4","UN","NP2-S4-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D1","CA","NP2-S4-D1-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D2","CA","NP2-S4-D2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D3","CA","NP2-S4-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D4","CA","NP2-S4-D4-CA","Numba Primary","Baiting","PHEI 046",3,FALSE
+"NP2","NP2-S4","D1","UN","NP2-S4-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D2","UN","NP2-S4-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S4","D3","UN","NP2-S4-D3-UN","Numba Primary","Baiting","CARE 001",30,FALSE
+"NP2","NP2-S4","D4","UN","NP2-S4-D4-UN","Numba Primary","Baiting","POLY 041",1,FALSE
+"NP2","NP2-S5","A1","CA","NP2-S5-A1-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP2","NP2-S5","A2","CA","NP2-S5-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","A3","CA","NP2-S5-A3-CA","Numba Primary","Baiting","CREM 013",75,FALSE
+"NP2","NP2-S5","A4","CA","NP2-S5-A4-CA","Numba Primary","Baiting","PHEI 046",30,FALSE
+"NP2","NP2-S5","A1","UN","NP2-S5-A1-UN","Numba Primary","Baiting","PHEI 004",35,FALSE
+"NP2","NP2-S5","A2","UN","NP2-S5-A2-UN","Numba Primary","Baiting","TETR 012",1,FALSE
+"NP2","NP2-S5","A3","UN","NP2-S5-A3-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","A4","UN","NP2-S5-A4-UN","Numba Primary","Baiting","PHEI 004",100,FALSE
+"NP2","NP2-S5","B1","CA","NP2-S5-B1-CA","Numba Primary","Baiting","CREM 013",30,FALSE
+"NP2","NP2-S5","B2","CA","NP2-S5-B2-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","B3","CA","NP2-S5-B3-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP2","NP2-S5","B4","CA","NP2-S5-B4-CA","Numba Primary","Baiting","OECO 001",1,FALSE
+"NP2","NP2-S5","B1","UN","NP2-S5-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","B2","UN","NP2-S5-B2-UN","Numba Primary","Baiting","PARA 006",8,FALSE
+"NP2","NP2-S5","B3","UN","NP2-S5-B3-UN","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP2","NP2-S5","B4","UN","NP2-S5-B4-UN","Numba Primary","Baiting","TETR 010",100,FALSE
+"NP2","NP2-S5","C1","CA","NP2-S5-C1-CA","Numba Primary","Baiting","CREM 013",30,FALSE
+"NP2","NP2-S5","C2","CA","NP2-S5-C2-CA","Numba Primary","Baiting","ANON 001",1,FALSE
+"NP2","NP2-S5","C3","CA","NP2-S5-C3-CA","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP2","NP2-S5","C4","CA","NP2-S5-C4-CA","Numba Primary","Baiting","CREM 013",75,FALSE
+"NP2","NP2-S5","C1","UN","NP2-S5-C1-UN","Numba Primary","Baiting","PHEI 013",100,FALSE
+"NP2","NP2-S5","C2","UN","NP2-S5-C2-UN","Numba Primary","Baiting","LEPM 001",100,FALSE
+"NP2","NP2-S5","C3","UN","NP2-S5-C3-UN","Numba Primary","Baiting","PHEI 028",30,FALSE
+"NP2","NP2-S5","C4","UN","NP2-S5-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","D1","CA","NP2-S5-D1-CA","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP2","NP2-S5","D2","CA","NP2-S5-D2-CA","Numba Primary","Baiting","PHEI 007",35,FALSE
+"NP2","NP2-S5","D3","CA","NP2-S5-D3-CA","Numba Primary","Baiting","PHEI 003",2,FALSE
+"NP2","NP2-S5","D4","CA","NP2-S5-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","D1","UN","NP2-S5-D1-UN","Numba Primary","Baiting","PHEI 038",75,FALSE
+"NP2","NP2-S5","D2","UN","NP2-S5-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP2","NP2-S5","D3","UN","NP2-S5-D3-UN","Numba Primary","Baiting","RHYT 005",1,FALSE
+"NP2","NP2-S5","D4","UN","NP2-S5-D4-UN","Numba Primary","Baiting","RHYT 005",35,FALSE
+"NP4","NP4-S1","A1","CA","NP4-S1-A1-CA","Numba Primary","Baiting","PODO 001",15,FALSE
+"NP4","NP4-S1","A2","CA","NP4-S1-A2-CA","Numba Primary","Baiting","POLY 041",45,FALSE
+"NP4","NP4-S1","A3","CA","NP4-S1-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","A4","CA","NP4-S1-A4-CA","Numba Primary","Baiting","POLY 041",3,FALSE
+"NP4","NP4-S1","A1","UN","NP4-S1-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","A2","UN","NP4-S1-A2-UN","Numba Primary","Baiting","PHEI 014",15,FALSE
+"NP4","NP4-S1","A3","UN","NP4-S1-A3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","A4","UN","NP4-S1-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","B1","CA","NP4-S1-B1-CA","Numba Primary","Baiting","POLY 041",25,FALSE
+"NP4","NP4-S1","B2","CA","NP4-S1-B2-CA","Numba Primary","Baiting","TETR 028",3,FALSE
+"NP4","NP4-S1","B3","CA","NP4-S1-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","B4","CA","NP4-S1-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","B1","UN","NP4-S1-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","B2","UN","NP4-S1-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","B3","UN","NP4-S1-B3-UN","Numba Primary","Baiting","TETR 028",200,FALSE
+"NP4","NP4-S1","B4","UN","NP4-S1-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","C1","CA","NP4-S1-C1-CA","Numba Primary","Baiting","POLY 041",1,FALSE
+"NP4","NP4-S1","C2","CA","NP4-S1-C2-CA","Numba Primary","Baiting","PHEI 007",35,FALSE
+"NP4","NP4-S1","C3","CA","NP4-S1-C3-CA","Numba Primary","Baiting","POLY 041",20,FALSE
+"NP4","NP4-S1","C4","CA","NP4-S1-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","C1","UN","NP4-S1-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","C2","UN","NP4-S1-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","C3","UN","NP4-S1-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S1","C4","UN","NP4-S1-C4-UN","Numba Primary","Baiting","PODO 003",200,FALSE
+"NP4","NP4-S1","D1","CA","NP4-S1-D1-CA","Numba Primary","Baiting","POLY 041",5,FALSE
+"NP4","NP4-S1","D2","CA","NP4-S1-D2-CA","Numba Primary","Baiting","POLY 041",20,FALSE
+"NP4","NP4-S1","D3","CA","NP4-S1-D3-CA","Numba Primary","Baiting","POLY 041",20,FALSE
+"NP4","NP4-S1","D4","CA","NP4-S1-D4-CA","Numba Primary","Baiting","POLY 041",5,FALSE
+"NP4","NP4-S1","D1","UN","NP4-S1-D1-UN","Numba Primary","Baiting","ODON 005",1,FALSE
+"NP4","NP4-S1","D2","UN","NP4-S1-D2-UN","Numba Primary","Baiting","CREM 010",8,FALSE
+"NP4","NP4-S1","D3","UN","NP4-S1-D3-UN","Numba Primary","Baiting","PODO 003",100,FALSE
+"NP4","NP4-S1","D4","UN","NP4-S1-D4-UN","Numba Primary","Baiting","ANON 009",300,FALSE
+"NP4","NP4-S2","A1","CA","NP4-S2-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","A2","CA","NP4-S2-A2-CA","Numba Primary","Baiting","POLY 041",4,FALSE
+"NP4","NP4-S2","A3","CA","NP4-S2-A3-CA","Numba Primary","Baiting","POLY 041",8,FALSE
+"NP4","NP4-S2","A4","CA","NP4-S2-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","A1","UN","NP4-S2-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","A2","UN","NP4-S2-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","A3","UN","NP4-S2-A3-UN","Numba Primary","Baiting","PODO 003",75,FALSE
+"NP4","NP4-S2","A4","UN","NP4-S2-A4-UN","Numba Primary","Baiting","MONO 002",1,FALSE
+"NP4","NP4-S2","B1","CA","NP4-S2-B1-CA","Numba Primary","Baiting","POLY 022",3,FALSE
+"NP4","NP4-S2","B2","CA","NP4-S2-B2-CA","Numba Primary","Baiting","CREM 013",100,FALSE
+"NP4","NP4-S2","B3","CA","NP4-S2-B3-CA","Numba Primary","Baiting","POLY 041",20,FALSE
+"NP4","NP4-S2","B4","CA","NP4-S2-B4-CA","Numba Primary","Baiting","POLY 041",15,FALSE
+"NP4","NP4-S2","B1","UN","NP4-S2-B1-UN","Numba Primary","Baiting","CREM 010",2,FALSE
+"NP4","NP4-S2","B2","UN","NP4-S2-B2-UN","Numba Primary","Baiting","PODO 003",50,FALSE
+"NP4","NP4-S2","B3","UN","NP4-S2-B3-UN","Numba Primary","Baiting","PODO 003",50,FALSE
+"NP4","NP4-S2","B4","UN","NP4-S2-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","C1","CA","NP4-S2-C1-CA","Numba Primary","Baiting","POLY 041",1,FALSE
+"NP4","NP4-S2","C2","CA","NP4-S2-C2-CA","Numba Primary","Baiting","TAPI 001",1,FALSE
+"NP4","NP4-S2","C3","CA","NP4-S2-C3-CA","Numba Primary","Baiting","POLY 041",8,FALSE
+"NP4","NP4-S2","C4","CA","NP4-S2-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","C1","UN","NP4-S2-C1-UN","Numba Primary","Baiting","ANON 015",8,FALSE
+"NP4","NP4-S2","C2","UN","NP4-S2-C2-UN","Numba Primary","Baiting","PODO 003",60,FALSE
+"NP4","NP4-S2","C3","UN","NP4-S2-C3-UN","Numba Primary","Baiting","ANON 009",200,FALSE
+"NP4","NP4-S2","C4","UN","NP4-S2-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","D1","CA","NP4-S2-D1-CA","Numba Primary","Baiting","POLY 041",10,FALSE
+"NP4","NP4-S2","D2","CA","NP4-S2-D2-CA","Numba Primary","Baiting","POLY 041",8,FALSE
+"NP4","NP4-S2","D3","CA","NP4-S2-D3-CA","Numba Primary","Baiting","POLY 041",3,FALSE
+"NP4","NP4-S2","D4","CA","NP4-S2-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","D1","UN","NP4-S2-D1-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP4","NP4-S2","D2","UN","NP4-S2-D2-UN","Numba Primary","Baiting","PODO 003",12,FALSE
+"NP4","NP4-S2","D3","UN","NP4-S2-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S2","D4","UN","NP4-S2-D4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","A1","CA","NP4-S3-A1-CA","Numba Primary","Baiting","POLY 041",8,FALSE
+"NP4","NP4-S3","A2","CA","NP4-S3-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","A3","CA","NP4-S3-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","A4","CA","NP4-S3-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","A1","UN","NP4-S3-A1-UN","Numba Primary","Baiting","POLY 022",8,FALSE
+"NP4","NP4-S3","A2","UN","NP4-S3-A2-UN","Numba Primary","Baiting","POLY 002",1,FALSE
+"NP4","NP4-S3","A3","UN","NP4-S3-A3-UN","Numba Primary","Baiting","PARA 006",8,FALSE
+"NP4","NP4-S3","A4","UN","NP4-S3-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","B1","CA","NP4-S3-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","B2","CA","NP4-S3-B2-CA","Numba Primary","Baiting","PHEI 004",3,FALSE
+"NP4","NP4-S3","B3","CA","NP4-S3-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","B4","CA","NP4-S3-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","B1","UN","NP4-S3-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","B2","UN","NP4-S3-B2-UN","Numba Primary","Baiting","PARA 007",8,FALSE
+"NP4","NP4-S3","B3","UN","NP4-S3-B3-UN","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP4","NP4-S3","B4","UN","NP4-S3-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","C1","CA","NP4-S3-C1-CA","Numba Primary","Baiting","PARA 013",10,FALSE
+"NP4","NP4-S3","C2","CA","NP4-S3-C2-CA","Numba Primary","Baiting","TAPI 004",25,FALSE
+"NP4","NP4-S3","C3","CA","NP4-S3-C3-CA","Numba Primary","Baiting","ANON 012",150,FALSE
+"NP4","NP4-S3","C4","CA","NP4-S3-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","C1","UN","NP4-S3-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","C2","UN","NP4-S3-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","C3","UN","NP4-S3-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","C4","UN","NP4-S3-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","D1","CA","NP4-S3-D1-CA","Numba Primary","Baiting","CREM 014",150,FALSE
+"NP4","NP4-S3","D2","CA","NP4-S3-D2-CA","Numba Primary","Baiting","CAMP 001",20,FALSE
+"NP4","NP4-S3","D3","CA","NP4-S3-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","D4","CA","NP4-S3-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S3","D1","UN","NP4-S3-D1-UN","Numba Primary","Baiting","ANON 012",50,FALSE
+"NP4","NP4-S3","D2","UN","NP4-S3-D2-UN","Numba Primary","Baiting","PHEI 038",15,FALSE
+"NP4","NP4-S3","D3","UN","NP4-S3-D3-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP4","NP4-S3","D4","UN","NP4-S3-D4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","A1","CA","NP4-S4-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","A2","CA","NP4-S4-A2-CA","Numba Primary","Baiting","POLY 041",30,FALSE
+"NP4","NP4-S4","A3","CA","NP4-S4-A3-CA","Numba Primary","Baiting","POLY 041",6,FALSE
+"NP4","NP4-S4","A4","CA","NP4-S4-A4-CA","Numba Primary","Baiting","POLY 041",30,FALSE
+"NP4","NP4-S4","A1","UN","NP4-S4-A1-UN","Numba Primary","Baiting","TAPI 004",30,FALSE
+"NP4","NP4-S4","A2","UN","NP4-S4-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","A3","UN","NP4-S4-A3-UN","Numba Primary","Baiting","PHEI 001",30,FALSE
+"NP4","NP4-S4","A4","UN","NP4-S4-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","B1","CA","NP4-S4-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","B2","CA","NP4-S4-B2-CA","Numba Primary","Baiting","ANON 002",100,FALSE
+"NP4","NP4-S4","B3","CA","NP4-S4-B3-CA","Numba Primary","Baiting","ANON 002",75,FALSE
+"NP4","NP4-S4","B4","CA","NP4-S4-B4-CA","Numba Primary","Baiting","POLY 041",7,FALSE
+"NP4","NP4-S4","B1","UN","NP4-S4-B1-UN","Numba Primary","Baiting","TECH 004",30,FALSE
+"NP4","NP4-S4","B2","UN","NP4-S4-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","B3","UN","NP4-S4-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","B4","UN","NP4-S4-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","C1","CA","NP4-S4-C1-CA","Numba Primary","Baiting","PODO 013",8,FALSE
+"NP4","NP4-S4","C2","CA","NP4-S4-C2-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP4","NP4-S4","C3","CA","NP4-S4-C3-CA","Numba Primary","Baiting","CREM 014",30,FALSE
+"NP4","NP4-S4","C4","CA","NP4-S4-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","C1","UN","NP4-S4-C1-UN","Numba Primary","Baiting","RHYT 002",3,FALSE
+"NP4","NP4-S4","C2","UN","NP4-S4-C2-UN","Numba Primary","Baiting","ANON 009",30,FALSE
+"NP4","NP4-S4","C3","UN","NP4-S4-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","C4","UN","NP4-S4-C4-UN","Numba Primary","Baiting","PROL 002",4,FALSE
+"NP4","NP4-S4","D1","CA","NP4-S4-D1-CA","Numba Primary","Baiting","ANON 002",30,FALSE
+"NP4","NP4-S4","D2","CA","NP4-S4-D2-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","D3","CA","NP4-S4-D3-CA","Numba Primary","Baiting","CREM 014",100,FALSE
+"NP4","NP4-S4","D4","CA","NP4-S4-D4-CA","Numba Primary","Baiting","POLY 041",2,FALSE
+"NP4","NP4-S4","D1","UN","NP4-S4-D1-UN","Numba Primary","Baiting","ANON 002",75,FALSE
+"NP4","NP4-S4","D2","UN","NP4-S4-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","D3","UN","NP4-S4-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S4","D4","UN","NP4-S4-D4-UN","Numba Primary","Baiting","PHEI 019",30,FALSE
+"NP4","NP4-S5","A1","CA","NP4-S5-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","A2","CA","NP4-S5-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","A3","CA","NP4-S5-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","A4","CA","NP4-S5-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","A1","UN","NP4-S5-A1-UN","Numba Primary","Baiting","HYPO 003",6,FALSE
+"NP4","NP4-S5","A2","UN","NP4-S5-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","A3","UN","NP4-S5-A3-UN","Numba Primary","Baiting","PSEU 001",2,FALSE
+"NP4","NP4-S5","A4","UN","NP4-S5-A4-UN","Numba Primary","Baiting","POLY 041",4,FALSE
+"NP4","NP4-S5","B1","CA","NP4-S5-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","B2","CA","NP4-S5-B2-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","B3","CA","NP4-S5-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","B4","CA","NP4-S5-B4-CA","Numba Primary","Baiting","POLY 041",9,FALSE
+"NP4","NP4-S5","B1","UN","NP4-S5-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","B2","UN","NP4-S5-B2-UN","Numba Primary","Baiting","TETR 020",1,FALSE
+"NP4","NP4-S5","B3","UN","NP4-S5-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","B4","UN","NP4-S5-B4-UN","Numba Primary","Baiting","PHEI 014",30,FALSE
+"NP4","NP4-S5","C1","CA","NP4-S5-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","C2","CA","NP4-S5-C2-CA","Numba Primary","Baiting","POLY 041",9,FALSE
+"NP4","NP4-S5","C3","CA","NP4-S5-C3-CA","Numba Primary","Baiting","POLY 041",6,FALSE
+"NP4","NP4-S5","C4","CA","NP4-S5-C4-CA","Numba Primary","Baiting","POLY 041",10,FALSE
+"NP4","NP4-S5","C1","UN","NP4-S5-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","C2","UN","NP4-S5-C2-UN","Numba Primary","Baiting","ANON 014",75,FALSE
+"NP4","NP4-S5","C3","UN","NP4-S5-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","C4","UN","NP4-S5-C4-UN","Numba Primary","Baiting","ANON 002",100,FALSE
+"NP4","NP4-S5","D1","CA","NP4-S5-D1-CA","Numba Primary","Baiting","POLY 041",8,FALSE
+"NP4","NP4-S5","D2","CA","NP4-S5-D2-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP4","NP4-S5","D3","CA","NP4-S5-D3-CA","Numba Primary","Baiting","CREM 003",30,FALSE
+"NP4","NP4-S5","D4","CA","NP4-S5-D4-CA","Numba Primary","Baiting","CREM 003",100,FALSE
+"NP4","NP4-S5","D1","UN","NP4-S5-D1-UN","Numba Primary","Baiting","PHEI 014",8,FALSE
+"NP4","NP4-S5","D2","UN","NP4-S5-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","D3","UN","NP4-S5-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP4","NP4-S5","D4","UN","NP4-S5-D4-UN","Numba Primary","Baiting","CAMP 001",75,FALSE
+"NP5","NP5-S1","A1","CA","NP5-S1-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","A2","CA","NP5-S1-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","A3","CA","NP5-S1-A3-CA","Numba Primary","Baiting","PODO 001",20,FALSE
+"NP5","NP5-S1","A4","CA","NP5-S1-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","A1","UN","NP5-S1-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","A2","UN","NP5-S1-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","A3","UN","NP5-S1-A3-UN","Numba Primary","Baiting","STRU 001",10,FALSE
+"NP5","NP5-S1","A4","UN","NP5-S1-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","B1","CA","NP5-S1-B1-CA","Numba Primary","Baiting","POLY 002",2,FALSE
+"NP5","NP5-S1","B2","CA","NP5-S1-B2-CA","Numba Primary","Baiting","ANON 012",5,FALSE
+"NP5","NP5-S1","B3","CA","NP5-S1-B3-CA","Numba Primary","Baiting","ANON 012",10,FALSE
+"NP5","NP5-S1","B4","CA","NP5-S1-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","B1","UN","NP5-S1-B1-UN","Numba Primary","Baiting","PARA 007",1,FALSE
+"NP5","NP5-S1","B2","UN","NP5-S1-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","B3","UN","NP5-S1-B3-UN","Numba Primary","Baiting","PARA 007",4,FALSE
+"NP5","NP5-S1","B4","UN","NP5-S1-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","C1","CA","NP5-S1-C1-CA","Numba Primary","Baiting","PHEI 046",8,FALSE
+"NP5","NP5-S1","C2","CA","NP5-S1-C2-CA","Numba Primary","Baiting","PHEI 007",5,FALSE
+"NP5","NP5-S1","C3","CA","NP5-S1-C3-CA","Numba Primary","Baiting","CREM 014",15,FALSE
+"NP5","NP5-S1","C4","CA","NP5-S1-C4-CA","Numba Primary","Baiting","ANON 015",3,FALSE
+"NP5","NP5-S1","C1","UN","NP5-S1-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","C2","UN","NP5-S1-C2-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP5","NP5-S1","C3","UN","NP5-S1-C3-UN","Numba Primary","Baiting","PHEI 038",20,FALSE
+"NP5","NP5-S1","C4","UN","NP5-S1-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","D1","CA","NP5-S1-D1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S1","D2","CA","NP5-S1-D2-CA","Numba Primary","Baiting","CREM 014",20,FALSE
+"NP5","NP5-S1","D3","CA","NP5-S1-D3-CA","Numba Primary","Baiting","CREM 014",40,FALSE
+"NP5","NP5-S1","D4","CA","NP5-S1-D4-CA","Numba Primary","Baiting","CREM 014",50,FALSE
+"NP5","NP5-S1","D1","UN","NP5-S1-D1-UN","Numba Primary","Baiting","RHYT 004",1,FALSE
+"NP5","NP5-S1","D2","UN","NP5-S1-D2-UN","Numba Primary","Baiting","ANON 012",200,FALSE
+"NP5","NP5-S1","D3","UN","NP5-S1-D3-UN","Numba Primary","Baiting","PHEI 028",3,FALSE
+"NP5","NP5-S1","D4","UN","NP5-S1-D4-UN","Numba Primary","Baiting","PHEI 003",20,FALSE
+"NP5","NP5-S2","A1","CA","NP5-S2-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","A2","CA","NP5-S2-A2-CA","Numba Primary","Baiting","PARA 003",30,FALSE
+"NP5","NP5-S2","A3","CA","NP5-S2-A3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","A4","CA","NP5-S2-A4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","A1","UN","NP5-S2-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","A2","UN","NP5-S2-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","A3","UN","NP5-S2-A3-UN","Numba Primary","Baiting","RHYT 002",2,FALSE
+"NP5","NP5-S2","A4","UN","NP5-S2-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","B1","CA","NP5-S2-B1-CA","Numba Primary","Baiting","ANON 012",6,FALSE
+"NP5","NP5-S2","B2","CA","NP5-S2-B2-CA","Numba Primary","Baiting","PHEI 046",2,FALSE
+"NP5","NP5-S2","B3","CA","NP5-S2-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","B4","CA","NP5-S2-B4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","B1","UN","NP5-S2-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","B2","UN","NP5-S2-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","B3","UN","NP5-S2-B3-UN","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP5","NP5-S2","B4","UN","NP5-S2-B4-UN","Numba Primary","Baiting","ANON 009",75,FALSE
+"NP5","NP5-S2","C1","CA","NP5-S2-C1-CA","Numba Primary","Baiting","CREM 014",30,FALSE
+"NP5","NP5-S2","C2","CA","NP5-S2-C2-CA","Numba Primary","Baiting","PHEI 014",30,FALSE
+"NP5","NP5-S2","C3","CA","NP5-S2-C3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","C4","CA","NP5-S2-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","C1","UN","NP5-S2-C1-UN","Numba Primary","Baiting","PHEI 004",75,FALSE
+"NP5","NP5-S2","C2","UN","NP5-S2-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","C3","UN","NP5-S2-C3-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP5","NP5-S2","C4","UN","NP5-S2-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","D1","CA","NP5-S2-D1-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP5","NP5-S2","D3","CA","NP5-S2-D3-CA","Numba Primary","Baiting","CREM 014",30,FALSE
+"NP5","NP5-S2","D4","CA","NP5-S2-D4-CA","Numba Primary","Baiting","ANON 014",75,FALSE
+"NP5","NP5-S2","D1","UN","NP5-S2-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","D2","UN","NP5-S2-D2-UN","Numba Primary","Baiting","PRIS 001",5,FALSE
+"NP5","NP5-S2","D3","UN","NP5-S2-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S2","D4","UN","NP5-S2-D4-UN","Numba Primary","Baiting","ANON 012",100,FALSE
+"NP5","NP5-S3","A1","CA","NP5-S3-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","A2","CA","NP5-S3-A2-CA","Numba Primary","Baiting","PODO 001",65,FALSE
+"NP5","NP5-S3","A3","CA","NP5-S3-A3-CA","Numba Primary","Baiting","PHEI 046",75,FALSE
+"NP5","NP5-S3","A4","CA","NP5-S3-A4-CA","Numba Primary","Baiting","TETR 003",2,FALSE
+"NP5","NP5-S3","A1","UN","NP5-S3-A1-UN","Numba Primary","Baiting","CARE 007",75,FALSE
+"NP5","NP5-S3","A2","UN","NP5-S3-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","A3","UN","NP5-S3-A3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","A4","UN","NP5-S3-A4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","B1","CA","NP5-S3-B1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","B2","CA","NP5-S3-B2-CA","Numba Primary","Baiting","ANON 012",75,FALSE
+"NP5","NP5-S3","B3","CA","NP5-S3-B3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","B4","CA","NP5-S3-B4-CA","Numba Primary","Baiting","PHEI 004",75,FALSE
+"NP5","NP5-S3","B1","UN","NP5-S3-B1-UN","Numba Primary","Baiting","ANON 012",3,FALSE
+"NP5","NP5-S3","B2","UN","NP5-S3-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","B3","UN","NP5-S3-B3-UN","Numba Primary","Baiting","SOLE 004",30,FALSE
+"NP5","NP5-S3","B4","UN","NP5-S3-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","C1","CA","NP5-S3-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","C2","CA","NP5-S3-C2-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","C3","CA","NP5-S3-C3-CA","Numba Primary","Baiting","PHEI 046",30,FALSE
+"NP5","NP5-S3","C4","CA","NP5-S3-C4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","C1","UN","NP5-S3-C1-UN","Numba Primary","Baiting","PSEU 001",30,FALSE
+"NP5","NP5-S3","C2","UN","NP5-S3-C2-UN","Numba Primary","Baiting","PHEI 028",30,FALSE
+"NP5","NP5-S3","C3","UN","NP5-S3-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","C4","UN","NP5-S3-C4-UN","Numba Primary","Baiting","PHEI 003",30,FALSE
+"NP5","NP5-S3","D1","CA","NP5-S3-D1-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP5","NP5-S3","D2","CA","NP5-S3-D2-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP5","NP5-S3","D3","CA","NP5-S3-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","D4","CA","NP5-S3-D4-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP5","NP5-S3","D1","UN","NP5-S3-D1-UN","Numba Primary","Baiting","CARE 008",75,FALSE
+"NP5","NP5-S3","D2","UN","NP5-S3-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","D3","UN","NP5-S3-D3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S3","D4","UN","NP5-S3-D4-UN","Numba Primary","Baiting","PHEI 019",30,FALSE
+"NP5","NP5-S4","A1","CA","NP5-S4-A1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","A2","CA","NP5-S4-A2-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP5","NP5-S4","A3","CA","NP5-S4-A3-CA","Numba Primary","Baiting","CREM 014",100,FALSE
+"NP5","NP5-S4","A4","CA","NP5-S4-A4-CA","Numba Primary","Baiting","CREM 014",100,FALSE
+"NP5","NP5-S4","A1","UN","NP5-S4-A1-UN","Numba Primary","Baiting","STRU 001",2,FALSE
+"NP5","NP5-S4","A2","UN","NP5-S4-A2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","A3","UN","NP5-S4-A3-UN","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP5","NP5-S4","A4","UN","NP5-S4-A4-UN","Numba Primary","Baiting","CARE 001",30,FALSE
+"NP5","NP5-S4","B1","CA","NP5-S4-B1-CA","Numba Primary","Baiting","POLY 041",30,FALSE
+"NP5","NP5-S4","B2","CA","NP5-S4-B2-CA","Numba Primary","Baiting","CREM 014",100,FALSE
+"NP5","NP5-S4","B3","CA","NP5-S4-B3-CA","Numba Primary","Baiting","CREM 014",75,FALSE
+"NP5","NP5-S4","B4","CA","NP5-S4-B4-CA","Numba Primary","Baiting","CREM 014",30,FALSE
+"NP5","NP5-S4","B1","UN","NP5-S4-B1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","B2","UN","NP5-S4-B2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","B3","UN","NP5-S4-B3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","B4","UN","NP5-S4-B4-UN","Numba Primary","Baiting","ANON 009",100,FALSE
+"NP5","NP5-S4","C1","CA","NP5-S4-C1-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","C2","CA","NP5-S4-C2-CA","Numba Primary","Baiting","POLY 041",30,FALSE
+"NP5","NP5-S4","C3","CA","NP5-S4-C3-CA","Numba Primary","Baiting","TETR 003",6,FALSE
+"NP5","NP5-S4","C4","CA","NP5-S4-C4-CA","Numba Primary","Baiting","PHEI 001",6,FALSE
+"NP5","NP5-S4","C1","UN","NP5-S4-C1-UN","Numba Primary","Baiting","HYPO 003",30,FALSE
+"NP5","NP5-S4","C2","UN","NP5-S4-C2-UN","Numba Primary","Baiting","PHEI 004",30,FALSE
+"NP5","NP5-S4","C3","UN","NP5-S4-C3-UN","Numba Primary","Baiting","PHEI 003",6,FALSE
+"NP5","NP5-S4","C4","UN","NP5-S4-C4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","D1","CA","NP5-S4-D1-CA","Numba Primary","Baiting","POLY 041",30,FALSE
+"NP5","NP5-S4","D2","CA","NP5-S4-D2-CA","Numba Primary","Baiting","POLY 041",6,FALSE
+"NP5","NP5-S4","D3","CA","NP5-S4-D3-CA","Numba Primary","Baiting","TETR 003",6,FALSE
+"NP5","NP5-S4","D4","CA","NP5-S4-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","D1","UN","NP5-S4-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","D2","UN","NP5-S4-D2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S4","D3","UN","NP5-S4-D3-UN","Numba Primary","Baiting","PROL 002",1,FALSE
+"NP5","NP5-S4","D4","UN","NP5-S4-D4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","A1","CA","NP5-S5-A1-CA","Numba Primary","Baiting","CREM 014",1,FALSE
+"NP5","NP5-S5","A2","CA","NP5-S5-A2-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","A3","CA","NP5-S5-A3-CA","Numba Primary","Baiting","PHIL 003",50,FALSE
+"NP5","NP5-S5","A4","CA","NP5-S5-A4-CA","Numba Primary","Baiting","CREM 014",60,FALSE
+"NP5","NP5-S5","A1","UN","NP5-S5-A1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","A2","UN","NP5-S5-A2-UN","Numba Primary","Baiting","PARA 007",40,FALSE
+"NP5","NP5-S5","A3","UN","NP5-S5-A3-UN","Numba Primary","Baiting","LEPM 002",50,FALSE
+"NP5","NP5-S5","A4","UN","NP5-S5-A4-UN","Numba Primary","Baiting","ANON 009",300,FALSE
+"NP5","NP5-S5","B1","CA","NP5-S5-B1-CA","Numba Primary","Baiting","ANON 012",30,FALSE
+"NP5","NP5-S5","B2","CA","NP5-S5-B2-CA","Numba Primary","Baiting","CREM 014",40,FALSE
+"NP5","NP5-S5","B3","CA","NP5-S5-B3-CA","Numba Primary","Baiting","CREM 014",100,FALSE
+"NP5","NP5-S5","B4","CA","NP5-S5-B4-CA","Numba Primary","Baiting","POLY 041",10,FALSE
+"NP5","NP5-S5","B1","UN","NP5-S5-B1-UN","Numba Primary","Baiting","PHEI 003",40,FALSE
+"NP5","NP5-S5","B2","UN","NP5-S5-B2-UN","Numba Primary","Baiting","CREM 014",1,FALSE
+"NP5","NP5-S5","B3","UN","NP5-S5-B3-UN","Numba Primary","Baiting","ANON 009",40,FALSE
+"NP5","NP5-S5","B4","UN","NP5-S5-B4-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","C1","CA","NP5-S5-C1-CA","Numba Primary","Baiting","PHEI 014",1,FALSE
+"NP5","NP5-S5","C2","CA","NP5-S5-C2-CA","Numba Primary","Baiting","CREM 014",50,FALSE
+"NP5","NP5-S5","C3","CA","NP5-S5-C3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","C4","CA","NP5-S5-C4-CA","Numba Primary","Baiting","POLY 002",1,FALSE
+"NP5","NP5-S5","C1","UN","NP5-S5-C1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","C2","UN","NP5-S5-C2-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","C3","UN","NP5-S5-C3-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","C4","UN","NP5-S5-C4-UN","Numba Primary","Baiting","TETR 012",2,FALSE
+"NP5","NP5-S5","D1","CA","NP5-S5-D1-CA","Numba Primary","Baiting","CREM 014",50,FALSE
+"NP5","NP5-S5","D2","CA","NP5-S5-D2-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","D3","CA","NP5-S5-D3-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","D4","CA","NP5-S5-D4-CA","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","D1","UN","NP5-S5-D1-UN","Numba Primary","Baiting","",0,FALSE
+"NP5","NP5-S5","D2","UN","NP5-S5-D2-UN","Numba Primary","Baiting","PARA 003",20,FALSE
+"NP5","NP5-S5","D3","UN","NP5-S5-D3-UN","Numba Primary","Baiting","POLY 041",50,FALSE
+"NP5","NP5-S5","D4","UN","NP5-S5-D4-UN","Numba Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","A1","CA","KP1-S1-A1-CA","Kausi Primary","Baiting","CREM 003",50,FALSE
+"KP1","KP1-S1","A2","CA","KP1-S1-A2-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","A3","CA","KP1-S1-A3-CA","Kausi Primary","Baiting","ANON 001",50,FALSE
+"KP1","KP1-S1","A4","CA","KP1-S1-A4-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","A1","UN","KP1-S1-A1-UN","Kausi Primary","Baiting","TETR 003",15,FALSE
+"KP1","KP1-S1","A2","UN","KP1-S1-A2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","A3","UN","KP1-S1-A3-UN","Kausi Primary","Baiting","TETR 003",18,FALSE
+"KP1","KP1-S1","A4","UN","KP1-S1-A4-UN","Kausi Primary","Baiting","TETR 010",5,FALSE
+"KP1","KP1-S1","B1","CA","KP1-S1-B1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP1","KP1-S1","B2","CA","KP1-S1-B2-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","B3","CA","KP1-S1-B3-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","B4","CA","KP1-S1-B4-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","B1","UN","KP1-S1-B1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","B2","UN","KP1-S1-B2-UN","Kausi Primary","Baiting","POLY 001",4,FALSE
+"KP1","KP1-S1","B3","UN","KP1-S1-B3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","B4","UN","KP1-S1-B4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","C1","CA","KP1-S1-C1-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S1","C2","CA","KP1-S1-C2-CA","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","C3","CA","KP1-S1-C3-CA","Kausi Primary","Baiting","CREM 003",50,FALSE
+"KP1","KP1-S1","C4","CA","KP1-S1-C4-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","C1","UN","KP1-S1-C1-UN","Kausi Primary","Baiting","POLY 001",5,FALSE
+"KP1","KP1-S1","C2","UN","KP1-S1-C2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","C3","UN","KP1-S1-C3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S1","C4","UN","KP1-S1-C4-UN","Kausi Primary","Baiting","TETR 003",7,FALSE
+"KP1","KP1-S1","D1","CA","KP1-S1-D1-CA","Kausi Primary","Baiting","CREM 003",40,FALSE
+"KP1","KP1-S1","D2","CA","KP1-S1-D2-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP1","KP1-S1","D3","CA","KP1-S1-D3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP1","KP1-S1","D4","CA","KP1-S1-D4-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S1","D1","UN","KP1-S1-D1-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S1","D2","UN","KP1-S1-D2-UN","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP1","KP1-S1","D3","UN","KP1-S1-D3-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S1","D4","UN","KP1-S1-D4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","A1","CA","KP1-S2-A1-CA","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","A2","CA","KP1-S2-A2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP1","KP1-S2","A3","CA","KP1-S2-A3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP1","KP1-S2","A4","CA","KP1-S2-A4-CA","Kausi Primary","Baiting","CREM 003",30,FALSE
+"KP1","KP1-S2","A1","UN","KP1-S2-A1-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","A2","UN","KP1-S2-A2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","A3","UN","KP1-S2-A3-UN","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP1","KP1-S2","A4","UN","KP1-S2-A4-UN","Kausi Primary","Baiting","CREM 003",25,FALSE
+"KP1","KP1-S2","B1","CA","KP1-S2-B1-CA","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP1","KP1-S2","B2","CA","KP1-S2-B2-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","B3","CA","KP1-S2-B3-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","B4","CA","KP1-S2-B4-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","B1","UN","KP1-S2-B1-UN","Kausi Primary","Baiting","ANON 001",200,FALSE
+"KP1","KP1-S2","B2","UN","KP1-S2-B2-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","B3","UN","KP1-S2-B3-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","B4","UN","KP1-S2-B4-UN","Kausi Primary","Baiting","TECH 005",100,FALSE
+"KP1","KP1-S2","C1","CA","KP1-S2-C1-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","C2","CA","KP1-S2-C2-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","C3","CA","KP1-S2-C3-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","C4","CA","KP1-S2-C4-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","C1","UN","KP1-S2-C1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","C2","UN","KP1-S2-C2-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","C3","UN","KP1-S2-C3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","C4","UN","KP1-S2-C4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","D1","CA","KP1-S2-D1-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","D2","CA","KP1-S2-D2-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","D3","CA","KP1-S2-D3-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","D4","CA","KP1-S2-D4-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP1","KP1-S2","D1","UN","KP1-S2-D1-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","D2","UN","KP1-S2-D2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP1","KP1-S2","D3","UN","KP1-S2-D3-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S2","D4","UN","KP1-S2-D4-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP1","KP1-S3","A1","CA","KP1-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",35,FALSE
+"KP1","KP1-S3","A2","CA","KP1-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP1","KP1-S3","A3","CA","KP1-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",18,FALSE
+"KP1","KP1-S3","A4","CA","KP1-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","A1","UN","KP1-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","A2","UN","KP1-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","A3","UN","KP1-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","A4","UN","KP1-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","B1","CA","KP1-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","B2","CA","KP1-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","B3","CA","KP1-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",30,FALSE
+"KP1","KP1-S3","B4","CA","KP1-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP1","KP1-S3","B1","UN","KP1-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","B2","UN","KP1-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","B3","UN","KP1-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","B4","UN","KP1-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","C1","CA","KP1-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",30,FALSE
+"KP1","KP1-S3","C2","CA","KP1-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","C3","CA","KP1-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","C4","CA","KP1-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP1","KP1-S3","C1","UN","KP1-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","C2","UN","KP1-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","C3","UN","KP1-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","C4","UN","KP1-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting","POLY 002",1,FALSE
+"KP1","KP1-S3","D1","CA","KP1-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","D2","CA","KP1-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP1","KP1-S3","D3","CA","KP1-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP1","KP1-S3","D4","CA","KP1-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP1","KP1-S3","D1","UN","KP1-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP1","KP1-S3","D2","UN","KP1-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP1","KP1-S3","D3","UN","KP1-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP1","KP1-S3","D4","UN","KP1-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP2","KP2-S1","A1","CA","KP2-S1-A1-CA","Kausi Primary","Baiting","CREM 005",30,FALSE
+"KP2","KP2-S1","A2","CA","KP2-S1-A2-CA","Kausi Primary","Baiting","POLY 015",1,FALSE
+"KP2","KP2-S1","A3","CA","KP2-S1-A3-CA","Kausi Primary","Baiting","CREM 014",35,FALSE
+"KP2","KP2-S1","A4","CA","KP2-S1-A4-CA","Kausi Primary","Baiting","PODO 011",75,FALSE
+"KP2","KP2-S1","A1","UN","KP2-S1-A1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","A2","UN","KP2-S1-A2-UN","Kausi Primary","Baiting","CREM 014",75,FALSE
+"KP2","KP2-S1","A4","UN","KP2-S1-A4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","B1","CA","KP2-S1-B1-CA","Kausi Primary","Baiting","CREM 014",3,FALSE
+"KP2","KP2-S1","B2","CA","KP2-S1-B2-CA","Kausi Primary","Baiting","CREM 003",25,FALSE
+"KP2","KP2-S1","B3","CA","KP2-S1-B3-CA","Kausi Primary","Baiting","CREM 014",100,FALSE
+"KP2","KP2-S1","B4","CA","KP2-S1-B4-CA","Kausi Primary","Baiting","PODO 011",75,FALSE
+"KP2","KP2-S1","B1","UN","KP2-S1-B1-UN","Kausi Primary","Baiting","CREM 014",100,FALSE
+"KP2","KP2-S1","B2","UN","KP2-S1-B2-UN","Kausi Primary","Baiting","CREM 014",30,FALSE
+"KP2","KP2-S1","B4","UN","KP2-S1-B4-UN","Kausi Primary","Baiting","PODO 003",75,FALSE
+"KP2","KP2-S1","C1","CA","KP2-S1-C1-CA","Kausi Primary","Baiting","CREM 014",35,FALSE
+"KP2","KP2-S1","C2","CA","KP2-S1-C2-CA","Kausi Primary","Baiting","CREM 014",35,FALSE
+"KP2","KP2-S1","C3","CA","KP2-S1-C3-CA","Kausi Primary","Baiting","PHEI 007",100,FALSE
+"KP2","KP2-S1","C4","CA","KP2-S1-C4-CA","Kausi Primary","Baiting","PHEI 007",100,FALSE
+"KP2","KP2-S1","C1","UN","KP2-S1-C1-UN","Kausi Primary","Baiting","ANON 001",1,FALSE
+"KP2","KP2-S1","C2","UN","KP2-S1-C2-UN","Kausi Primary","Baiting","POLY 015",2,FALSE
+"KP2","KP2-S1","C4","UN","KP2-S1-C4-UN","Kausi Primary","Baiting","OECO 001",100,FALSE
+"KP2","KP2-S1","D1","CA","KP2-S1-D1-CA","Kausi Primary","Baiting","PODO 001",30,FALSE
+"KP2","KP2-S1","D2","CA","KP2-S1-D2-CA","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","D3","CA","KP2-S1-D3-CA","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","D4","CA","KP2-S1-D4-CA","Kausi Primary","Baiting","CAMP 001",75,FALSE
+"KP2","KP2-S1","D1","UN","KP2-S1-D1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","D2","UN","KP2-S1-D2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","D3","UN","KP2-S1-D3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S1","D4","UN","KP2-S1-D4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","A1","CA","KP2-S2-A1-CA","Kausi Primary","Baiting","OECO 001",30,FALSE
+"KP2","KP2-S2","A2","CA","KP2-S2-A2-CA","Kausi Primary","Baiting","CREM 014",30,FALSE
+"KP2","KP2-S2","A3","CA","KP2-S2-A3-CA","Kausi Primary","Baiting","CREM 014",75,FALSE
+"KP2","KP2-S2","A4","CA","KP2-S2-A4-CA","Kausi Primary","Baiting","CREM 014",75,FALSE
+"KP2","KP2-S2","A1","UN","KP2-S2-A1-UN","Kausi Primary","Baiting","POLY 015",2,FALSE
+"KP2","KP2-S2","A2","UN","KP2-S2-A2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","A3","UN","KP2-S2-A3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","A4","UN","KP2-S2-A4-UN","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP2","KP2-S2","B1","CA","KP2-S2-B1-CA","Kausi Primary","Baiting","OECO 001",4,FALSE
+"KP2","KP2-S2","B2","CA","KP2-S2-B2-CA","Kausi Primary","Baiting","CREM 014",75,FALSE
+"KP2","KP2-S2","B3","CA","KP2-S2-B3-CA","Kausi Primary","Baiting","OECO 001",75,FALSE
+"KP2","KP2-S2","B4","CA","KP2-S2-B4-CA","Kausi Primary","Baiting","OECO 001",30,FALSE
+"KP2","KP2-S2","B1","UN","KP2-S2-B1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","B2","UN","KP2-S2-B2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","B3","UN","KP2-S2-B3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","B4","UN","KP2-S2-B4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","C1","CA","KP2-S2-C1-CA","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","C2","CA","KP2-S2-C2-CA","Kausi Primary","Baiting","OECO 001",30,FALSE
+"KP2","KP2-S2","C3","CA","KP2-S2-C3-CA","Kausi Primary","Baiting","OECO 001",75,FALSE
+"KP2","KP2-S2","C4","CA","KP2-S2-C4-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP2","KP2-S2","C1","UN","KP2-S2-C1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","C2","UN","KP2-S2-C2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","C3","UN","KP2-S2-C3-UN","Kausi Primary","Baiting","PHEI 035",75,FALSE
+"KP2","KP2-S2","C4","UN","KP2-S2-C4-UN","Kausi Primary","Baiting","PRIS 001",1,FALSE
+"KP2","KP2-S2","D1","CA","KP2-S2-D1-CA","Kausi Primary","Baiting","PODO 001",75,FALSE
+"KP2","KP2-S2","D2","CA","KP2-S2-D2-CA","Kausi Primary","Baiting","PODO 001",30,FALSE
+"KP2","KP2-S2","D3","CA","KP2-S2-D3-CA","Kausi Primary","Baiting","ANON 001",75,FALSE
+"KP2","KP2-S2","D4","CA","KP2-S2-D4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP2","KP2-S2","D1","UN","KP2-S2-D1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","D2","UN","KP2-S2-D2-UN","Kausi Primary","Baiting","PHEI 004",75,FALSE
+"KP2","KP2-S2","D3","UN","KP2-S2-D3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S2","D4","UN","KP2-S2-D4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP2","KP2-S3","A1","CA","KP2-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting","OECO 001",100,FALSE
+"KP2","KP2-S3","A2","CA","KP2-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",200,FALSE
+"KP2","KP2-S3","A3","CA","KP2-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting","OECO 001",16,FALSE
+"KP2","KP2-S3","A4","CA","KP2-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting","OECO 001",25,FALSE
+"KP2","KP2-S3","A1","UN","KP2-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","A2","UN","KP2-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","A3","UN","KP2-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","A4","UN","KP2-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting","TETR 003",4,FALSE
+"KP2","KP2-S3","B1","CA","KP2-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",30,FALSE
+"KP2","KP2-S3","B2","CA","KP2-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","B3","CA","KP2-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting","MONO 008",10,FALSE
+"KP2","KP2-S3","B4","CA","KP2-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 013",100,FALSE
+"KP2","KP2-S3","B1","UN","KP2-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",400,FALSE
+"KP2","KP2-S3","B2","UN","KP2-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",500,FALSE
+"KP2","KP2-S3","B3","UN","KP2-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","B4","UN","KP2-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","C1","CA","KP2-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",76,FALSE
+"KP2","KP2-S3","C2","CA","KP2-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",76,FALSE
+"KP2","KP2-S3","C3","CA","KP2-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","C4","CA","KP2-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",10,FALSE
+"KP2","KP2-S3","C1","UN","KP2-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","C2","UN","KP2-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",76,FALSE
+"KP2","KP2-S3","C3","UN","KP2-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting","OECO 001",200,FALSE
+"KP2","KP2-S3","C4","UN","KP2-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","D1","CA","KP2-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP2","KP2-S3","D2","CA","KP2-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",30,FALSE
+"KP2","KP2-S3","D3","CA","KP2-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",100,FALSE
+"KP2","KP2-S3","D4","CA","KP2-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP2","KP2-S3","D1","UN","KP2-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP2","KP2-S3","D2","UN","KP2-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting","PRIS 001",4,FALSE
+"KP2","KP2-S3","D3","UN","KP2-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting","TETR 003",4,FALSE
+"KP2","KP2-S3","D4","UN","KP2-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP4","KP4-S1","A1","CA","KP4-S1-A1-CA","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","A2","CA","KP4-S1-A2-CA","Kausi Primary","Baiting","ANON 001",3,FALSE
+"KP4","KP4-S1","A3","CA","KP4-S1-A3-CA","Kausi Primary","Baiting","CREM 003",35,FALSE
+"KP4","KP4-S1","A4","CA","KP4-S1-A4-CA","Kausi Primary","Baiting","PODO 001",75,FALSE
+"KP4","KP4-S1","A1","UN","KP4-S1-A1-UN","Kausi Primary","Baiting","TETR 003",1,FALSE
+"KP4","KP4-S1","A2","UN","KP4-S1-A2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","A3","UN","KP4-S1-A3-UN","Kausi Primary","Baiting","PODO 001",75,FALSE
+"KP4","KP4-S1","A4","UN","KP4-S1-A4-UN","Kausi Primary","Baiting","TETR 003",4,FALSE
+"KP4","KP4-S1","B1","CA","KP4-S1-B1-CA","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","B2","CA","KP4-S1-B2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP4","KP4-S1","B3","CA","KP4-S1-B3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP4","KP4-S1","B4","CA","KP4-S1-B4-CA","Kausi Primary","Baiting","ANON 001",35,FALSE
+"KP4","KP4-S1","B1","UN","KP4-S1-B1-UN","Kausi Primary","Baiting","CREM 010",100,FALSE
+"KP4","KP4-S1","B2","UN","KP4-S1-B2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","B3","UN","KP4-S1-B3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","B4","UN","KP4-S1-B4-UN","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP4","KP4-S1","C1","CA","KP4-S1-C1-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP4","KP4-S1","C2","CA","KP4-S1-C2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP4","KP4-S1","C3","CA","KP4-S1-C3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP4","KP4-S1","C4","CA","KP4-S1-C4-CA","Kausi Primary","Baiting","ANON 001",25,FALSE
+"KP4","KP4-S1","C1","UN","KP4-S1-C1-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP4","KP4-S1","C2","UN","KP4-S1-C2-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP4","KP4-S1","C3","UN","KP4-S1-C3-UN","Kausi Primary","Baiting","POLY 002",12,FALSE
+"KP4","KP4-S1","C4","UN","KP4-S1-C4-UN","Kausi Primary","Baiting","ANON 001",100,FALSE
+"KP4","KP4-S1","D1","CA","KP4-S1-D1-CA","Kausi Primary","Baiting","CREM 003",35,FALSE
+"KP4","KP4-S1","D2","CA","KP4-S1-D2-CA","Kausi Primary","Baiting","ANON 001",3,FALSE
+"KP4","KP4-S1","D3","CA","KP4-S1-D3-CA","Kausi Primary","Baiting","ANON 001",15,FALSE
+"KP4","KP4-S1","D4","CA","KP4-S1-D4-CA","Kausi Primary","Baiting","ANON 001",5,FALSE
+"KP4","KP4-S1","D1","UN","KP4-S1-D1-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP4","KP4-S1","D2","UN","KP4-S1-D2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","D3","UN","KP4-S1-D3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S1","D4","UN","KP4-S1-D4-UN","Kausi Primary","Baiting","PHIL 001",35,FALSE
+"KP4","KP4-S2","A1","CA","KP4-S2-A1-CA","Kausi Primary","Baiting","CREM 003",3,FALSE
+"KP4","KP4-S2","A2","CA","KP4-S2-A2-CA","Kausi Primary","Baiting","ANON 001",8,FALSE
+"KP4","KP4-S2","A3","CA","KP4-S2-A3-CA","Kausi Primary","Baiting","OECO 001",15,FALSE
+"KP4","KP4-S2","A4","CA","KP4-S2-A4-CA","Kausi Primary","Baiting","ANON 001",8,FALSE
+"KP4","KP4-S2","A1","UN","KP4-S2-A1-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","A2","UN","KP4-S2-A2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","A3","UN","KP4-S2-A3-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","A4","UN","KP4-S2-A4-UN","Kausi Primary","Baiting","PHEI 004",30,FALSE
+"KP4","KP4-S2","B1","CA","KP4-S2-B1-CA","Kausi Primary","Baiting","ANON 001",15,FALSE
+"KP4","KP4-S2","B2","CA","KP4-S2-B2-CA","Kausi Primary","Baiting","ANON 001",25,FALSE
+"KP4","KP4-S2","B3","CA","KP4-S2-B3-CA","Kausi Primary","Baiting","PHEI 007",30,FALSE
+"KP4","KP4-S2","B4","CA","KP4-S2-B4-CA","Kausi Primary","Baiting","ANON 001",15,FALSE
+"KP4","KP4-S2","B1","UN","KP4-S2-B1-UN","Kausi Primary","Baiting","OECO 001",75,FALSE
+"KP4","KP4-S2","B2","UN","KP4-S2-B2-UN","Kausi Primary","Baiting","ANON 002",100,FALSE
+"KP4","KP4-S2","B3","UN","KP4-S2-B3-UN","Kausi Primary","Baiting","PODO 001",30,FALSE
+"KP4","KP4-S2","B4","UN","KP4-S2-B4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","C1","CA","KP4-S2-C1-CA","Kausi Primary","Baiting","ANON 001",15,FALSE
+"KP4","KP4-S2","C2","CA","KP4-S2-C2-CA","Kausi Primary","Baiting","ANON 001",6,FALSE
+"KP4","KP4-S2","C3","CA","KP4-S2-C3-CA","Kausi Primary","Baiting","ANON 001",3,FALSE
+"KP4","KP4-S2","C4","CA","KP4-S2-C4-CA","Kausi Primary","Baiting","ANON 001",3,FALSE
+"KP4","KP4-S2","C1","UN","KP4-S2-C1-UN","Kausi Primary","Baiting","PHEI 004",30,FALSE
+"KP4","KP4-S2","C2","UN","KP4-S2-C2-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","C3","UN","KP4-S2-C3-UN","Kausi Primary","Baiting","OECO 001",30,FALSE
+"KP4","KP4-S2","C4","UN","KP4-S2-C4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","D1","CA","KP4-S2-D1-CA","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","D2","CA","KP4-S2-D2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP4","KP4-S2","D3","CA","KP4-S2-D3-CA","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S2","D4","CA","KP4-S2-D4-CA","Kausi Primary","Baiting","OECO 001",75,FALSE
+"KP4","KP4-S2","D1","UN","KP4-S2-D1-UN","Kausi Primary","Baiting","PHEI 004",8,FALSE
+"KP4","KP4-S2","D2","UN","KP4-S2-D2-UN","Kausi Primary","Baiting","PHEI 004",75,FALSE
+"KP4","KP4-S2","D3","UN","KP4-S2-D3-UN","Kausi Primary","Baiting","OECO 001",100,FALSE
+"KP4","KP4-S2","D4","UN","KP4-S2-D4-UN","Kausi Primary","Baiting","",0,FALSE
+"KP4","KP4-S3","A1","CA","KP4-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",40,FALSE
+"KP4","KP4-S3","A2","CA","KP4-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP4","KP4-S3","A3","CA","KP4-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",150,FALSE
+"KP4","KP4-S3","A4","CA","KP4-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",75,FALSE
+"KP4","KP4-S3","A1","UN","KP4-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",175,FALSE
+"KP4","KP4-S3","A2","UN","KP4-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",250,FALSE
+"KP4","KP4-S3","A3","UN","KP4-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP4","KP4-S3","A4","UN","KP4-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",300,FALSE
+"KP4","KP4-S3","B1","CA","KP4-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP4","KP4-S3","B2","CA","KP4-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP4","KP4-S3","B3","CA","KP4-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",35,FALSE
+"KP4","KP4-S3","B4","CA","KP4-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting","PARA 001",35,FALSE
+"KP4","KP4-S3","B1","UN","KP4-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",250,FALSE
+"KP4","KP4-S3","B2","UN","KP4-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",2,FALSE
+"KP4","KP4-S3","B3","UN","KP4-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting","ANON 001",200,FALSE
+"KP4","KP4-S3","B4","UN","KP4-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP4","KP4-S3","C1","CA","KP4-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP4","KP4-S3","C2","CA","KP4-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",200,FALSE
+"KP4","KP4-S3","C3","CA","KP4-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",150,FALSE
+"KP4","KP4-S3","C4","CA","KP4-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",150,FALSE
+"KP4","KP4-S3","C1","UN","KP4-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP4","KP4-S3","C2","UN","KP4-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",225,FALSE
+"KP4","KP4-S3","C3","UN","KP4-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP4","KP4-S3","C4","UN","KP4-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting","POLY 002",4,FALSE
+"KP4","KP4-S3","D1","CA","KP4-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting","PODO 001",40,FALSE
+"KP4","KP4-S3","D2","CA","KP4-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP4","KP4-S3","D3","CA","KP4-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",75,FALSE
+"KP4","KP4-S3","D4","CA","KP4-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",75,FALSE
+"KP4","KP4-S3","D1","UN","KP4-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",300,FALSE
+"KP4","KP4-S3","D2","UN","KP4-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",250,FALSE
+"KP4","KP4-S3","D3","UN","KP4-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 014",100,FALSE
+"KP4","KP4-S3","D4","UN","KP4-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting","",0,FALSE
+"KP6","KP6-S1","A1","CA","KP6-S1-A1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","A2","CA","KP6-S1-A2-CA","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP6","KP6-S1","A3","CA","KP6-S1-A3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","A4","CA","KP6-S1-A4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","A1","UN","KP6-S1-A1-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","A2","UN","KP6-S1-A2-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","A3","UN","KP6-S1-A3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","A4","UN","KP6-S1-A4-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","B1","CA","KP6-S1-B1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","B2","CA","KP6-S1-B2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","B3","CA","KP6-S1-B3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","B4","CA","KP6-S1-B4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","B1","UN","KP6-S1-B1-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","B2","UN","KP6-S1-B2-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","B3","UN","KP6-S1-B3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","B4","UN","KP6-S1-B4-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","C1","CA","KP6-S1-C1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","C2","CA","KP6-S1-C2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","C3","CA","KP6-S1-C3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","C4","CA","KP6-S1-C4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","C1","UN","KP6-S1-C1-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","C2","UN","KP6-S1-C2-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","C3","UN","KP6-S1-C3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","C4","UN","KP6-S1-C4-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","D1","CA","KP6-S1-D1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","D2","CA","KP6-S1-D2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","D3","CA","KP6-S1-D3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","D4","CA","KP6-S1-D4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S1","D1","UN","KP6-S1-D1-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","D2","UN","KP6-S1-D2-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","D3","UN","KP6-S1-D3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S1","D4","UN","KP6-S1-D4-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","A1","CA","KP6-S2-A1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","A2","CA","KP6-S2-A2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","A3","CA","KP6-S2-A3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","A4","CA","KP6-S2-A4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","A1","UN","KP6-S2-A1-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","A2","UN","KP6-S2-A2-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","A3","UN","KP6-S2-A3-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","A4","UN","KP6-S2-A4-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP6","KP6-S2","B1","CA","KP6-S2-B1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","B2","CA","KP6-S2-B2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","B3","CA","KP6-S2-B3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","B4","CA","KP6-S2-B4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","B1","UN","KP6-S2-B1-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","B2","UN","KP6-S2-B2-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","B3","UN","KP6-S2-B3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","B4","UN","KP6-S2-B4-UN","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","C1","CA","KP6-S2-C1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","C2","CA","KP6-S2-C2-CA","Kausi Primary","Baiting","CREM 003",35,FALSE
+"KP6","KP6-S2","C3","CA","KP6-S2-C3-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","C4","CA","KP6-S2-C4-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","C1","UN","KP6-S2-C1-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","C2","UN","KP6-S2-C2-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","C3","UN","KP6-S2-C3-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","C4","UN","KP6-S2-C4-UN","Kausi Primary","Baiting","CREM 003",300,FALSE
+"KP6","KP6-S2","D1","CA","KP6-S2-D1-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","D2","CA","KP6-S2-D2-CA","Kausi Primary","Baiting","CREM 003",75,FALSE
+"KP6","KP6-S2","D3","CA","KP6-S2-D3-CA","Kausi Primary","Baiting","CREM 003",15,FALSE
+"KP6","KP6-S2","D4","CA","KP6-S2-D4-CA","Kausi Primary","Baiting","CREM 003",150,FALSE
+"KP6","KP6-S2","D1","UN","KP6-S2-D1-UN","Kausi Primary","Baiting","CREM 003",50,FALSE
+"KP6","KP6-S2","D2","UN","KP6-S2-D2-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","D3","UN","KP6-S2-D3-UN","Kausi Primary","Baiting","CREM 003",200,FALSE
+"KP6","KP6-S2","D4","UN","KP6-S2-D4-UN","Kausi Primary","Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","A1","CA","KP6-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",30,FALSE
+"KP6","KP6-S3","A2","CA","KP6-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",30,FALSE
+"KP6","KP6-S3","A3","CA","KP6-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","A4","CA","KP6-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","A1","UN","KP6-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","A2","UN","KP6-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","A3","UN","KP6-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","A4","UN","KP6-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","B1","CA","KP6-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","B2","CA","KP6-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","B3","CA","KP6-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","B4","CA","KP6-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","B1","UN","KP6-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","B2","UN","KP6-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","B3","UN","KP6-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","B4","UN","KP6-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C1","CA","KP6-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C2","CA","KP6-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C3","CA","KP6-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C4","CA","KP6-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C1","UN","KP6-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C2","UN","KP6-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C3","UN","KP6-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","C4","UN","KP6-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D1","CA","KP6-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D2","CA","KP6-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D3","CA","KP6-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D4","CA","KP6-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",75,FALSE
+"KP6","KP6-S3","D1","UN","KP6-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D2","UN","KP6-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D3","UN","KP6-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP6","KP6-S3","D4","UN","KP6-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 003",100,FALSE
+"KP2","KP2-S3","B2","UN","KP2-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",6,FALSE
+"KP2","KP2-S3","D3","UN","KP2-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting","CREM 007",1,FALSE
+"KP1","KP1-S3","D1","UN","KP1-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",4,FALSE
+"KP1","KP1-S3","D2","UN","KP1-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting","CAMP 001",10,FALSE
+"KP1","KP1-S1","C4","UN","KP1-S1-C4-UN","Kausi Primary","Baiting","PARA 006",1,FALSE
+"KP2","KP2-S1","B2","CA","KP2-S1-B2-CA","Kausi Primary","Baiting","CAMP 007",6,FALSE
+"NP5","NP5-S1","A3","UN","NP5-S1-A3-UN","Numba Primary","Baiting","ANON 015",1,FALSE
+"NP5","NP5-S1","A3","CA","NP5-S1-A3-CA","Numba Primary","Baiting","CALO 001",2,FALSE
+"NP5","NP5-S2","C1","UN","NP5-S2-C1-UN","Numba Primary","Baiting","OREC 001",2,FALSE
+"NP5","NP5-S3","B3","UN","NP5-S3-B3-UN","Numba Primary","Baiting","POLY 036",1,FALSE
+"NP5","NP5-S4","D3","UN","NP5-S4-D3-UN","Numba Primary","Baiting","TETR 012",1,FALSE
+"NP5","NP5-S5","B2","UN","NP5-S5-B2-UN","Numba Primary","Baiting","HYPO 003",2,FALSE
+"NP5","NP5-S5","B1","CA","NP5-S5-B1-CA","Numba Primary","Baiting","CREM 014",6,FALSE
+"NP4","NP4-S1","D1","CA","NP4-S1-D1-CA","Numba Primary","Baiting","PARA 013",15,FALSE
+"NP4","NP4-S5","B4","CA","NP4-S5-B4-CA","Numba Primary","Baiting","ANON 002",30,FALSE
+"NP4","NP4-S5","D3","CA","NP4-S5-D3-CA","Numba Primary","Baiting","ANON 002",6,FALSE
+"NP4","NP4-S5","B2","UN","NP4-S5-B2-UN","Numba Primary","Baiting","CREM 014",1,FALSE
+"NP4","NP4-S5","A3","UN","NP4-S5-A3-UN","Numba Primary","Baiting","POLY 041",6,FALSE
+"NP4","NP4-S3","D2","CA","NP4-S3-D2-CA","Numba Primary","Baiting","PHEI 014",10,FALSE
+"NP4","NP4-S3","C1","CA","NP4-S3-C1-CA","Numba Primary","Baiting","POLY 041",5,FALSE
+"NP4","NP4-S3","A1","UN","NP4-S3-A1-UN","Numba Primary","Baiting","ANON 002",6,FALSE
+"NP4","NP4-S3","A2","UN","NP4-S3-A2-UN","Numba Primary","Baiting","ANON 002",100,FALSE
+"NP4","NP4-S3","B2","UN","NP4-S3-B2-UN","Numba Primary","Baiting","PROL 002",6,FALSE
+"NP4","NP4-S2","C3","CA","NP4-S2-C3-CA","Numba Primary","Baiting","PARA 001",2,FALSE
+"NP4","NP4-S1","A1","CA","NP4-S1-A1-CA","Numba Primary","Baiting","PARA 001",6,FALSE
+"NP4","NP4-S1","C3","CA","NP4-S1-C3-CA","Numba Primary","Baiting","PHEI 007",10,FALSE
+"NP2","NP2-S2","C1","CA","NP2-S2-C1-CA","Numba Primary","Baiting","CREM 014",1,FALSE
+"NP2","NP2-S2","D2","UN","NP2-S2-D2-UN","Numba Primary","Baiting","PHEI 003",5,FALSE
+"NP2","NP2-S3","B4","UN","NP2-S3-B4-UN","Numba Primary","Baiting","PARA 006",30,FALSE
+"NP2","NP2-S4","D4","CA","NP2-S4-D4-CA","Numba Primary","Baiting","POLY 028",1,FALSE
+"NP2","NP2-S5","A4","CA","NP2-S5-A4-CA","Numba Primary","Baiting","CREM 014",1,FALSE
+"NP2","NP2-S5","C1","CA","NP2-S5-C1-CA","Numba Primary","Baiting","CAMP 001",6,FALSE
+"NP2","NP2-S5","D3","UN","NP2-S5-D3-UN","Numba Primary","Baiting","CARE 003",20,FALSE
+"NP2","NP2-S5","B2","UN","NP2-S5-B2-UN","Numba Primary","Baiting","RHYT 002",3,FALSE
+"NP2","NP2-S5","C3","UN","NP2-S5-C3-UN","Numba Primary","Baiting","PARA 003",6,FALSE
+"NP1","NP1-S1","C2","UN","NP1-S1-C2-UN","Numba Primary","Baiting","LORD 004",2,FALSE
+"NP1","NP1-S2","C2","UN","NP1-S2-C2-UN","Numba Primary","Baiting","TECH 004",6,FALSE
+"NP1","NP1-S2","B3","UN","NP1-S2-B3-UN","Numba Primary","Baiting","PODO 001",6,FALSE
+"NP1","NP1-S4","C4","UN","NP1-S4-C4-UN","Numba Primary","Baiting","PARA 007",100,FALSE
+"NP1","NP1-S2","A4","CA","NP1-S2-A4-CA","Numba Primary","Baiting","PHEI 007",15,FALSE
+"NP1","NP1-S2","B2","CA","NP1-S2-B2-CA","Numba Primary","Baiting","POLY 002",5,FALSE
+"NP1","NP1-S5","A1","CA","NP1-S5-A1-CA","Numba Primary","Baiting","CREM 005",5,FALSE
+"NP1","NP1-S3","D2","CA","NP1-S3-D2-CA","Numba Primary","Baiting","PROL 002",1,FALSE
+"NP1","NP1-S5","C3","UN","NP1-S5-C3-UN","Numba Primary","Baiting","TETR 012",1,FALSE
+"NP1","NP1-S2","B4","CA","NP1-S2-B4-CA","Numba Primary","Baiting","PARA 006",6,FALSE
