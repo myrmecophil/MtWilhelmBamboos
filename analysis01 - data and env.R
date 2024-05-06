@@ -274,7 +274,7 @@ write.csv(tree.meta, "tree.meta.csv", row.names=FALSE)
 ### 1. Are any plot attributes different between elevations?
 
 # Are canopy cover different between forests? - no
-caco_model <- glmmTMB(scale(log(Caco+1))~  Forest +(1|Block), data = plot.meta, family = gaussian)
+caco_model <- glmmTMB((Caco+1)~  Forest +(1|Block), data = plot.meta, family = gaussian(link="log"))
 summary(caco_model) #ns
 #
 testDispersion(caco_model) # ok
@@ -282,7 +282,7 @@ simulateResiduals(caco_model, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = caco_model)) # ok
 
 # Is slope different?
-slope_model <- glmmTMB(scale(log(slope.var+1))~  Forest +(1|Block), data = plot.meta, family = gaussian)
+slope_model <- glmmTMB((slope.var+1)~  Forest +(1|Block), data = plot.meta, family = gaussian(link="log"))
 summary(slope_model) # ns
 #
 testDispersion(slope_model) # ok
@@ -295,27 +295,29 @@ testZeroInflation(simulateResiduals(fittedModel = slope_model)) # ok
 tree.data<-merge(tree.meta.sub.ID, baiting.incidence)
 
 # Is dbh different between forests?
-model_dbh<- glmmTMB(scale(log(trunk+1)) ~  Forest + (1|Block/Plot), data = tree.data, family = gaussian)
-summary(model_dbh)# ns
+model_dbh<- glmmTMB((trunk+1) ~  Forest + (1|Block/Plot),
+                    data = tree.data, 
+                    family=gaussian(link="log"))
+summary(model_dbh)# 
 #
 testDispersion(model_dbh) # ok
-simulateResiduals(model_dbh, plot = T) # slight deviation but ok
+simulateResiduals(model_dbh, plot = T) # deviation but best I can do... 
 testZeroInflation(simulateResiduals(fittedModel = model_dbh)) # ok
 
 # Is number of deadwood pieces different?
-model_dw.n<- glmmTMB(scale(log(dw.number+1)) ~ Forest + (1|Block/Plot), data= tree.data, family = gaussian)
+model_dw.n<- glmmTMB((dw.number+1) ~ Forest + (1|Block/Plot), data= tree.data, family =  gaussian(link="log"))
 summary(model_dw.n)# ns
 #
 testDispersion(model_dw.n) # ok
-simulateResiduals(model_dw.n, plot = T) # some troubles
+simulateResiduals(model_dw.n, plot = T) # deviation but best I can do...
 testZeroInflation(simulateResiduals(fittedModel = model_dw.n)) # ok
 
 # is % deadwood cover different?
-model_dw.p<- glmmTMB(scale(log(dw.percent+1)) ~  Forest + (1|Block/Plot), data= tree.data, family = gaussian)
+model_dw.p<- glmmTMB((dw.percent+1) ~  Forest + (1|Block/Plot), data= tree.data, family = gaussian(link="log"))
 summary(model_dw.p)# ns
 #
 testDispersion(model_dw.p) # ok
-simulateResiduals(model_dw.p, plot = T) # lots of troubles
+simulateResiduals(model_dw.p, plot = T) # deviation but best I can do...
 testZeroInflation(simulateResiduals(fittedModel = model_dw.p)) # ok
 
 # Is number of lianas different?
@@ -430,4 +432,49 @@ slope.plot<-ggplot(plot.meta, aes(x=Forest, y=slope.var, fill = Forest)) +
   theme_minimal(15)
 slope.plot
 
+## random garbage
+library(purrr)
+library(broom.mixed)
+library(dplyr)
+library(DHARMa)
 
+# Is dbh different between forests?
+model_dbh<- glmmTMB((trunk+1) ~  Forest + (1|Block/Plot),
+                    data = tree.data, 
+                    gaussian(link="log"))
+summary(model_dbh)# 
+
+## truncated genpois doesn't work for some reason ...
+#fam <- c(fam, paste0("truncated_", fam[-1]))
+mod_list <- lapply(fam,
+                   function(f) {
+                     cat(f, "\n")
+                     update(model_dbh, family = f)
+                   })
+names(mod_list) <- fam
+mod_list[["compois"]] <- model2
+
+
+aictab <- (map_dfr(mod_list, glance, .id = "family")
+           |> select(-c(nobs,logLik, BIC))
+           |> mutate(across(c(AIC, deviance), ~ . - min(., na.rm = TRUE)))
+           |> arrange(AIC)
+)
+aictab
+##   family              sigma   AIC df.residual deviance
+##   <chr>               <dbl> <dbl>       <int>    <dbl>
+## 1 truncated_nbinom2 3.66e-8    0          569      NA
+## 2 nbinom2           1.39e+0  665.         569       0
+## 3 compois           5.29e+9  682.         569      NA
+## 4 genpois           1.33e+1  768.         569      NA
+## 5 nbinom1           8.11e+0  981.         569     191.
+## 6 truncated_poisson 1   e+0 1996.         570      NA
+## 7 poisson           1   e+0 2553.         570    2077.
+## 8 truncated_nbinom1 7.84e+0   NA          569      NA
+
+tnb <- mod_list
+
+## DHARMa
+ss <- simulateResiduals(tnb)
+plot(ss)
+plotResiduals(ss, form = d$ELs/20)

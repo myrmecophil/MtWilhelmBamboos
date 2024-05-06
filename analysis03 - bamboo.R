@@ -506,11 +506,11 @@ bamboo.occupancy.model2 <- glmmTMB(occupancy~Forest.x
 anova(bamboo.occupancy.model1, bamboo.occupancy.model2)
 # ns, no interaction
 
-summary(bamboo.occupancy.model2)
+summary(bamboo.occupancy.model1)
 #
-testDispersion(bamboo.occupancy.model2) # ok
-simulateResiduals(bamboo.occupancy.model2, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model2)) # ok 
+testDispersion(bamboo.occupancy.model1) # ok
+simulateResiduals(bamboo.occupancy.model1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.occupancy.model1)) # ok 
 
 # binominal model of bamboo nesting with environment
 bamboooccupancy.model.e1 <- glmmTMB(occupancy~Forest.x
@@ -600,7 +600,7 @@ summary(bamboo.abundance.model.e4)
 testDispersion(bamboo.abundance.model.e4) # ok
 simulateResiduals(bamboo.abundance.model.e4, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = bamboo.abundance.model.e4)) # ok
-
+# 
 #####   Bamboo Species diversity
 # get environment
 diversity.nester.e<-merge(diversity.nester,plot.meta2, by = "plot.stratum", all.x = TRUE)

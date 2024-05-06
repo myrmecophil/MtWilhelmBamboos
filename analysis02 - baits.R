@@ -589,7 +589,7 @@ baitdiversity.stratum.model.e2 <- glmmTMB(expH ~Forest.x
                                           +(1|Block.x/Plot.x),
                                           data = diversity.stratum.e, family = gaussian(link="log"))
 
-anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # interaction is better
+anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # no interaction
 
 summary(baitdiversity.stratum.model.e2)
 #
@@ -633,13 +633,11 @@ baitdiversity.model.eve.e2 <- glmmTMB(evenness ~Forest.x
 
 anova(baitdiversity.model.eve.e1, baitdiversity.model.eve.e2) #  interaction
 
-summary(baitdiversity.model.eve.e2)
+summary(baitdiversity.model.eve.e1)
 #
-testDispersion(baitdiversity.model.eve.e2) # ok
-simulateResiduals(baitdiversity.model.eve.e2, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e2)) # ok
-
-plot(allEffects(baitdiversity.model.eve.e2)) # model visualization
+testDispersion(baitdiversity.model.eve.e1) # ok
+simulateResiduals(baitdiversity.model.eve.e1, plot = T) # ok 
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e1)) # ok
 
 ### Bait species beta diversity, abundance-based
 

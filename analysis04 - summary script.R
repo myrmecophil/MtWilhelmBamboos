@@ -54,11 +54,20 @@ nest.abundance.stratum
 abundance.proportion.bait
 abundance.proportion.nest
 
+
 main_figure <- ggarrange(bait.occupancy.stratum, nests.final.occupancy.plot, bait.abundance.stratum, nest.abundance.stratum, bait.diversity.stratum, nest.diversity.stratum.plot,
                          labels = c("A", "B", "C", "D", "E", "F"),
                          ncol = 2, nrow = 3, common.legend = T
 )
 main_figure
+
+species_composition <- ggarrange(abundance.proportion.bait, abundance.proportion.nest,
+                         labels = c("A", "B"),
+                         ncol = 2, nrow = 1, common.legend =F
+)
+species_composition 
+
+
 
 # Supplement figure: Phase divided
 
@@ -68,12 +77,8 @@ supplement_phase_fig <- ggarrange(nest.occupancy.phase.plot, nest.diversity.phas
 )
 supplement_phase_fig
 
-species_composition
 
-temp.lianas<- ggarrange(temp_stratum,lianas.plot,
-                        labels = c("A", "B"),
-                        ncol = 2, nrow = 1, legend="right", common.legend = T)
-temp.lianas
+
 
 # maybe include in supplement..
 obs.sim.model = ggplot()+
