@@ -164,6 +164,7 @@ plot.metada.raw<-read.csv(file="raw data/Plots_2022_AntProject.csv", header=T)
 plot.metada.raw$Block<-as.factor(plot.metada.raw$Block)
 
 # calculate slope variation as mean of the 4 absolute slope values
+#PK: to correct slopesand in models yet  - shall be 5:8 column (takes one of GPS now instead slope..N)
 plot.metada.raw$slope.var <- apply(abs(plot.metada.raw[,c(6:9)]), 1, mean)
 
 # upload raw tree dat
@@ -385,7 +386,7 @@ dw.percent.plot<-ggplot(tree.data, aes(x=Forest, y=dw.percent, fill = Stratum)) 
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
-lianas.plot
+dw.percent.plot
 
 # plot deadwood pieces
 dw.number.plot<-ggplot(tree.data, aes(x=Forest, y=log(dw.number+1), fill = Stratum)) +
