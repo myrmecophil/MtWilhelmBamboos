@@ -17,7 +17,7 @@ package_list <-
     "DHARMa",
     "car",
     "emmeans",
-    "effects",
+    "ggeffects",
     "plotrix")
 
 # install all packages
@@ -375,7 +375,7 @@ bait.abundance.stratum<-ggplot(baiting.incidence, aes(x=Forest, y=log(Abundance+
   ylab("")+
   xlab("")+ 
   #ylim(0,50)+
-  geom_violin(lwd=1)+
+  geom_boxplot(lwd=1)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
