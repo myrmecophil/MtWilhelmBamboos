@@ -17,7 +17,7 @@ package_list <-
     "DHARMa",
     "car",
     "emmeans",
-    "ggeffects",
+    "effects",
     "plotrix")
 
 # install all packages
