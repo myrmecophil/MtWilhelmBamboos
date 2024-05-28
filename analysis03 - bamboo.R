@@ -60,7 +60,7 @@ nest.r<-nest.raw3%>%
   count(Forest.Treatment, survived.d)
 
 nest.r$percent<-nest.r$n/128*100
-nest.r$percent[nest.r$Forest.Treatment== "Numba Primary other elevation"] <- nest.r$n[nest.r$Forest.Treatment== "Numba Primary other elevation"]/255*100 # more total bamboos in other elevation treatment
+nest.r$percent[nest.r$Forest.Treatment== "Numba Primary other elevation"] <- nest.r$n[nest.r$Forest.Treatment== "Numba Primary other elevation"]/253*100 # more total bamboos in other elevation treatment (3 of 256 lost)
 
 # Survived as proportion of total nests
 nest.r%>% filter(survived.d != 'empty')%>%
@@ -128,6 +128,13 @@ phase.final<-merge(phase.t, counts)
 # proportion
 phase.final$proportion<-phase.final$occupancy/phase.final$n*100
 
+#PK: phase.final is odd: it contains 52 plots and occupancy for each, which fits 
+#28+(28-4)= all our  established plots minus eradicated, so even those plots not having bamboos at a phase, are included (duplicated?)  
+#e.g. KP-6-S1 is twice in data (example of duplicate)
+#I am not sure where data duplication happen
+#The phase.final  data are used perhaps only for Nest occupancy figure, not models, so correction is needed for the Fig. but shall not touch modelling
+#it may still affect the mean and offsets points I think in the figure though
+
 # Bamboo nest occupancy by phase
 nest.occupancy.phase.plot<-ggplot(phase.final, aes(x=Forest, y=proportion, fill=phase)) +
   ggtitle("Nest occupancy [%]") +
@@ -163,6 +170,12 @@ nest1 <- phase.nests %>%
 # merge with total baits
 nests.final<-merge(nest1, nests.c)
 
+#PK: Nest.final (plotting only): 56 replicates by plots and strata, but some are pooled across two phases (16 vs 32 bamboos)
+#We shall be using for plotting rather plot x  time  x stratum replicate (each about equal effort 16 bamboos in all as a "sample") I think
+# as this would be our sample if we would compare plot-wise proportions as mimics to our binomial tests we do on bamboos
+# (=if we would use actual plot-proportions for quasi-binomial test with phase included, you would not pool phases per plot)
+# the update will not change main pattern I think but will be a bit more data points
+
 # proportion
 nests.final$proportion<-nests.final$occupancy/nests.final$n*100
 
@@ -184,6 +197,11 @@ nests.final.occupancy.plot
 
 ##### ignoring phase and empty bamboos: Proportion of abundance
 # nest abundance (=size) plot
+
+#PK: "nest.abundance1": We claim in paper that we analyse and plot mean abundance of ants per occupied nest, so
+#we shall have each point as a nest, as we say in legends and method, and how also GLMM is done,
+# (not as a pool of  indiv. per plot across nests and phases as now, which is incorrect approach), 
+#to correct the  nest.abundance1 data calculation and the figure
 
 # summarize bamboo nest abundance
 nest.abundance1 <- phase.nests %>%
@@ -251,7 +269,10 @@ nest.abundance$percentage[nest.abundance$Forest=="Numba Primary"] <-nest.abundan
 sum(nest.abundance$percentage[nest.abundance$Forest=="Kausi Primary"])
 sum(nest.abundance$percentage[nest.abundance$Forest=="Numba Primary"])
 
-# Define "Rest" group at <5% of total incidence 
+# Define "Rest" group at <5% of total incidence
+# PK: Similar to baits you are summing not nest incidences but all workers counts across the nests 
+#This  differs how  it is it now in the paper and is not usual for ants (I think  composition by n of nests would be more logical) 
+# PK: in case of  baits it was 3% (should not we use same threshold in same figure for both, eihter 3 or 5?)
 nest.abundance$AntSpCode[nest.abundance$percentage < 5] <- "other species"
 
 # summarize bait incidence counts
@@ -281,6 +302,7 @@ abundance.proportion.nest
 
 # remove species from unoccupied bamboos (i.e., foragers)
 nesters<-phase.nests
+#PK: This line does not remove any data? (occupied and not occupied still in matrix, but seems not matter for the code so perhaps redundant)
 nesters$AntSpCode[nesters$occupancy==0]  <- ""
 
 # define plot.stratum
@@ -396,6 +418,7 @@ nest.proportion3<- nest.proportion3%>%
 nest.proportion3$AntSpCode <- as.factor(nest.proportion3$AntSpCode)
 nest.proportion3$AntSpCode <- relevel(nest.proportion3$AntSpCode, "other species")
 
+#PK: I think this is correct chart by n of nests and shall be used (and the one on baits done yet similarly)
 nesting.proportion<-ggplot(nest.proportion3, aes(x = Forest, y = percentage, fill = AntSpCode)) +
   geom_bar(stat = "identity", position = position_fill(reverse = TRUE), color='black') +
   xlab("") +
@@ -593,7 +616,7 @@ bamboo.abundance.model.e5 <- glmmTMB(nesting.estimate~Forest.x
                                      data=subset(bamboo.incidence.e, nesting.estimate!=0),
                                      family=nbinom2)
 
-anova(bamboo.abundance.model.e4, bamboo.abundance.model.e5) 
+anova(bamboo.abundance.model.e4, bamboo.abundance.model.e5) # ns, no interaction 
 
 summary(bamboo.abundance.model.e4)
 #

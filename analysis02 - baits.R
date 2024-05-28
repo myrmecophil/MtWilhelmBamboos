@@ -336,6 +336,8 @@ bait.abundance$percentage[bait.abundance$Forest=="Numba Primary"] <-bait.abundan
 sum(bait.abundance$percentage[bait.abundance$Forest=="Kausi Primary"])
 sum(bait.abundance$percentage[bait.abundance$Forest=="Numba Primary"])
 
+#PK: for bamboos it is 5% and also pooling individual ant abundances instead incidences (n of baits) 
+#We shall use bait incidencies (bait numbers instead) as well as for bamboo nests (see nest’ code comments)
 # Define "Rest" group at <3% of total abundance 
 bait.abundance$AntSpCODE[bait.abundance$percentage < 3] <- "other species"
 
@@ -439,6 +441,7 @@ summary(bait.double.model.e1)
 testDispersion(bait.double.model.e1) # ok
 simulateResiduals(bait.double.model.e1, plot = T) # good
 testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e1)) # ok
+
 
 ## Bait occupancy
 # get environmental data
@@ -591,7 +594,7 @@ baitdiversity.stratum.model.e2 <- glmmTMB(expH ~Forest.x
 
 anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # no interaction
 
-summary(baitdiversity.stratum.model.e2)
+summary(baitdiversity.stratum.model.e1)
 #
 testDispersion(baitdiversity.stratum.model.e2) # ok
 simulateResiduals(baitdiversity.stratum.model.e2, plot = T) # ok
@@ -672,3 +675,4 @@ summary(bait.total.model1) #
 testDispersion(bait.total.model1) # ok
 simulateResiduals(bait.total.model1, plot = T) #some heterogeneity in variance, but ok
 testZeroInflation(simulateResiduals(fittedModel = bait.total.model1)) # ok
+
