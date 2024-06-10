@@ -51,7 +51,6 @@ bait.double <- baiting.data %>%
 # to remove baits with no ants, merge with incidence data
 bait.double<-merge(bait.double, baiting.incidence)
 
-# if incidence is 0, put also 0 species, if 2 species on bait, put 2 otherwise 1 
 bait.double <-bait.double %>%
   mutate(species.per.bait = case_when(occupancy == 0 ~ 0,
                                       species.per.bait.raw > 1 ~ 2,
@@ -74,12 +73,13 @@ baits.final<-merge(bait1, baits.c)
 # proportion
 baits.final$proportion<-baits.final$occupancy/baits.final$n*100
 
-labs <- expression("lowland", "midelevation")
+# labels
+labs <- expression("lowland", "mid-elevation")
 
 # plot it
 bait.occupancy.stratum<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Stratum)) +
-  ggtitle("Bait occupancy [%]") +
-  ylab("")+
+  ggtitle("Bait occupancy") +
+  ylab("%")+
   xlab("")+ 
   ylim(0,100)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
@@ -106,6 +106,7 @@ ant_m<-ant_m[,-c(1,2)]
 # extract diversity values
 data3 <- data.frame(row.names(ant_m))     # create a new file with plot numbers
 names(data3) <- "plot.stratum" # rename variable "plot.stratum"
+
 data3$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon diversity per plot
 data3$Richness <- specnumber(ant_m)                          # Richness per plot
 data3$expH <- exp(data3$Shannon)                                         # exponential Shannon diversity per plot
@@ -119,10 +120,9 @@ diversity.stratum<-merge(data3, plot_m2)
 # 
 
 ## Plot it
-
 bait.diversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = Stratum)) +
-  ggtitle("Bait species diversity [expH]") +
-  ylab("")+
+  ggtitle("Bait species diversity") +
+  ylab("expH")+
   xlab("")+ 
   ylim(0,15)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
@@ -138,10 +138,9 @@ bait.diversity.stratum
 # 1.3 Bait composition -----
 #----------------------------------------------------------#
 
-# Plot scale species overlap, all
-# make matrices
+# Plot scale species overlap
+# make occurance matrices
 baits.matrix <- dcast(baiting.data, formula = Plot ~ AntSpCODE, length)
-baits.matrix
 
 # set rownames
 rownames(baits.matrix) <- baits.matrix[, 1]
@@ -153,218 +152,65 @@ dist.baits <- vegdist(baits.matrix, method = "bray")
 # global matrix of plot dissimiliarities
 dist.baits <- as.matrix(dist.baits)
 
-## select subsets
-# midelevation vs lowland
+## select plot distances: midelevation vs lowland
 m_vs_l <- dist.baits[c(1:12), c(13:32)]
 
 distance.baits.elev <- as.data.frame(rowMeans(m_vs_l))
 mean(colMeans(m_vs_l))
 std.error(colMeans(m_vs_l))
 
-## Species overlap, canopy only
-# make matrices
-baits.matrix.ca <- dcast(subset(baiting.data, Stratum=="CA"), formula = Plot ~ AntSpCODE, length)
-baits.matrix.ca
-
-# set rownames
-rownames(baits.matrix.ca) <- baits.matrix.ca[, 1]
-baits.matrix.ca <- baits.matrix.ca[, -c(1,2)]
-
-# Bray-Curtis Dissimilarity
-dist.baits <- vegdist(baits.matrix.ca, method = "bray")
-
-# global matrix of plot dissimiliarities
-dist.baits <- as.matrix(dist.baits)
-
-## select subsets
-# midelevation vs lowland
-m_vs_l.ca <- dist.baits[c(1:12), c(13:32)]
-
-distance.baits.elev.ca <- as.data.frame(rowMeans(m_vs_l.ca))
-mean(colMeans(m_vs_l.ca))
-std.error(colMeans(m_vs_l.ca))
-
-
-## Species overlap, understorey only
-# make matrices
-baits.matrix.un <- dcast(subset(baiting.data, Stratum=="UN"), formula = Plot ~ AntSpCODE, length)
-baits.matrix.un
-
-# set rownames
-rownames(baits.matrix.un) <- baits.matrix.un[, 1]
-baits.matrix.un <- baits.matrix.un[, -c(1,2)]
-
-# Bray-Curtis Dissimilarity
-dist.baits <- vegdist(baits.matrix.un, method = "bray")
-
-# global matrix of plot dissimiliarities
-dist.baits <- as.matrix(dist.baits)
-
-## select subsets
-# midelevation vs lowland
-m_vs_l.un <- dist.baits[c(1:12), c(13:32)]
-
-distance.baits.elev.un <- as.data.frame(rowMeans(m_vs_l.un))
-mean(colMeans(m_vs_l.un))
-std.error(colMeans(m_vs_l.un))
-
-## Species overlap, understorey vs canopy
-# in midelevation
-
-
-
-#### beta partitioning, abundance based
-
-#  abundance matrix
-baits.matrix.un.oc <-baits.matrix.un
-baits.matrix.ca.oc <-baits.matrix.ca
-
-beta.sim_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray.bal)
-beta.sne_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray.gra)
-beta.total_un <- as.matrix(beta.pair.abund(baits.matrix.un.oc, index.family = "bray")$beta.bray)
-
-
-beta.sim_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray.bal)
-beta.sne_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray.gra)
-beta.total_ca <- as.matrix(beta.pair.abund(baits.matrix.ca.oc, index.family = "bray")$beta.bray)
-
-# species replacement midelevation vs lowland, UN
-beta.sim_un <- beta.sim_un[c(1:12), c(13:32)]
-
-beta_un.sim.means <- as.data.frame(rowMeans(beta.sim_un))
-colnames(beta_un.sim.means)<-"sim"
-beta_un.sim.means$Stratum<-'UN'
-beta_un.sim.means$plot<-rownames(beta_un.sim.means)
-beta_un.sim.means$plot.stratum<-paste(beta_un.sim.means$plot,beta_un.sim.means$Stratum)
-mean(beta_un.sim.means$sim)
-
-# species replacement midelevation vs lowland, CA
-beta.sim_ca <- beta.sim_ca[c(1:12), c(13:32)]
-
-beta_ca.sim.means <- as.data.frame(rowMeans(beta.sim_ca))
-colnames(beta_ca.sim.means)<-"sim"
-beta_ca.sim.means$Stratum<-"CA"
-beta_ca.sim.means$plot<-rownames(beta_ca.sim.means)
-beta_ca.sim.means$plot.stratum<-paste(beta_ca.sim.means$plot,beta_ca.sim.means$Stratum)
-mean(beta_ca.sim.means$sim)
-
-# nestedness midelevation vs lowland, UN
-beta.sne_un <- beta.sne_un[c(1:12), c(13:32)]
-
-beta_un.sne.means <- as.data.frame(rowMeans(beta.sne_un))
-colnames(beta_un.sne.means)<-"sne"
-beta_un.sne.means$Stratum<-"UN"
-beta_un.sne.means$plot<-rownames(beta_un.sne.means)
-beta_un.sne.means$plot.stratum<-paste(beta_un.sne.means$plot,beta_un.sne.means$Stratum)
-mean(beta_un.sne.means$sne)
-
-# nestedness midelevation vs lowland, CA
-beta.sne_ca <- beta.sne_ca[c(1:12), c(13:32)]
-
-beta_ca.sne.means <- as.data.frame(rowMeans(beta.sne_ca))
-colnames(beta_ca.sne.means)<-"sne"
-beta_ca.sne.means$Stratum<-"CA"
-beta_ca.sne.means$plot<-rownames(beta_ca.sne.means)
-beta_ca.sne.means$plot.stratum<-paste(beta_ca.sne.means$plot,beta_ca.sne.means$Stratum)
-mean(beta_ca.sne.means$sne)
-
-# total turnover, midelevation vs lowland, UN
-beta.total_un <- beta.total_un[c(1:12), c(13:32)]
-
-beta_un.total.means <- as.data.frame(rowMeans(beta.total_un))
-colnames(beta_un.total.means)<-"total"
-beta_un.total.means$Stratum<-"UN"
-beta_un.total.means$plot<-rownames(beta_un.total.means)
-beta_un.total.means$plot.stratum<-paste(beta_un.total.means$plot,beta_un.total.means$Stratum)
-mean(beta_un.total.means$total)
-
-# total turnover, midelevation vs lowland, CA
-beta.total_ca <- beta.total_ca[c(1:12), c(13:32)]
-
-beta_ca.total.means <- as.data.frame(rowMeans(beta.total_ca))
-colnames(beta_ca.total.means)<-"total"
-beta_ca.total.means$Stratum<-"CA"
-beta_ca.total.means$plot<-rownames(beta_ca.total.means)
-beta_ca.total.means$plot.stratum<-paste(beta_ca.total.means$plot,beta_ca.total.means$Stratum)
-mean(beta_ca.total.means$total)
-
-# combine all values
-df<-rbind(beta_ca.sne.means, beta_un.sne.means)
-df1<-rbind(beta_ca.sim.means, beta_un.sim.means)
-df2<-rbind(beta_ca.total.means, beta_un.total.means)
-
-beta.all<-merge(df, df1, by="plot.stratum")
-beta.all<-merge(beta.all, df2, by="plot.stratum")
-
-beta.all.abund<-beta.all[,-c(3,4,6,7)]
-
-# plot abundance based
-bray_plot<-ggplot(beta.all.abund, aes(x=Stratum, y=total, colour = Stratum)) +
-  ggtitle("Elevational Species Turnover") +
-  ylab("Average Bray Curits Distance")+
-  xlab("Stratum")+ 
-  ylim(0.5,1.01)+
-  geom_boxplot(outlier.colour=NA, lwd=1)+
-  geom_jitter(data = beta.all.abund, aes(x = Stratum, y = total, colour = Stratum), alpha = 0.5, size = 3)+
-  scale_color_manual(values=c("#0072B2", "#E69F00"))+
-  guides(colour = "none")+
-  theme_minimal(20)
-bray_plot
-
 #### Species identity figure
 
 # summarize bait incidence counts
-bait.abundance <- baiting.data %>%
+bait.incidence<- baiting.data %>%
   group_by(Forest, AntSpCODE) %>%
-  summarize(Abundance = sum(Abundance))
+  summarize(incidence = n())
 
 # Remove empty baits
-bait.abundance <- bait.abundance[bait.abundance$AntSpCODE != "", ]
+bait.incidence <- bait.incidence[bait.incidence$AntSpCODE != "", ]
 
 # species with NA abundance have at least 1 worker, so set to 1
-bait.abundance$Abundance[is.na(bait.abundance$Abundance)] <-1
+bait.incidence$incidence[is.na(bait.incidence$incidence)] <-1
 
-n.kausi<-sum(bait.abundance$Abundance[bait.abundance$Forest=="Kausi Primary"])
-n.numba<-sum(bait.abundance$Abundance[bait.abundance$Forest=="Numba Primary"])
+n.kausi<-sum(bait.incidence$incidence[bait.incidence$Forest=="Kausi Primary"])
+n.numba<-sum(bait.incidence$incidence[bait.incidence$Forest=="Numba Primary"])
 
-bait.abundance$percentage<-0
+bait.incidence$percentage<-0
 
-bait.abundance$percentage[bait.abundance$Forest=="Kausi Primary"] <-bait.abundance$Abundance[bait.abundance$Forest=="Kausi Primary"]/n.kausi*100
-bait.abundance$percentage[bait.abundance$Forest=="Numba Primary"] <-bait.abundance$Abundance[bait.abundance$Forest=="Numba Primary"]/n.numba*100
+bait.incidence$percentage[bait.incidence$Forest=="Kausi Primary"] <-bait.incidence$incidence[bait.incidence$Forest=="Kausi Primary"]/n.kausi*100
+bait.incidence$percentage[bait.incidence$Forest=="Numba Primary"] <-bait.incidence$incidence[bait.incidence$Forest=="Numba Primary"]/n.numba*100
 
 # check sums
-sum(bait.abundance$percentage[bait.abundance$Forest=="Kausi Primary"])
-sum(bait.abundance$percentage[bait.abundance$Forest=="Numba Primary"])
+sum(bait.incidence$percentage[bait.incidence$Forest=="Kausi Primary"])
+sum(bait.incidence$percentage[bait.incidence$Forest=="Numba Primary"])
 
-#PK: for bamboos it is 5% and also pooling individual ant abundances instead incidences (n of baits) 
-#We shall use bait incidencies (bait numbers instead) as well as for bamboo nests (see nest’ code comments)
-# Define "Rest" group at <3% of total abundance 
-bait.abundance$AntSpCODE[bait.abundance$percentage < 3] <- "other species"
+# Define "Rest" group at <5% of total abundance 
+bait.incidence$AntSpCODE[bait.incidence$percentage < 3] <- "other species"
 
-bait.abundance$AntSpCODE<-as.factor(bait.abundance$AntSpCODE)
-bait.abundance$Forest<-as.factor(bait.abundance$Forest)
+bait.incidence$AntSpCODE<-as.factor(bait.incidence$AntSpCODE)
+bait.incidence$Forest<-as.factor(bait.incidence$Forest)
 
 # summarize bait percentage counts
-bait.abundance2<- bait.abundance%>% 
+bait.incidence<- bait.incidence%>% 
   group_by(Forest, AntSpCODE) %>% 
   summarise(percentage = sum(percentage))
 
 # Plot it
 
 # Change order of levels
-bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "CREM 014")
-bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "CREM 003")
-bait.abundance2$AntSpCODE <- relevel(bait.abundance2$AntSpCODE, "other species")
+bait.incidence$AntSpCODE <- relevel(bait.incidence$AntSpCODE, "CREM 014")
+bait.incidence$AntSpCODE <- relevel(bait.incidence$AntSpCODE, "CREM 003")
+bait.incidence$AntSpCODE <- relevel(bait.incidence$AntSpCODE, "other species")
 
-abundance.proportion.bait<-ggplot(bait.abundance2, aes(x = Forest, y = percentage, fill = AntSpCODE)) +
+incidence.proportion.bait<-ggplot(bait.incidence, aes(x = Forest, y = percentage, fill = AntSpCODE)) +
   geom_bar(stat = "identity",position= position_fill(reverse = TRUE), color='black') +
   xlab("") +
   labs(fill = "Ant species")+
   scale_x_discrete(labels=labs)+
-  ylab("relative abundance [%]") +
+  ylab("relative incidence [%]") +
   ggtitle("bait species composition") +
   theme_minimal()
-abundance.proportion.bait
+incidence.proportion.bait
 
 # summarize bait incidence counts
 bait.incidence <- baiting.data %>%
@@ -373,11 +219,12 @@ bait.incidence <- baiting.data %>%
 
 # Bait abundance plot
 bait.abundance.stratum<-ggplot(baiting.incidence, aes(x=Forest, y=log(Abundance+1), fill = Stratum)) +
-  ggtitle("Bait abundance [log+1]") +
-  ylab("")+
+  ggtitle("Bait abundance") +
+  ylab("ln(number of ants+1)")+
   xlab("")+ 
-  #ylim(0,50)+
-  geom_boxplot(lwd=1)+
+  geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
+             position=position_jitterdodge(0.1), alpha=0.8)+
+  geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
@@ -425,7 +272,7 @@ bait.double.model.e1 <- glmmTMB(species.per.bait~Forest
 
 bait.double.model.e2 <- glmmTMB(species.per.bait~Forest
                                 *Stratum
-                                *scale(log(Lianas.n+1))
+                                +scale(log(Lianas.n+1))
                                 +scale(log(dw.percent+1))
                                 +scale(log(dw.number+1))
                                 +scale(log(trunk+1))
@@ -441,7 +288,6 @@ summary(bait.double.model.e1)
 testDispersion(bait.double.model.e1) # ok
 simulateResiduals(bait.double.model.e1, plot = T) # good
 testZeroInflation(simulateResiduals(fittedModel = bait.double.model.e1)) # ok
-
 
 ## Bait occupancy
 # get environmental data
@@ -478,7 +324,7 @@ baitoccupancy.model.e1 <- glmmTMB(occupancy~Forest
 
 baitoccupancy.model.e2 <- glmmTMB(occupancy~Forest
                                   *Stratum
-                                  *scale(log(Lianas.n+1))
+                                  +scale(log(Lianas.n+1))
                                   +scale(log(dw.percent+1))
                                   +scale(log(dw.number+1))
                                   +scale(log(trunk+1))
@@ -530,7 +376,7 @@ baitabundance.model.e1 <- glmmTMB(Abundance~Forest
 
 baitabundance.model.e2 <- glmmTMB(Abundance~Forest
                                   *Stratum
-                                  *scale(log(Lianas.n+1))
+                                  +scale(log(Lianas.n+1))
                                   +scale(log(dw.percent+1))
                                   +scale(log(dw.number+1))
                                   +scale(log(trunk+1))
@@ -540,14 +386,13 @@ baitabundance.model.e2 <- glmmTMB(Abundance~Forest
                                   data=baiting.incidence.e,
                                   family=nbinom1)
 
-anova(baitabundance.model.e1, baitabundance.model.e2) # better with interaction
+anova(baitabundance.model.e1, baitabundance.model.e2) # no interaction
 
-summary(baitabundance.model.e2)
+summary(baitabundance.model.e1)
 #
-testDispersion(baitabundance.model.e2) # ok
-simulateResiduals(baitabundance.model.e2, plot = T) #   ok-ish
-testZeroInflation(simulateResiduals(fittedModel = baitabundance.model.e2)) # ok
-plot(allEffects(baitabundance.model.e2)) # model visualization
+testDispersion(baitabundance.model.e1) # ok
+simulateResiduals(baitabundance.model.e1, plot = T) #   ok-ish
+testZeroInflation(simulateResiduals(fittedModel = baitabundance.model.e1)) # ok
 
 #####  Baiting diversity 
 
@@ -583,7 +428,7 @@ baitdiversity.stratum.model.e1 <- glmmTMB(expH ~Forest.x
 
 baitdiversity.stratum.model.e2 <- glmmTMB(expH ~Forest.x
                                           *Stratum
-                                          *scale(Lianas.n_mean)
+                                          +scale(Lianas.n_mean)
                                           +scale(log(slope.var+1))
                                           +scale(log(Caco+1))
                                           +scale(trunk_mean)
@@ -596,9 +441,9 @@ anova(baitdiversity.stratum.model.e1, baitdiversity.stratum.model.e2) # no inter
 
 summary(baitdiversity.stratum.model.e1)
 #
-testDispersion(baitdiversity.stratum.model.e2) # ok
-simulateResiduals(baitdiversity.stratum.model.e2, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e2)) # ok
+testDispersion(baitdiversity.stratum.model.e1) # ok
+simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
 
 # evenness
 baitdiversity.model.eve1 <- glmmTMB(evenness ~ Forest.x + Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
@@ -625,7 +470,7 @@ baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest.x
 
 baitdiversity.model.eve.e2 <- glmmTMB(evenness ~Forest.x
                                       *Stratum
-                                      *scale(Lianas.n_mean)
+                                      +scale(Lianas.n_mean)
                                       +scale(log(slope.var+1))
                                       +scale(log(Caco+1))
                                       +scale(trunk_mean)
@@ -675,4 +520,3 @@ summary(bait.total.model1) #
 testDispersion(bait.total.model1) # ok
 simulateResiduals(bait.total.model1, plot = T) #some heterogeneity in variance, but ok
 testZeroInflation(simulateResiduals(fittedModel = bait.total.model1)) # ok
-

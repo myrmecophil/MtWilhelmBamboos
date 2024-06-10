@@ -14,7 +14,7 @@
 #----------------------------------------------------------#
 ### List of R-packages
 #----------------------------------------------------------#
- 
+
 package_list <- 
   c("dplyr",
     "tidyr",
@@ -62,20 +62,20 @@ parse_abundance <- function(x) {
 # Import raw occurrence data
 baiting.raw<-read.csv(file="raw data/BaitsData.csv", header=T)
 
-
-# remove post poison data
-baiting.raw<-subset(baiting.raw, Season!="Kausi September Baiting")
-baiting.raw<-subset(baiting.raw, Season!="Kausi Post-Poison Baiting")
-
 # calculate abundance
 baiting.raw$Abundance <- apply(baiting.raw["Abundance"], 1, parse_abundance)
 
 # define empty baits as 0 abundance
 baiting.raw$Abundance[is.na(baiting.raw$Abundance)] <- 0
 
+# remove post poison data
+baiting.raw<-subset(baiting.raw, Season!="Kausi September Baiting")
+baiting.raw<-subset(baiting.raw, Season!="Kausi Post-Poison Baiting")
+
 # select relevant columns
 baiting.data <- baiting.raw %>%
   dplyr::select(Block, Plot, Subplot, Stratum, Code, Forest, Season, AntSpCODE, Abundance, Bait.missing)
+
 
 # remove missing baits
 baiting.data<-subset(baiting.data, Bait.missing==FALSE)
@@ -132,12 +132,12 @@ nesters <-nest.raw2 %>%
 ## Separate data sets, then put them back together so that counts and occupancies of ants from phase 1 and 2 are in the same column
 
 phase1.nests <- nesters %>%
-  dplyr::select(Block, Plot, Stratum, Code, Forest, Treatment, AntSpCode, nesting.estimate, phase1.occupancy,LOST.REPLACED)%>%
-  rename(occupancy = phase1.occupancy, lost = LOST.REPLACED)
+  dplyr::select(Block, Plot, Stratum, Code, Forest, Treatment, AntSpCode, nesting.estimate, phase1.occupancy,LOST.REPLACED, Cavity..mm.)%>%
+  rename(occupancy = phase1.occupancy, lost = LOST.REPLACED, cav.size =Cavity..mm.)
 
 phase2.nests <- nesters %>%
-  dplyr::select(Moved.to.block, Moved.to.plot, Stratum, Code, moved.to.forest, Treatment, AntSpCODE.final, N.ants, phase2.occupancy, LOST.FINAL) %>%
-  rename(Block = Moved.to.block, Plot = Moved.to.plot, Forest = moved.to.forest, occupancy = phase2.occupancy,lost = LOST.FINAL, AntSpCode = AntSpCODE.final, nesting.estimate=N.ants)
+  dplyr::select(Moved.to.block, Moved.to.plot, Stratum, Code, moved.to.forest, Treatment, AntSpCODE.final, N.ants, phase2.occupancy, LOST.FINAL, Cavity..mm.) %>%
+  rename(Block = Moved.to.block, Plot = Moved.to.plot, Forest = moved.to.forest, occupancy = phase2.occupancy,lost = LOST.FINAL, AntSpCode = AntSpCODE.final, nesting.estimate=N.ants, cav.size =Cavity..mm.)
 
 phase1.nests$phase <- "phase 1"
 phase2.nests$phase <- "phase 2"
@@ -164,8 +164,7 @@ plot.metada.raw<-read.csv(file="raw data/Plots_2022_AntProject.csv", header=T)
 plot.metada.raw$Block<-as.factor(plot.metada.raw$Block)
 
 # calculate slope variation as mean of the 4 absolute slope values
-#PK: to correct slopesand in models yet  - shall be 5:8 column (takes one of GPS now instead slope..N)
-plot.metada.raw$slope.var <- apply(abs(plot.metada.raw[,c(6:9)]), 1, mean)
+plot.metada.raw$slope.var <- apply(abs(plot.metada.raw[,c(5:8)]), 1, mean)
 
 # upload raw tree dat
 tree.metada.raw<-read.csv(file="raw data/TreeAttributes.csv", header=T)
@@ -173,20 +172,23 @@ tree.metada.raw<-read.csv(file="raw data/TreeAttributes.csv", header=T)
 # turn number of lianas into numeric
 tree.metada.raw$Lianas.n <- as.numeric(gsub('>', '', tree.metada.raw$Lianas))
 
+# calculate DBH as pi*trunk circumference
+tree.metada.raw$DBH<-pi*tree.metada.raw$Trunk.perimenter..cm.
+
 # define plot.stratum 
 tree.metada.raw$plot.stratum<-paste(tree.metada.raw$Plot,tree.metada.raw$Stratum)
 
 # Prepare tree-level metadata for later models
 tree.meta.sub<-tree.metada.raw %>%
-  dplyr::select(Plot, plot.stratum, mastercode, Trunk.perimenter..cm., tree.ID, Lianas.n, deadwood.., deadwood., Bait.Bamboo.Height.m.)%>%
-  rename(trunk =Trunk.perimenter..cm., Code = mastercode, height = Bait.Bamboo.Height.m., dw.percent = deadwood., dw.number=deadwood..)
+  dplyr::select(Plot, plot.stratum, mastercode, DBH, tree.ID, Lianas.n, deadwood.., deadwood., Bait.Bamboo.Height.m.)%>%
+  rename(trunk = DBH, Code = mastercode, height = Bait.Bamboo.Height.m., dw.percent = deadwood., dw.number=deadwood..)
 
 plot.metada.sub<-  plot.metada.raw %>%
   dplyr::select(Plot_code, Block, forest_type, Canopy.cover..Caco., elevation, slope.var)%>%
   rename(Plot=Plot_code, Forest = forest_type, Caco =Canopy.cover..Caco.)
 
 ## calculate tree metadata as means on plot level
-# first get rid of tree duplicates measures
+# first get rid of tree duplicates measurespi
 tree.meta.sub.ID<-distinct(tree.meta.sub, tree.ID, .keep_all = TRUE)
 
 tree.meta.plot<-tree.meta.sub.ID %>%
@@ -296,33 +298,46 @@ testZeroInflation(simulateResiduals(fittedModel = slope_model)) # ok
 tree.data<-merge(tree.meta.sub.ID, baiting.incidence)
 
 # Is dbh different between forests?
-model_dbh<- glmmTMB((trunk+1) ~  Forest + (1|Block/Plot),
+model_dbh1<- glmmTMB((trunk+1) ~  Forest + Stratum+ (1|Block/Plot),
                     data = tree.data, 
                     family=gaussian(link="log"))
-summary(model_dbh)# 
+model_dbh2<- glmmTMB((trunk+1) ~  Forest * Stratum + (1|Block/Plot),
+                     data = tree.data, 
+                     family=gaussian(link="log"))
+anova(model_dbh1,model_dbh2)
+summary(model_dbh1)# 
 #
-testDispersion(model_dbh) # ok
-simulateResiduals(model_dbh, plot = T) # deviation but best I can do... 
-testZeroInflation(simulateResiduals(fittedModel = model_dbh)) # ok
+testDispersion(model_dbh1) # ok
+simulateResiduals(model_dbh1, plot = T) # deviation but best I can do... 
+testZeroInflation(simulateResiduals(fittedModel = model_dbh1)) # ok
 
 # Is number of deadwood pieces different?
-model_dw.n<- glmmTMB((dw.number+1) ~ Forest + (1|Block/Plot), data= tree.data, family =  gaussian(link="log"))
-summary(model_dw.n)# ns
+model_dw.n1<- glmmTMB((dw.number+1) ~ Forest  +Stratum + (1|Block/Plot), data= tree.data, family =  gaussian(link="log"))
+model_dw.n2<- glmmTMB((dw.number+1) ~ Forest  * Stratum + (1|Block/Plot), data= tree.data, family =  gaussian(link="log"))
+anova(model_dw.n1,model_dw.n2)
+
+summary(model_dw.n1)# ns
 #
-testDispersion(model_dw.n) # ok
-simulateResiduals(model_dw.n, plot = T) # deviation but best I can do...
-testZeroInflation(simulateResiduals(fittedModel = model_dw.n)) # ok
+testDispersion(model_dw.n1) # ok
+simulateResiduals(model_dw.n1, plot = T) # deviation but best I can do...
+testZeroInflation(simulateResiduals(fittedModel = model_dw.n1)) # ok
 
 # is % deadwood cover different?
-model_dw.p<- glmmTMB((dw.percent+1) ~  Forest + (1|Block/Plot), data= tree.data, family = gaussian(link="log"))
-summary(model_dw.p)# ns
+model_dw.p1<- glmmTMB((dw.percent+1) ~  Forest + Stratum + (1|Block/Plot), data= tree.data, family = gaussian(link="log"))
+model_dw.p2<- glmmTMB((dw.percent+1) ~  Forest * Stratum + (1|Block/Plot), data= tree.data, family = gaussian(link="log"))
+anova(model_dw.p1, model_dw.p2)
+
+summary(model_dw.p2)# ns
 #
-testDispersion(model_dw.p) # ok
-simulateResiduals(model_dw.p, plot = T) # deviation but best I can do...
-testZeroInflation(simulateResiduals(fittedModel = model_dw.p)) # ok
+testDispersion(model_dw.p2) # ok
+simulateResiduals(model_dw.p2, plot = T) # deviation but best I can do...
+testZeroInflation(simulateResiduals(fittedModel = model_dw.p2)) # ok
 
 # Is number of lianas different?
-model_lianas1<- glmmTMB(Lianas.n ~  Forest+(1|Block/Plot), data= tree.data, family = nbinom2())
+model_lianas1<- glmmTMB(Lianas.n ~  Forest+ Stratum+ (1|Block/Plot), data= tree.data, family = nbinom2())
+model_lianas2<- glmmTMB(Lianas.n ~  Forest* Stratum + (1|Block/Plot), data= tree.data, family = nbinom2())
+anova(model_lianas1, model_lianas2)
+
 summary(model_lianas1) # ns
 #
 testDispersion(model_lianas1) # ok
@@ -331,18 +346,28 @@ testZeroInflation(simulateResiduals(fittedModel = model_lianas1)) # ok
 
 # correlation plot of environmental variables. Note: does not include tree duplicates
 names(tree.meta)
+
 # remove duplicate tree IDs
 tree.meta.sub2<-distinct(tree.meta, tree.ID, .keep_all = TRUE)
 
-mydata.cor <- cor(tree.meta.sub2[, c(4, 6:9,12:14)], method = c("spearman"), use = "pairwise.complete.obs")
+# select environmental variables
+variables.env<-tree.meta.sub2[, c(4, 6:9,12:14)]
+colnames(variables.env) <- c("DBH", "Lianas (#)", "Deadwood (#)", "Deadwood (%)", "Height", "Canopy Cover", "Elevation", 'Slope')
+
+# move column 'Elevation' to last position
+variables.env<-variables.env %>% select(-Elevation, Elevation)
+
+
+# Plot 
+mydata.cor <- cor(variables.env, method = c("spearman"), use = "pairwise.complete.obs")
 corrplot(mydata.cor,
-         method = "color", type = "lower", order = "AOE", diag = F,
+         method = "color", type = "lower", order = "original", diag = F,
          tl.col = "black", outline = T, addCoef.col = "black", number.cex = 0.8,
-         tl.cex = 1.1, cl.cex = 0.9
+         tl.cex = 1.1, cl.cex = 0.9,
 )
 
 # plot lianas (without duplicates)
-labs <- expression("lowland", "midelevation")
+labs <- expression("lowland", "mid-elevation")
 
 lianas.plot<-ggplot(tree.data, aes(x=Forest, y=log(Lianas.n+1), fill = Stratum)) +
   ggtitle("Number of Lianas") +
@@ -386,7 +411,7 @@ dw.percent.plot<-ggplot(tree.data, aes(x=Forest, y=dw.percent, fill = Stratum)) 
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
-dw.percent.plot
+lianas.plot
 
 # plot deadwood pieces
 dw.number.plot<-ggplot(tree.data, aes(x=Forest, y=log(dw.number+1), fill = Stratum)) +
@@ -432,50 +457,3 @@ slope.plot<-ggplot(plot.meta, aes(x=Forest, y=slope.var, fill = Forest)) +
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
 slope.plot
-
-## random garbage
-library(purrr)
-library(broom.mixed)
-library(dplyr)
-library(DHARMa)
-
-# Is dbh different between forests?
-model_dbh<- glmmTMB((trunk+1) ~  Forest + (1|Block/Plot),
-                    data = tree.data, 
-                    gaussian(link="log"))
-summary(model_dbh)# 
-
-## truncated genpois doesn't work for some reason ...
-#fam <- c(fam, paste0("truncated_", fam[-1]))
-mod_list <- lapply(fam,
-                   function(f) {
-                     cat(f, "\n")
-                     update(model_dbh, family = f)
-                   })
-names(mod_list) <- fam
-mod_list[["compois"]] <- model2
-
-
-aictab <- (map_dfr(mod_list, glance, .id = "family")
-           |> select(-c(nobs,logLik, BIC))
-           |> mutate(across(c(AIC, deviance), ~ . - min(., na.rm = TRUE)))
-           |> arrange(AIC)
-)
-aictab
-##   family              sigma   AIC df.residual deviance
-##   <chr>               <dbl> <dbl>       <int>    <dbl>
-## 1 truncated_nbinom2 3.66e-8    0          569      NA
-## 2 nbinom2           1.39e+0  665.         569       0
-## 3 compois           5.29e+9  682.         569      NA
-## 4 genpois           1.33e+1  768.         569      NA
-## 5 nbinom1           8.11e+0  981.         569     191.
-## 6 truncated_poisson 1   e+0 1996.         570      NA
-## 7 poisson           1   e+0 2553.         570    2077.
-## 8 truncated_nbinom1 7.84e+0   NA          569      NA
-
-tnb <- mod_list
-
-## DHARMa
-ss <- simulateResiduals(tnb)
-plot(ss)
-plotResiduals(ss, form = d$ELs/20)
