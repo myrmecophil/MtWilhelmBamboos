@@ -7,7 +7,7 @@
 ### Associated csv files:
 
 # BaitsData.csv: data on the baiting experiment
-# NestsData.csv: data on bamboon nesting
+# NestsData.csv: data on bamboo nesting
 # Plots_2022_AntProject.csv: Plot attributes
 # TreeAttributes.csv: Tree attributes
 
@@ -173,6 +173,8 @@ tree.metada.raw<-read.csv(file="raw data/TreeAttributes.csv", header=T)
 tree.metada.raw$Lianas.n <- as.numeric(gsub('>', '', tree.metada.raw$Lianas))
 
 # calculate DBH as pi*trunk circumference
+#PK: Whole code seems ok to me except this - you shall divide by pi, not multiply, to get a diameter
+#so you do not get 10 m  wide trees in charts:]
 tree.metada.raw$DBH<-pi*tree.metada.raw$Trunk.perimenter..cm.
 
 # define plot.stratum 
@@ -383,9 +385,9 @@ lianas.plot<-ggplot(tree.data, aes(x=Forest, y=log(Lianas.n+1), fill = Stratum))
   theme_minimal(15)
 lianas.plot
 
-# plot tree circumference
+# plot tree DBH
 trunk.plot<-ggplot(tree.data, aes(x=Forest, y=log(trunk+1), fill = Stratum)) +
-  ggtitle("Tree circumference [ln(n+1)]") +
+  ggtitle("Tree DBH [ln(n+1)]") +
   ylab("")+
   xlab("")+ 
   #ylim(0,4)+
