@@ -264,7 +264,7 @@ data2$Shannon <- diversity(ant_n.phase1, index = "shannon", base = exp(1)) # Sha
 data2$Richness <- specnumber(ant_n.phase1)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                  # define exp(Shannon) = 0
-data2$evenness <- data2$expH/specnumber(ant_n.phase1) # evenness per plot
+data2$evenness <- data2$Shannon/log(33) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -279,7 +279,7 @@ data2$Shannon <- diversity(ant_n.phase2, index = "shannon", base = exp(1)) # Sha
 data2$Richness <- specnumber(ant_n.phase2)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data2$evenness <- data2$expH/specnumber(ant_n.phase2) # evenness per plot
+data2$evenness <- data2$Shannon/log(33) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -291,7 +291,7 @@ diversity.nester <-rbind(phase1.diversity, phase2.diversity)
 
 # Plot nester diversity, phase dependence
 nest.diversity.phase.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=phase)) +
-  ggtitle("Nester diversity") +
+  ggtitle("Nest species diversity") +
   labs(fill = "Phase")+  
   ylab("expH")+
   xlab("")+ 
@@ -596,6 +596,63 @@ bamboo.diversity.model.e2 <- glmmTMB((expH) ~ Forest.x
                                      +(1|Block.x/Plot.x),
                                      zi=~Forest.x,
                                      data = diversity.nester.e, family=gaussian(link=identity))
+
+anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # no interaction better
+
+summary(bamboo.diversity.model.e1)
+#
+testDispersion(bamboo.diversity.model.e1) # ok
+simulateResiduals(bamboo.diversity.model.e1, plot = T) # ok-ish
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e1)) # ok
+
+# evenness
+bamboo.eve.model1 <- glmmTMB((evenness+1) ~ Forest.x
+                                   +Stratum
+                                   +new.Treatment
+                                   +(1|Block.x/Plot.x), 
+                                   data = diversity.nester.e, 
+                                   family=gaussian(link="log"))
+
+bamboo.eve.model2 <- glmmTMB((evenness+1) ~ Forest.x
+                                   *Stratum
+                                   +new.Treatment
+                                   +(1|Block.x/Plot.x), 
+                                   data = diversity.nester.e, 
+                                   family=gaussian(link="log"))
+
+
+anova(bamboo.diversity.model1,bamboo.diversity.model2) # ns, no interaction
+#
+summary(bamboo.eve.model1)
+#
+testDispersion(bamboo.diversity.model1) # ok
+simulateResiduals(bamboo.diversity.model1, plot = T) # ok
+testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model1)) # ok
+
+# bamboo evenness  with environment metadata
+bamboo.diversity.model.e1 <- glmmTMB((evenness+0.001) ~ Forest.x
+                                     +Stratum
+                                     +scale(log(Lianas.n_mean))
+                                     +scale(log(dw.percent_mean))
+                                     +scale(log(dw.number_mean))
+                                     +scale(log(trunk_mean))
+                                     +scale(log(Caco+1))
+                                     +scale(log(slope.var+1))
+                                     +new.Treatment
+                                     +(1|Block.x/Plot.x),
+                                     data = diversity.nester.e, family = tweedie(link = "log"))
+
+bamboo.diversity.model.e2 <- glmmTMB((evenness+1) ~ Forest.x
+                                     *Stratum
+                                     +scale(log(Lianas.n_mean))
+                                     +scale(log(dw.percent_mean))
+                                     +scale(log(dw.number_mean))
+                                     +scale(log(trunk_mean))
+                                     +scale(log(Caco+1))
+                                     +scale(log(slope.var+1))
+                                     +new.Treatment
+                                     +(1|Block.x/Plot.x),
+                                     data = diversity.nester.e, family=gaussian(link="log"))
 
 anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # no interaction better
 

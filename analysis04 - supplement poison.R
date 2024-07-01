@@ -40,8 +40,8 @@ set.seed(1234)
 setwd("~/GitHub/MtWilhelmBamboos")
 
 
----------------------------------------------------------#
-  # Baits analysis for poison plots -----
+#---------------------------------------------------------#
+# Baits analysis for poison plots -----
 #----------------------------------------------------------#
 
 # Get data
@@ -119,11 +119,10 @@ std.error(subset(baiting.incidence, Season=="Kausi Pre-Poison Baiting")$Abundanc
 mean(subset(baiting.incidence, Season=="Kausi Post-Poison Baiting")$Abundance)
 std.error(subset(baiting.incidence, Season=="Kausi Post-Poison Baiting")$Abundance)
 
----------------------------------------------------------#
-  # Bamboo analysis for poison plots -----
+#---------------------------------------------------------#
+# Bamboo analysis for poison plots -----
 #----------------------------------------------------------#
 
-# Get data
 phase.nests <- read.csv(file="phase.nests.csv", header=T)
 
 # define poison/no poisoned plots

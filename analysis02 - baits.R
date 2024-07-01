@@ -109,9 +109,10 @@ names(data3) <- "plot.stratum" # rename variable "plot.stratum"
 
 data3$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon diversity per plot
 data3$Richness <- specnumber(ant_m)                          # Richness per plot
-data3$expH <- exp(data3$Shannon)                                         # exponential Shannon diversity per plot
-data3$expH[data3$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data3$evenness <- data3$expH/specnumber(ant_m) # evenness per plot
+data3$expH <- exp(data3$Shannon)                             # exponential Shannon diversity per plot
+data3$expH[data3$Richness == 0] <- 0                         # define exp(Shannon) = 0
+data3$evenness <- data3$Shannon/log(89) # Pielou's evenness per plot
+
 str(data3)
 
 # add Plot location
@@ -446,8 +447,11 @@ simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
 
 # evenness
-baitdiversity.model.eve1 <- glmmTMB(evenness ~ Forest.x + Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
-baitdiversity.model.eve2 <- glmmTMB(evenness ~ Forest.x * Stratum+ (1|Block.x/Plot.x), data = diversity.stratum.e, family = gaussian)
+baitdiversity.model.eve1 <- glmmTMB((evenness+1) ~ Forest.x + Stratum+ (1|Block.x/Plot.x),
+                                    data = diversity.stratum.e,
+                                    family = gaussian(link="log"))
+baitdiversity.model.eve2 <- glmmTMB((evenness+1) ~ Forest.x * Stratum+ (1|Block.x/Plot.x),
+                                    data = diversity.stratum.e, gaussian(link="log"))
 anova(baitdiversity.model.eve1, baitdiversity.model.eve2) # no interaction
 
 summary(baitdiversity.model.eve1)
@@ -457,7 +461,7 @@ simulateResiduals(baitdiversity.model.eve1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve1)) # ok
 
 # evenness with environmental factors
-baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest.x
+baitdiversity.model.eve.e1 <- glmmTMB((evenness+1) ~Forest.x
                                       +Stratum
                                       +scale(Lianas.n_mean)
                                       +scale(log(slope.var+1))
@@ -466,9 +470,9 @@ baitdiversity.model.eve.e1 <- glmmTMB(evenness ~Forest.x
                                       +scale(dw.number_mean)
                                       +scale(dw.percent_mean) 
                                       +(1|Block.x/Plot.x),
-                                      data = diversity.stratum.e, family = gaussian)
+                                      data = diversity.stratum.e, family = gaussian(link="log"))
 
-baitdiversity.model.eve.e2 <- glmmTMB(evenness ~Forest.x
+baitdiversity.model.eve.e2 <- glmmTMB((evenness+1) ~Forest.x
                                       *Stratum
                                       +scale(Lianas.n_mean)
                                       +scale(log(slope.var+1))
@@ -477,7 +481,7 @@ baitdiversity.model.eve.e2 <- glmmTMB(evenness ~Forest.x
                                       +scale(dw.number_mean)
                                       +scale(dw.percent_mean) 
                                       +(1|Block.x/Plot.x),
-                                      data = diversity.stratum.e, family = gaussian)
+                                      data = diversity.stratum.e, family = gaussian(link="log"))
 
 anova(baitdiversity.model.eve.e1, baitdiversity.model.eve.e2) #  interaction
 
@@ -486,37 +490,3 @@ summary(baitdiversity.model.eve.e1)
 testDispersion(baitdiversity.model.eve.e1) # ok
 simulateResiduals(baitdiversity.model.eve.e1, plot = T) # ok 
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e1)) # ok
-
-### Bait species beta diversity, abundance-based
-
-# NOTE: Here, we look at stratum-level, i.e. twice for each plot (understory+canopy)
-
-# get environmental data: plot.meta2 has averages for variables on Stratum-level (2 strata per plot)
-beta.stratum.a<-merge(beta.all.abund, plot.meta2, by.x = 'plot.stratum', by.y = 'plot.stratum', all.x = T)
-
-# Fit a model for species turnover (Beta sim). 
-bait.sim.model1 <- glmmTMB(sim ~ Stratum+ (1|Block/Plot), data = beta.stratum.a, family = gaussian)
-
-summary(bait.sim.model1) #
-#
-testDispersion(bait.sim.model1) # ok
-simulateResiduals(bait.sim.model1, plot = T) # some heterogeneity in variance, but ok
-testZeroInflation(simulateResiduals(fittedModel = bait.sim.model1)) # ok
-
-# Fit a model for nestedness
-bait.sne.model1 <- glmmTMB((sne+1) ~ Stratum+(1|Block/Plot), data = beta.stratum.a, family = gaussian(link="log"))
-
-summary(bait.sne.model1) 
-#
-testDispersion(bait.sne.model1) # ok
-simulateResiduals(bait.sne.model1, plot = T) # some heterogeneity in variance, but ok
-testZeroInflation(simulateResiduals(fittedModel = bait.sne.model1)) # ok
-
-# Fit a model for total turnover (Soerensen)
-bait.total.model1 <- glmmTMB(total ~ Stratum+ (1|Block/Plot), data = beta.stratum.a, family=gaussian)
-
-summary(bait.total.model1) # 
-
-testDispersion(bait.total.model1) # ok
-simulateResiduals(bait.total.model1, plot = T) #some heterogeneity in variance, but ok
-testZeroInflation(simulateResiduals(fittedModel = bait.total.model1)) # ok

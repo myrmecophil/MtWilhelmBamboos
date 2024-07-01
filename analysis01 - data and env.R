@@ -7,7 +7,7 @@
 ### Associated csv files:
 
 # BaitsData.csv: data on the baiting experiment
-# NestsData.csv: data on bamboo nesting
+# NestsData.csv: data on bamboon nesting
 # Plots_2022_AntProject.csv: Plot attributes
 # TreeAttributes.csv: Tree attributes
 
@@ -172,10 +172,8 @@ tree.metada.raw<-read.csv(file="raw data/TreeAttributes.csv", header=T)
 # turn number of lianas into numeric
 tree.metada.raw$Lianas.n <- as.numeric(gsub('>', '', tree.metada.raw$Lianas))
 
-# calculate DBH as pi*trunk circumference
-#PK: Whole code seems ok to me except this - you shall divide by pi, not multiply, to get a diameter
-#so you do not get 10 m  wide trees in charts:]
-tree.metada.raw$DBH<-pi*tree.metada.raw$Trunk.perimenter..cm.
+# calculate DBH as trunk circumference/pi
+tree.metada.raw$DBH<-tree.metada.raw$Trunk.perimenter..cm./pi
 
 # define plot.stratum 
 tree.metada.raw$plot.stratum<-paste(tree.metada.raw$Plot,tree.metada.raw$Stratum)
@@ -300,10 +298,10 @@ testZeroInflation(simulateResiduals(fittedModel = slope_model)) # ok
 tree.data<-merge(tree.meta.sub.ID, baiting.incidence)
 
 # Is dbh different between forests?
-model_dbh1<- glmmTMB((trunk+1) ~  Forest + Stratum+ (1|Block/Plot),
-                    data = tree.data, 
+model_dbh1<- glmmTMB((trunk) ~  Forest + Stratum+ (1|Block/Plot),
+                    data = tree.data,
                     family=gaussian(link="log"))
-model_dbh2<- glmmTMB((trunk+1) ~  Forest * Stratum + (1|Block/Plot),
+model_dbh2<- glmmTMB((trunk) ~  Forest * Stratum + (1|Block/Plot),
                      data = tree.data, 
                      family=gaussian(link="log"))
 anova(model_dbh1,model_dbh2)
@@ -359,7 +357,6 @@ colnames(variables.env) <- c("DBH", "Lianas (#)", "Deadwood (#)", "Deadwood (%)"
 # move column 'Elevation' to last position
 variables.env<-variables.env %>% select(-Elevation, Elevation)
 
-
 # Plot 
 mydata.cor <- cor(variables.env, method = c("spearman"), use = "pairwise.complete.obs")
 corrplot(mydata.cor,
@@ -385,9 +382,9 @@ lianas.plot<-ggplot(tree.data, aes(x=Forest, y=log(Lianas.n+1), fill = Stratum))
   theme_minimal(15)
 lianas.plot
 
-# plot tree DBH
-trunk.plot<-ggplot(tree.data, aes(x=Forest, y=log(trunk+1), fill = Stratum)) +
-  ggtitle("Tree DBH [ln(n+1)]") +
+# plot tree circumference
+trunk.plot<-ggplot(tree.data, aes(x=Forest, y=log(trunk), fill = Stratum)) +
+  ggtitle("Tree circumference [ln(n)]") +
   ylab("")+
   xlab("")+ 
   #ylim(0,4)+
