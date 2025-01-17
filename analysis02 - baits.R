@@ -1,4 +1,17 @@
-# Bait subscript
+# Bait analysis - R script 2024
+
+# This part of the script does the analysis of the baits. 
+# First, it transforms the data and plots it.
+# Finally, it analysed statistically.
+
+### Associated csv files:
+## All tables were first created in the raw data  script (01)
+
+# baiting.data.csv: data on the baiting experiment
+# baiting.incidence.csv: baiting incidence
+# tree.meta.csv: tree level attributes (including tree duplicates)
+# plot.meta.csv: plot attributes, on plot-stratum level (ie., understorey+canopy per plot)
+# plot.meta2.csv: plot attributes, but only on plot level
 
 #----------------------------------------------------------#
 ### List of R-packages
@@ -27,17 +40,14 @@ package_list <-
 sapply(package_list, library, character.only = TRUE)
 
 # Citations
-#sapply(package_list, citation)
-
-setwd("~/GitHub/MtWilhelmBamboos")
-set.seed(1234)
+sapply(package_list, citation)
 
 # load data
-baiting.data <- read.csv(file="baiting.data.csv", header=T)
-baiting.incidence <- read.csv(file="baiting.incidence.csv", header=T)
-tree.meta <- read.csv(file="tree.meta.csv", header=T)
-plot.meta<- read.csv(file="plot.meta.csv", header=T)
-plot.meta2 <- read.csv(file="plot.meta2.csv", header=T)
+baiting.data <- read.csv(file="processed/baiting.data.csv", header=T)
+baiting.incidence <- read.csv(file="processed/baiting.incidence.csv", header=T)
+tree.meta <- read.csv(file="processed/tree.meta.csv", header=T)
+plot.meta<- read.csv(file="processed/plot.meta.csv", header=T)
+plot.meta2 <- read.csv(file="processed/plot.meta2.csv", header=T)
 
 #----------------------------------------------------------#
 # 1.1 Bait occupancy -----
@@ -78,17 +88,17 @@ labs <- expression("lowland", "mid-elevation")
 
 # plot it
 bait.occupancy.stratum<-ggplot(baits.final, aes(x=Forest, y=proportion, fill = Stratum)) +
-  ggtitle("Bait occupancy") +
-  ylab("%")+
+  ggtitle("") +
+  ylab("Bait occuppancy [%]")+
   xlab("")+ 
   ylim(0,100)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
              position=position_jitterdodge(0.1), alpha=0.8)+
-  
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 bait.occupancy.stratum
 
 #----------------------------------------------------------#
@@ -111,7 +121,6 @@ data3$Shannon <- diversity(ant_m, index = "shannon", base = exp(1)) # Shannon di
 data3$Richness <- specnumber(ant_m)                          # Richness per plot
 data3$expH <- exp(data3$Shannon)                             # exponential Shannon diversity per plot
 data3$expH[data3$Richness == 0] <- 0                         # define exp(Shannon) = 0
-data3$evenness <- data3$Shannon/log(89) # Pielou's evenness per plot
 
 str(data3)
 
@@ -122,8 +131,8 @@ diversity.stratum<-merge(data3, plot_m2)
 
 ## Plot it
 bait.diversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = Stratum)) +
-  ggtitle("Bait species diversity") +
-  ylab("expH")+
+  ggtitle("") +
+  ylab("Bait diversity [expH]")+
   xlab("")+ 
   ylim(0,15)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
@@ -132,7 +141,8 @@ bait.diversity.stratum<-ggplot(diversity.stratum, aes(x=Forest, y=expH, fill = S
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 bait.diversity.stratum
 
 #----------------------------------------------------------#
@@ -140,7 +150,7 @@ bait.diversity.stratum
 #----------------------------------------------------------#
 
 # Plot scale species overlap
-# make occurance matrices
+# make occurrence matrices
 baits.matrix <- dcast(baiting.data, formula = Plot ~ AntSpCODE, length)
 
 # set rownames
@@ -150,7 +160,7 @@ baits.matrix <- baits.matrix[, -c(1,2)]
 # Bray-Curtis Dissimilarity
 dist.baits <- vegdist(baits.matrix, method = "bray")
 
-# global matrix of plot dissimiliarities
+# global matrix of plot dissimilarities
 dist.baits <- as.matrix(dist.baits)
 
 ## select plot distances: midelevation vs lowland
@@ -209,7 +219,7 @@ incidence.proportion.bait<-ggplot(bait.incidence, aes(x = Forest, y = percentage
   labs(fill = "Ant species")+
   scale_x_discrete(labels=labs)+
   ylab("relative incidence [%]") +
-  ggtitle("bait species composition") +
+  ggtitle("Bait species composition") +
   theme_minimal()
 incidence.proportion.bait
 
@@ -220,15 +230,16 @@ bait.incidence <- baiting.data %>%
 
 # Bait abundance plot
 bait.abundance.stratum<-ggplot(baiting.incidence, aes(x=Forest, y=log(Abundance+1), fill = Stratum)) +
-  ggtitle("Bait abundance") +
-  ylab("ln(number of ants+1)")+
+  ggtitle("") +
+  ylab("Abundance [ln(n+1)]")+
   xlab("")+ 
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
              position=position_jitterdodge(0.1), alpha=0.8)+
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 bait.abundance.stratum
 
 #----------------------------------------------------------#
@@ -445,48 +456,3 @@ summary(baitdiversity.stratum.model.e1)
 testDispersion(baitdiversity.stratum.model.e1) # ok
 simulateResiduals(baitdiversity.stratum.model.e1, plot = T) # ok
 testZeroInflation(simulateResiduals(fittedModel = baitdiversity.stratum.model.e1)) # ok
-
-# evenness
-baitdiversity.model.eve1 <- glmmTMB((evenness+1) ~ Forest.x + Stratum+ (1|Block.x/Plot.x),
-                                    data = diversity.stratum.e,
-                                    family = gaussian(link="log"))
-baitdiversity.model.eve2 <- glmmTMB((evenness+1) ~ Forest.x * Stratum+ (1|Block.x/Plot.x),
-                                    data = diversity.stratum.e, gaussian(link="log"))
-anova(baitdiversity.model.eve1, baitdiversity.model.eve2) # no interaction
-
-summary(baitdiversity.model.eve1)
-#
-testDispersion(baitdiversity.model.eve1) # ok
-simulateResiduals(baitdiversity.model.eve1, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve1)) # ok
-
-# evenness with environmental factors
-baitdiversity.model.eve.e1 <- glmmTMB((evenness+1) ~Forest.x
-                                      +Stratum
-                                      +scale(Lianas.n_mean)
-                                      +scale(log(slope.var+1))
-                                      +scale(log(Caco+1))
-                                      +scale(trunk_mean)
-                                      +scale(dw.number_mean)
-                                      +scale(dw.percent_mean) 
-                                      +(1|Block.x/Plot.x),
-                                      data = diversity.stratum.e, family = gaussian(link="log"))
-
-baitdiversity.model.eve.e2 <- glmmTMB((evenness+1) ~Forest.x
-                                      *Stratum
-                                      +scale(Lianas.n_mean)
-                                      +scale(log(slope.var+1))
-                                      +scale(log(Caco+1))
-                                      +scale(trunk_mean)
-                                      +scale(dw.number_mean)
-                                      +scale(dw.percent_mean) 
-                                      +(1|Block.x/Plot.x),
-                                      data = diversity.stratum.e, family = gaussian(link="log"))
-
-anova(baitdiversity.model.eve.e1, baitdiversity.model.eve.e2) #  interaction
-
-summary(baitdiversity.model.eve.e1)
-#
-testDispersion(baitdiversity.model.eve.e1) # ok
-simulateResiduals(baitdiversity.model.eve.e1, plot = T) # ok 
-testZeroInflation(simulateResiduals(fittedModel = baitdiversity.model.eve.e1)) # ok

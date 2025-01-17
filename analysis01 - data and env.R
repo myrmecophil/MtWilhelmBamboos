@@ -1,7 +1,7 @@
-## Numba-Kausi Baits & nests - R script by Phil, April 2024
+## raw data preparation and environment - R script, 2024
 
 
-# This part of the script does the raw data conversion and saves it as tables that are being used in the other scripts.
+# This part of the script converts the raw data and saves it as tables in the 'processed' folder that are being used in the other scripts.
 # Further, it includes the statistical analysis of the environmental data.
 
 ### Associated csv files:
@@ -34,10 +34,7 @@ package_list <-
 sapply(package_list, library, character.only = TRUE)
 
 # Citations
-#sapply(package_list, citation)
-
-set.seed(1234)
-setwd("~/GitHub/MtWilhelmBamboos")
+sapply(package_list, citation)
 
 #----------------------------------------------------------#
 # raw data transformation -----
@@ -92,8 +89,8 @@ baiting.incidence<- baiting.incidence %>%
 baiting.incidence<-as.data.frame(baiting.incidence)
 
 # export
-write.csv(baiting.incidence, "baiting.incidence.csv", row.names=FALSE)
-write.csv(baiting.data, "baiting.data.csv", row.names=FALSE)
+write.csv(baiting.incidence, "processed/baiting.incidence.csv", row.names=FALSE)
+write.csv(baiting.data, "processed/baiting.data.csv", row.names=FALSE)
 
 ### Raw nesting data
 
@@ -152,8 +149,9 @@ phase.nests<-subset(phase.nests,lost != 1)
 phase.nests$nesting.estimate[is.na(phase.nests$nesting.estimate)] <- 0
 
 # export
-write.csv(phase.nests, "phase.nests.csv", row.names=FALSE)
-write.csv(nest.raw, "nest.raw.csv", row.names=FALSE)
+write.csv(phase.nests, "processed/phase.nests.csv", row.names=FALSE)
+write.csv(nest.raw, "processed/nest.raw.csv", row.names=FALSE)
+write.csv(nesters, "processed/nesters.csv", row.names=FALSE)
 
 #----------------------------------------------------------#
 #  Plot attributes -----
@@ -188,7 +186,7 @@ plot.metada.sub<-  plot.metada.raw %>%
   rename(Plot=Plot_code, Forest = forest_type, Caco =Canopy.cover..Caco.)
 
 ## calculate tree metadata as means on plot level
-# first get rid of tree duplicates measurespi
+# first get rid of tree duplicates
 tree.meta.sub.ID<-distinct(tree.meta.sub, tree.ID, .keep_all = TRUE)
 
 tree.meta.plot<-tree.meta.sub.ID %>%
@@ -266,9 +264,9 @@ hist(plot.meta$height_mean)
 hist(scale(log(plot.meta$height_mean+1)))
 
 # export
-write.csv(plot.meta2, "plot.meta2.csv", row.names=FALSE)
-write.csv(plot.meta, "plot.meta.csv", row.names=FALSE)
-write.csv(tree.meta, "tree.meta.csv", row.names=FALSE)
+write.csv(plot.meta2, "processed/plot.meta2.csv", row.names=FALSE)
+write.csv(plot.meta, "processed/plot.meta.csv", row.names=FALSE)
+write.csv(tree.meta, "processed/tree.meta.csv", row.names=FALSE)
 
 #----------------------------------------------------------#
 # 3.1 Statistic: Environment  -----
@@ -357,7 +355,7 @@ colnames(variables.env) <- c("DBH", "Lianas (#)", "Deadwood (#)", "Deadwood (%)"
 # move column 'Elevation' to last position
 variables.env<-variables.env %>% select(-Elevation, Elevation)
 
-# Plot 
+# Plot correlations
 mydata.cor <- cor(variables.env, method = c("spearman"), use = "pairwise.complete.obs")
 corrplot(mydata.cor,
          method = "color", type = "lower", order = "original", diag = F,
@@ -456,3 +454,4 @@ slope.plot<-ggplot(plot.meta, aes(x=Forest, y=slope.var, fill = Forest)) +
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
   theme_minimal(15)
 slope.plot
+

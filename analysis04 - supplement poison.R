@@ -1,14 +1,11 @@
-## Supplement Poison Analysis: Numba-Kausi Baits & nests - R script by Phil, April 2024
+## Supplement Poison Analysis: R script, 2024
 
-
-# This part plots the effects of the poisoning on baiting and bamboos
+# This part plots the effects of the poisoning on baiting and bamboos.
 
 ### Associated csv files:
 
 # BaitsData.csv: data on the baiting experiment
-# NestsData.csv: data on bamboon nesting
-# Plots_2022_AntProject.csv: Plot attributes
-# TreeAttributes.csv: Tree attributes
+# phase.nests.csv: nesting data split by phases
 
 #----------------------------------------------------------#
 ### List of R-packages
@@ -35,10 +32,6 @@ sapply(package_list, library, character.only = TRUE)
 
 # Citations
 #sapply(package_list, citation)
-
-set.seed(1234)
-setwd("~/GitHub/MtWilhelmBamboos")
-
 
 #---------------------------------------------------------#
 # Baits analysis for poison plots -----
@@ -123,7 +116,7 @@ std.error(subset(baiting.incidence, Season=="Kausi Post-Poison Baiting")$Abundan
 # Bamboo analysis for poison plots -----
 #----------------------------------------------------------#
 
-phase.nests <- read.csv(file="phase.nests.csv", header=T)
+phase.nests <- read.csv(file="processed/phase.nests.csv", header=T)
 
 # define poison/no poisoned plots
 phase.nest.poison <-phase.nests %>%

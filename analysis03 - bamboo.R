@@ -1,4 +1,19 @@
-# Bamboo subscript
+# Bamboo analysis - R script, 2024
+
+
+# This part of the script does the analysis of the artificial nesting resources (bamboos) 
+# First, it transforms the data and plots it.
+# Finally, it analysed statistically.
+
+### Associated csv files:
+## All tables were first created in the raw data  script (01)
+
+# nest.raw.csv: raw data of the nesting experiment
+# phase.nests.csv: a subset of nesting data split by phases
+# tree.meta.csv: tree level attributes (including tree duplicates)
+# plot.meta.csv: plot attributes, on plot-stratum level (ie., understorey+canopy per plot)
+# plot.meta2.csv: plot attributes, but only on plot level
+# baiting.data.csv: baiting data, for a species composition comparison 
 
 #----------------------------------------------------------#
 ### List of R-packages
@@ -17,7 +32,6 @@ package_list <-
     "DHARMa",
     "car",
     "emmeans",
-    "effects",
     "plotrix")
 
 # install all packages
@@ -29,19 +43,15 @@ sapply(package_list, library, character.only = TRUE)
 # Citations
 #sapply(package_list, citation)
 
-setwd("~/GitHub/MtWilhelmBamboos")
-
-set.seed(1234)
-
 # load data
-nest.raw <- read.csv(file="nest.raw.csv", header=T)
-baiting.data <-read.csv(file="baiting.data.csv", header=T)
-phase.nests <- read.csv(file="phase.nests.csv", header=T)
-tree.meta <- read.csv(file="tree.meta.csv", header=T)
-plot.meta<- read.csv(file="plot.meta.csv", header=T)
-plot.meta2 <- read.csv(file="plot.meta2.csv", header=T)
+baiting.data<-read.csv(file="processed/baiting.data.csv", header=T)
+nest.raw <- read.csv(file="processed/nest.raw.csv", header=T)
+phase.nests <- read.csv(file="processed/phase.nests.csv", header=T)
+tree.meta <- read.csv(file="processed/tree.meta.csv", header=T)
+plot.meta<- read.csv(file="processed/plot.meta.csv", header=T)
+plot.meta2 <- read.csv(file="processed/plot.meta2.csv", header=T)
 
-# set labels
+# set labels for plots
 labs <- expression("lowland", "mid-elevation")
 
 #----------------------------------------------------------#
@@ -183,8 +193,8 @@ nests.final$proportion<-nests.final$occupancy/nests.final$n*100
 
 # plot it
 nests.final.occupancy.plot<-ggplot(nests.final, aes(x=Forest, y=proportion, fill = Stratum)) +
-  ggtitle("Nest occupancy") +
-  ylab("%")+
+  ggtitle("") +
+  ylab("Nest occupancy [%]")+
   xlab("")+ 
   ylim(0,50)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
@@ -193,7 +203,8 @@ nests.final.occupancy.plot<-ggplot(nests.final, aes(x=Forest, y=proportion, fill
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 nests.final.occupancy.plot
 
 
@@ -205,8 +216,8 @@ nests.final.occupancy.plot
 nest.abundance1 <- subset(phase.nests, occupancy!=0)
 
 nest.abundance.stratum<-ggplot(nest.abundance1, aes(x=Forest, y=log(nesting.estimate), fill = Stratum)) +
-  ggtitle("Nest size") +
-  ylab("ln(number of ants)")+
+  ggtitle("") +
+  ylab("Nest size [ln(n)]")+
   xlab("")+ 
   #ylim(0,50)+
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20",
@@ -215,13 +226,14 @@ nest.abundance.stratum<-ggplot(nest.abundance1, aes(x=Forest, y=log(nesting.esti
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 nest.abundance.stratum
 
 ##### Phase, ignoring stratum: abundance (nest size)
 nest.abundance.phase<-ggplot(nest.abundance1, aes(x=Forest, y=log(nesting.estimate), fill = phase)) +
-  ggtitle("Nest size") +
-  ylab("ln(number of ants)")+
+  ggtitle("") +
+  ylab("Nest size [ln(n)]")+
   xlab("")+ 
   #ylim(0,50)+
   geom_point(aes(fill=phase), size=3, shape=21, colour="grey20",
@@ -264,7 +276,6 @@ data2$Shannon <- diversity(ant_n.phase1, index = "shannon", base = exp(1)) # Sha
 data2$Richness <- specnumber(ant_n.phase1)                          # Richness per plot
 data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
 data2$expH[data2$Richness == 0] <- 0                                  # define exp(Shannon) = 0
-data2$evenness <- data2$Shannon/log(33) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -277,9 +288,8 @@ data2 <- data.frame(row.names(ant_n.phase2))     # create a new file with plot n
 names(data2) <- "plot.stratum" # rename variable "plot.stratum"
 data2$Shannon <- diversity(ant_n.phase2, index = "shannon", base = exp(1)) # Shannon diversity per plot
 data2$Richness <- specnumber(ant_n.phase2)                          # Richness per plot
-data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity per plot
+data2$expH <- exp(data2$Shannon)                                         # exponential Shannon diversity perNest species diversity plot
 data2$expH[data2$Richness == 0] <- 0                                     # define exp(Shannon) = 0
-data2$evenness <- data2$Shannon/log(33) # evenness per plot
 str(data2)
 
 # add Plot location
@@ -304,15 +314,16 @@ nest.diversity.phase.plot
 
 # Plot nester diversity, stratum dependent
 nest.diversity.stratum.plot<-ggplot(diversity.nester, aes(x=Forest, y=expH, fill=Stratum)) +
-  ggtitle("Nest species diversity") +
+  ggtitle("") +
   labs(fill = "Stratum")+  
-  ylab("expH")+
+  ylab("Nest diversity [expH]")+
   xlab("")+ 
   geom_point(aes(fill=Stratum), size=3, shape=21, colour="grey20", position=position_jitterdodge(0.1), alpha=0.8)+
   geom_boxplot(outlier.color=NA, lwd=1, alpha=0.6)+
   scale_x_discrete(labels=labs)+
   scale_fill_manual(values=c("#0072B2", "#E69F00"))+
-  theme_minimal(15)
+  theme_minimal(15)+
+  theme(axis.title.y = element_text(size = 13))
 nest.diversity.stratum.plot
 
 #----------------------------------------------------------#
@@ -359,7 +370,7 @@ incidence.proportion.nest<-ggplot(nest.proportion3, aes(x = Forest, y = percenta
   labs(fill = "Ant species")+
   scale_x_discrete(labels=labs)+
   ylab("relative occupancy [%]") +
-  ggtitle("bamboo species composition") +
+  ggtitle("Bamboo species composition") +
   #scale_fill_brewer(palette="Dark2")+
   theme_minimal()
 incidence.proportion.nest
@@ -388,6 +399,39 @@ b.m_vs_l <- dist.bamboo[c(1:8), c(9:28)]
 distance.bamboo.elev.un <- as.data.frame(rowMeans(b.m_vs_l))
 mean(colMeans(b.m_vs_l))
 std.error(colMeans(b.m_vs_l))
+
+#----------------------------------------------------------#
+# 2.3 Species overlap between baits and bamboos -----
+#----------------------------------------------------------#
+
+# Bait species overlap by Forest
+baits.matrix <- dcast(baiting.data, formula = Forest ~ AntSpCODE, length)
+df1<-baits.matrix
+
+# bamboo species overlap by forest
+bamboo.matrix <- dcast(nesters, formula = Forest ~ AntSpCode, length)
+df2<-bamboo.matrix
+
+# fill in non-overlapping columns with NAs
+df1[setdiff(names(df2), names(df1))] <- NA
+df2[setdiff(names(df1), names(df2))] <- NA
+
+#merge
+bamboo.baits.matrix<-rbind(df1,df2)
+
+# set NAs as 0
+bamboo.baits.matrix[is.na(bamboo.baits.matrix)] <- 0
+
+# set rownames
+rownames(bamboo.baits.matrix) <- c("Kausi Baits", "Numba Baits", "Kausi Bamboo", "Numba Bamboo")
+bamboo.baits.matrix <- bamboo.baits.matrix[, -c(1,2)]
+
+# Bray-Curtis Dissimilarity
+dist.kausi.numba.bray <- vegdist(bamboo.baits.matrix, method = "bray")
+
+# global matrix of forest dissimilarities
+dist.kausi.numba.bray <- as.matrix(dist.kausi.numba.bray)
+dist.kausi.numba.bray
 
 #----------------------------------------------------------#
 # 3.3 Bamboo Nest Statistics -----
@@ -604,61 +648,3 @@ summary(bamboo.diversity.model.e1)
 testDispersion(bamboo.diversity.model.e1) # ok
 simulateResiduals(bamboo.diversity.model.e1, plot = T) # ok-ish
 testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e1)) # ok
-
-# evenness
-bamboo.eve.model1 <- glmmTMB((evenness+1) ~ Forest.x
-                                   +Stratum
-                                   +new.Treatment
-                                   +(1|Block.x/Plot.x), 
-                                   data = diversity.nester.e, 
-                                   family=gaussian(link="log"))
-
-bamboo.eve.model2 <- glmmTMB((evenness+1) ~ Forest.x
-                                   *Stratum
-                                   +new.Treatment
-                                   +(1|Block.x/Plot.x), 
-                                   data = diversity.nester.e, 
-                                   family=gaussian(link="log"))
-
-
-anova(bamboo.diversity.model1,bamboo.diversity.model2) # ns, no interaction
-#
-summary(bamboo.eve.model1)
-#
-testDispersion(bamboo.diversity.model1) # ok
-simulateResiduals(bamboo.diversity.model1, plot = T) # ok
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model1)) # ok
-
-# bamboo evenness  with environment metadata
-bamboo.diversity.model.e1 <- glmmTMB((evenness+0.001) ~ Forest.x
-                                     +Stratum
-                                     +scale(log(Lianas.n_mean))
-                                     +scale(log(dw.percent_mean))
-                                     +scale(log(dw.number_mean))
-                                     +scale(log(trunk_mean))
-                                     +scale(log(Caco+1))
-                                     +scale(log(slope.var+1))
-                                     +new.Treatment
-                                     +(1|Block.x/Plot.x),
-                                     data = diversity.nester.e, family = tweedie(link = "log"))
-
-bamboo.diversity.model.e2 <- glmmTMB((evenness+1) ~ Forest.x
-                                     *Stratum
-                                     +scale(log(Lianas.n_mean))
-                                     +scale(log(dw.percent_mean))
-                                     +scale(log(dw.number_mean))
-                                     +scale(log(trunk_mean))
-                                     +scale(log(Caco+1))
-                                     +scale(log(slope.var+1))
-                                     +new.Treatment
-                                     +(1|Block.x/Plot.x),
-                                     data = diversity.nester.e, family=gaussian(link="log"))
-
-anova(bamboo.diversity.model.e1, bamboo.diversity.model.e2) # no interaction better
-
-summary(bamboo.diversity.model.e1)
-#
-testDispersion(bamboo.diversity.model.e1) # ok
-simulateResiduals(bamboo.diversity.model.e1, plot = T) # ok-ish
-testZeroInflation(simulateResiduals(fittedModel = bamboo.diversity.model.e1)) # ok
-
