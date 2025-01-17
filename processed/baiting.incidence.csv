@@ -1,0 +1,1021 @@
+"Block","Plot","Subplot","Stratum","Code","Forest","Season","Abundance","occupancy"
+"KP1","KP1-S1","A1","CA","KP1-S1-A1-CA","Kausi Primary","Baiting",50,1
+"KP1","KP1-S1","A1","UN","KP1-S1-A1-UN","Kausi Primary","Baiting",15,1
+"KP1","KP1-S1","A2","CA","KP1-S1-A2-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","A2","UN","KP1-S1-A2-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","A3","CA","KP1-S1-A3-CA","Kausi Primary","Baiting",50,1
+"KP1","KP1-S1","A3","UN","KP1-S1-A3-UN","Kausi Primary","Baiting",18,1
+"KP1","KP1-S1","A4","CA","KP1-S1-A4-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","A4","UN","KP1-S1-A4-UN","Kausi Primary","Baiting",5,1
+"KP1","KP1-S1","B1","CA","KP1-S1-B1-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","B1","UN","KP1-S1-B1-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","B2","CA","KP1-S1-B2-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","B2","UN","KP1-S1-B2-UN","Kausi Primary","Baiting",4,1
+"KP1","KP1-S1","B3","CA","KP1-S1-B3-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","B3","UN","KP1-S1-B3-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","B4","CA","KP1-S1-B4-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","B4","UN","KP1-S1-B4-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","C1","CA","KP1-S1-C1-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S1","C1","UN","KP1-S1-C1-UN","Kausi Primary","Baiting",5,1
+"KP1","KP1-S1","C2","CA","KP1-S1-C2-CA","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","C2","UN","KP1-S1-C2-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","C3","CA","KP1-S1-C3-CA","Kausi Primary","Baiting",50,1
+"KP1","KP1-S1","C3","UN","KP1-S1-C3-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S1","C4","CA","KP1-S1-C4-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","C4","UN","KP1-S1-C4-UN","Kausi Primary","Baiting",8,1
+"KP1","KP1-S1","D1","CA","KP1-S1-D1-CA","Kausi Primary","Baiting",40,1
+"KP1","KP1-S1","D1","UN","KP1-S1-D1-UN","Kausi Primary","Baiting",100,1
+"KP1","KP1-S1","D2","CA","KP1-S1-D2-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","D2","UN","KP1-S1-D2-UN","Kausi Primary","Baiting",100,1
+"KP1","KP1-S1","D3","CA","KP1-S1-D3-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S1","D3","UN","KP1-S1-D3-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S1","D4","CA","KP1-S1-D4-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S1","D4","UN","KP1-S1-D4-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","A1","CA","KP1-S2-A1-CA","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","A1","UN","KP1-S2-A1-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","A2","CA","KP1-S2-A2-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S2","A2","UN","KP1-S2-A2-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","A3","CA","KP1-S2-A3-CA","Kausi Primary","Baiting",75,1
+"KP1","KP1-S2","A3","UN","KP1-S2-A3-UN","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","A4","CA","KP1-S2-A4-CA","Kausi Primary","Baiting",30,1
+"KP1","KP1-S2","A4","UN","KP1-S2-A4-UN","Kausi Primary","Baiting",25,1
+"KP1","KP1-S2","B1","CA","KP1-S2-B1-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","B1","UN","KP1-S2-B1-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","B2","CA","KP1-S2-B2-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","B2","UN","KP1-S2-B2-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","B3","CA","KP1-S2-B3-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","B3","UN","KP1-S2-B3-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","B4","CA","KP1-S2-B4-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","B4","UN","KP1-S2-B4-UN","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C1","CA","KP1-S2-C1-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C1","UN","KP1-S2-C1-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","C2","CA","KP1-S2-C2-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C2","UN","KP1-S2-C2-UN","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C3","CA","KP1-S2-C3-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C3","UN","KP1-S2-C3-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","C4","CA","KP1-S2-C4-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","C4","UN","KP1-S2-C4-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","D1","CA","KP1-S2-D1-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","D1","UN","KP1-S2-D1-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","D2","CA","KP1-S2-D2-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","D2","UN","KP1-S2-D2-UN","Kausi Primary","Baiting",0,0
+"KP1","KP1-S2","D3","CA","KP1-S2-D3-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","D3","UN","KP1-S2-D3-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S2","D4","CA","KP1-S2-D4-CA","Kausi Primary","Baiting",100,1
+"KP1","KP1-S2","D4","UN","KP1-S2-D4-UN","Kausi Primary","Baiting",200,1
+"KP1","KP1-S3","A1","CA","KP1-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting",35,1
+"KP1","KP1-S3","A1","UN","KP1-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","A2","CA","KP1-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP1","KP1-S3","A2","UN","KP1-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","A3","CA","KP1-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting",18,1
+"KP1","KP1-S3","A3","UN","KP1-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","A4","CA","KP1-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","A4","UN","KP1-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","B1","CA","KP1-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","B1","UN","KP1-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","B2","CA","KP1-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","B2","UN","KP1-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","B3","CA","KP1-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP1","KP1-S3","B3","UN","KP1-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","B4","CA","KP1-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","B4","UN","KP1-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","C1","CA","KP1-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP1","KP1-S3","C1","UN","KP1-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","C2","CA","KP1-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","C2","UN","KP1-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","C3","CA","KP1-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","C3","UN","KP1-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","C4","CA","KP1-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","C4","UN","KP1-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting",1,1
+"KP1","KP1-S3","D1","CA","KP1-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","D1","UN","KP1-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting",104,1
+"KP1","KP1-S3","D2","CA","KP1-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","D2","UN","KP1-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting",85,1
+"KP1","KP1-S3","D3","CA","KP1-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","D3","UN","KP1-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP1","KP1-S3","D4","CA","KP1-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP1","KP1-S3","D4","UN","KP1-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S1","A1","CA","KP2-S1-A1-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S1","A1","UN","KP2-S1-A1-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","A2","CA","KP2-S1-A2-CA","Kausi Primary","Baiting",1,1
+"KP2","KP2-S1","A2","UN","KP2-S1-A2-UN","Kausi Primary","Baiting",75,1
+"KP2","KP2-S1","A3","CA","KP2-S1-A3-CA","Kausi Primary","Baiting",35,1
+"KP2","KP2-S1","A4","CA","KP2-S1-A4-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S1","A4","UN","KP2-S1-A4-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","B1","CA","KP2-S1-B1-CA","Kausi Primary","Baiting",3,1
+"KP2","KP2-S1","B1","UN","KP2-S1-B1-UN","Kausi Primary","Baiting",100,1
+"KP2","KP2-S1","B2","CA","KP2-S1-B2-CA","Kausi Primary","Baiting",31,1
+"KP2","KP2-S1","B2","UN","KP2-S1-B2-UN","Kausi Primary","Baiting",30,1
+"KP2","KP2-S1","B3","CA","KP2-S1-B3-CA","Kausi Primary","Baiting",100,1
+"KP2","KP2-S1","B4","CA","KP2-S1-B4-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S1","B4","UN","KP2-S1-B4-UN","Kausi Primary","Baiting",75,1
+"KP2","KP2-S1","C1","CA","KP2-S1-C1-CA","Kausi Primary","Baiting",35,1
+"KP2","KP2-S1","C1","UN","KP2-S1-C1-UN","Kausi Primary","Baiting",1,1
+"KP2","KP2-S1","C2","CA","KP2-S1-C2-CA","Kausi Primary","Baiting",35,1
+"KP2","KP2-S1","C2","UN","KP2-S1-C2-UN","Kausi Primary","Baiting",2,1
+"KP2","KP2-S1","C3","CA","KP2-S1-C3-CA","Kausi Primary","Baiting",100,1
+"KP2","KP2-S1","C4","CA","KP2-S1-C4-CA","Kausi Primary","Baiting",100,1
+"KP2","KP2-S1","C4","UN","KP2-S1-C4-UN","Kausi Primary","Baiting",100,1
+"KP2","KP2-S1","D1","CA","KP2-S1-D1-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S1","D1","UN","KP2-S1-D1-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","D2","CA","KP2-S1-D2-CA","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","D2","UN","KP2-S1-D2-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","D3","CA","KP2-S1-D3-CA","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","D3","UN","KP2-S1-D3-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S1","D4","CA","KP2-S1-D4-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S1","D4","UN","KP2-S1-D4-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","A1","CA","KP2-S2-A1-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S2","A1","UN","KP2-S2-A1-UN","Kausi Primary","Baiting",2,1
+"KP2","KP2-S2","A2","CA","KP2-S2-A2-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S2","A2","UN","KP2-S2-A2-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","A3","CA","KP2-S2-A3-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","A3","UN","KP2-S2-A3-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","A4","CA","KP2-S2-A4-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","A4","UN","KP2-S2-A4-UN","Kausi Primary","Baiting",100,1
+"KP2","KP2-S2","B1","CA","KP2-S2-B1-CA","Kausi Primary","Baiting",4,1
+"KP2","KP2-S2","B1","UN","KP2-S2-B1-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","B2","CA","KP2-S2-B2-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","B2","UN","KP2-S2-B2-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","B3","CA","KP2-S2-B3-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","B3","UN","KP2-S2-B3-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","B4","CA","KP2-S2-B4-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S2","B4","UN","KP2-S2-B4-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","C1","CA","KP2-S2-C1-CA","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","C1","UN","KP2-S2-C1-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","C2","CA","KP2-S2-C2-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S2","C2","UN","KP2-S2-C2-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","C3","CA","KP2-S2-C3-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","C3","UN","KP2-S2-C3-UN","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","C4","CA","KP2-S2-C4-CA","Kausi Primary","Baiting",100,1
+"KP2","KP2-S2","C4","UN","KP2-S2-C4-UN","Kausi Primary","Baiting",1,1
+"KP2","KP2-S2","D1","CA","KP2-S2-D1-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","D1","UN","KP2-S2-D1-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","D2","CA","KP2-S2-D2-CA","Kausi Primary","Baiting",30,1
+"KP2","KP2-S2","D2","UN","KP2-S2-D2-UN","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","D3","CA","KP2-S2-D3-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","D3","UN","KP2-S2-D3-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S2","D4","CA","KP2-S2-D4-CA","Kausi Primary","Baiting",75,1
+"KP2","KP2-S2","D4","UN","KP2-S2-D4-UN","Kausi Primary","Baiting",0,0
+"KP2","KP2-S3","A1","CA","KP2-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S3","A1","UN","KP2-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","A2","CA","KP2-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting",200,1
+"KP2","KP2-S3","A2","UN","KP2-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","A3","CA","KP2-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting",16,1
+"KP2","KP2-S3","A3","UN","KP2-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","A4","CA","KP2-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting",25,1
+"KP2","KP2-S3","A4","UN","KP2-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting",4,1
+"KP2","KP2-S3","B1","CA","KP2-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP2","KP2-S3","B1","UN","KP2-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting",400,1
+"KP2","KP2-S3","B2","CA","KP2-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","B2","UN","KP2-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting",506,1
+"KP2","KP2-S3","B3","CA","KP2-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting",10,1
+"KP2","KP2-S3","B3","UN","KP2-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","B4","CA","KP2-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S3","B4","UN","KP2-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","C1","CA","KP2-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting",76,1
+"KP2","KP2-S3","C1","UN","KP2-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","C2","CA","KP2-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting",76,1
+"KP2","KP2-S3","C2","UN","KP2-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting",76,1
+"KP2","KP2-S3","C3","CA","KP2-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","C3","UN","KP2-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting",200,1
+"KP2","KP2-S3","C4","CA","KP2-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting",10,1
+"KP2","KP2-S3","C4","UN","KP2-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","D1","CA","KP2-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S3","D1","UN","KP2-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP2","KP2-S3","D2","CA","KP2-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP2","KP2-S3","D2","UN","KP2-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting",4,1
+"KP2","KP2-S3","D3","CA","KP2-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S3","D3","UN","KP2-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting",5,1
+"KP2","KP2-S3","D4","CA","KP2-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP2","KP2-S3","D4","UN","KP2-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP4","KP4-S1","A1","CA","KP4-S1-A1-CA","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","A1","UN","KP4-S1-A1-UN","Kausi Primary","Baiting",1,1
+"KP4","KP4-S1","A2","CA","KP4-S1-A2-CA","Kausi Primary","Baiting",3,1
+"KP4","KP4-S1","A2","UN","KP4-S1-A2-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","A3","CA","KP4-S1-A3-CA","Kausi Primary","Baiting",35,1
+"KP4","KP4-S1","A3","UN","KP4-S1-A3-UN","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","A4","CA","KP4-S1-A4-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","A4","UN","KP4-S1-A4-UN","Kausi Primary","Baiting",4,1
+"KP4","KP4-S1","B1","CA","KP4-S1-B1-CA","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","B1","UN","KP4-S1-B1-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","B2","CA","KP4-S1-B2-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","B2","UN","KP4-S1-B2-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","B3","CA","KP4-S1-B3-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","B3","UN","KP4-S1-B3-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","B4","CA","KP4-S1-B4-CA","Kausi Primary","Baiting",35,1
+"KP4","KP4-S1","B4","UN","KP4-S1-B4-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","C1","CA","KP4-S1-C1-CA","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","C1","UN","KP4-S1-C1-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","C2","CA","KP4-S1-C2-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","C2","UN","KP4-S1-C2-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","C3","CA","KP4-S1-C3-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S1","C3","UN","KP4-S1-C3-UN","Kausi Primary","Baiting",12,1
+"KP4","KP4-S1","C4","CA","KP4-S1-C4-CA","Kausi Primary","Baiting",25,1
+"KP4","KP4-S1","C4","UN","KP4-S1-C4-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","D1","CA","KP4-S1-D1-CA","Kausi Primary","Baiting",35,1
+"KP4","KP4-S1","D1","UN","KP4-S1-D1-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S1","D2","CA","KP4-S1-D2-CA","Kausi Primary","Baiting",3,1
+"KP4","KP4-S1","D2","UN","KP4-S1-D2-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","D3","CA","KP4-S1-D3-CA","Kausi Primary","Baiting",15,1
+"KP4","KP4-S1","D3","UN","KP4-S1-D3-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S1","D4","CA","KP4-S1-D4-CA","Kausi Primary","Baiting",5,1
+"KP4","KP4-S1","D4","UN","KP4-S1-D4-UN","Kausi Primary","Baiting",35,1
+"KP4","KP4-S2","A1","CA","KP4-S2-A1-CA","Kausi Primary","Baiting",3,1
+"KP4","KP4-S2","A1","UN","KP4-S2-A1-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","A2","CA","KP4-S2-A2-CA","Kausi Primary","Baiting",8,1
+"KP4","KP4-S2","A2","UN","KP4-S2-A2-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","A3","CA","KP4-S2-A3-CA","Kausi Primary","Baiting",15,1
+"KP4","KP4-S2","A3","UN","KP4-S2-A3-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","A4","CA","KP4-S2-A4-CA","Kausi Primary","Baiting",8,1
+"KP4","KP4-S2","A4","UN","KP4-S2-A4-UN","Kausi Primary","Baiting",30,1
+"KP4","KP4-S2","B1","CA","KP4-S2-B1-CA","Kausi Primary","Baiting",15,1
+"KP4","KP4-S2","B1","UN","KP4-S2-B1-UN","Kausi Primary","Baiting",75,1
+"KP4","KP4-S2","B2","CA","KP4-S2-B2-CA","Kausi Primary","Baiting",25,1
+"KP4","KP4-S2","B2","UN","KP4-S2-B2-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S2","B3","CA","KP4-S2-B3-CA","Kausi Primary","Baiting",30,1
+"KP4","KP4-S2","B3","UN","KP4-S2-B3-UN","Kausi Primary","Baiting",30,1
+"KP4","KP4-S2","B4","CA","KP4-S2-B4-CA","Kausi Primary","Baiting",15,1
+"KP4","KP4-S2","B4","UN","KP4-S2-B4-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","C1","CA","KP4-S2-C1-CA","Kausi Primary","Baiting",15,1
+"KP4","KP4-S2","C1","UN","KP4-S2-C1-UN","Kausi Primary","Baiting",30,1
+"KP4","KP4-S2","C2","CA","KP4-S2-C2-CA","Kausi Primary","Baiting",6,1
+"KP4","KP4-S2","C2","UN","KP4-S2-C2-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","C3","CA","KP4-S2-C3-CA","Kausi Primary","Baiting",3,1
+"KP4","KP4-S2","C3","UN","KP4-S2-C3-UN","Kausi Primary","Baiting",30,1
+"KP4","KP4-S2","C4","CA","KP4-S2-C4-CA","Kausi Primary","Baiting",3,1
+"KP4","KP4-S2","C4","UN","KP4-S2-C4-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","D1","CA","KP4-S2-D1-CA","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","D1","UN","KP4-S2-D1-UN","Kausi Primary","Baiting",8,1
+"KP4","KP4-S2","D2","CA","KP4-S2-D2-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S2","D2","UN","KP4-S2-D2-UN","Kausi Primary","Baiting",75,1
+"KP4","KP4-S2","D3","CA","KP4-S2-D3-CA","Kausi Primary","Baiting",0,0
+"KP4","KP4-S2","D3","UN","KP4-S2-D3-UN","Kausi Primary","Baiting",100,1
+"KP4","KP4-S2","D4","CA","KP4-S2-D4-CA","Kausi Primary","Baiting",75,1
+"KP4","KP4-S2","D4","UN","KP4-S2-D4-UN","Kausi Primary","Baiting",0,0
+"KP4","KP4-S3","A1","CA","KP4-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting",40,1
+"KP4","KP4-S3","A1","UN","KP4-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting",175,1
+"KP4","KP4-S3","A2","CA","KP4-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","A2","UN","KP4-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting",250,1
+"KP4","KP4-S3","A3","CA","KP4-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting",150,1
+"KP4","KP4-S3","A3","UN","KP4-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP4","KP4-S3","A4","CA","KP4-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","A4","UN","KP4-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting",300,1
+"KP4","KP4-S3","B1","CA","KP4-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","B1","UN","KP4-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting",250,1
+"KP4","KP4-S3","B2","CA","KP4-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","B2","UN","KP4-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting",2,1
+"KP4","KP4-S3","B3","CA","KP4-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting",35,1
+"KP4","KP4-S3","B3","UN","KP4-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting",200,1
+"KP4","KP4-S3","B4","CA","KP4-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting",35,1
+"KP4","KP4-S3","B4","UN","KP4-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP4","KP4-S3","C1","CA","KP4-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP4","KP4-S3","C1","UN","KP4-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP4","KP4-S3","C2","CA","KP4-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting",200,1
+"KP4","KP4-S3","C2","UN","KP4-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting",225,1
+"KP4","KP4-S3","C3","CA","KP4-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting",150,1
+"KP4","KP4-S3","C3","UN","KP4-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP4","KP4-S3","C4","CA","KP4-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting",150,1
+"KP4","KP4-S3","C4","UN","KP4-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting",4,1
+"KP4","KP4-S3","D1","CA","KP4-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting",40,1
+"KP4","KP4-S3","D1","UN","KP4-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting",300,1
+"KP4","KP4-S3","D2","CA","KP4-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP4","KP4-S3","D2","UN","KP4-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting",250,1
+"KP4","KP4-S3","D3","CA","KP4-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","D3","UN","KP4-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP4","KP4-S3","D4","CA","KP4-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP4","KP4-S3","D4","UN","KP4-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting",0,0
+"KP6","KP6-S1","A1","CA","KP6-S1-A1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","A1","UN","KP6-S1-A1-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","A2","CA","KP6-S1-A2-CA","Kausi Primary","Baiting",100,1
+"KP6","KP6-S1","A2","UN","KP6-S1-A2-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","A3","CA","KP6-S1-A3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","A3","UN","KP6-S1-A3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","A4","CA","KP6-S1-A4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","A4","UN","KP6-S1-A4-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","B1","CA","KP6-S1-B1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","B1","UN","KP6-S1-B1-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","B2","CA","KP6-S1-B2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","B2","UN","KP6-S1-B2-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","B3","CA","KP6-S1-B3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","B3","UN","KP6-S1-B3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","B4","CA","KP6-S1-B4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","B4","UN","KP6-S1-B4-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","C1","CA","KP6-S1-C1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","C1","UN","KP6-S1-C1-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","C2","CA","KP6-S1-C2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","C2","UN","KP6-S1-C2-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","C3","CA","KP6-S1-C3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","C3","UN","KP6-S1-C3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","C4","CA","KP6-S1-C4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","C4","UN","KP6-S1-C4-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","D1","CA","KP6-S1-D1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","D1","UN","KP6-S1-D1-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","D2","CA","KP6-S1-D2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","D2","UN","KP6-S1-D2-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","D3","CA","KP6-S1-D3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","D3","UN","KP6-S1-D3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S1","D4","CA","KP6-S1-D4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S1","D4","UN","KP6-S1-D4-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","A1","CA","KP6-S2-A1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","A1","UN","KP6-S2-A1-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","A2","CA","KP6-S2-A2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","A2","UN","KP6-S2-A2-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","A3","CA","KP6-S2-A3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","A3","UN","KP6-S2-A3-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","A4","CA","KP6-S2-A4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","A4","UN","KP6-S2-A4-UN","Kausi Primary","Baiting",100,1
+"KP6","KP6-S2","B1","CA","KP6-S2-B1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","B1","UN","KP6-S2-B1-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","B2","CA","KP6-S2-B2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","B2","UN","KP6-S2-B2-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","B3","CA","KP6-S2-B3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","B3","UN","KP6-S2-B3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","B4","CA","KP6-S2-B4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","B4","UN","KP6-S2-B4-UN","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","C1","CA","KP6-S2-C1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","C1","UN","KP6-S2-C1-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","C2","CA","KP6-S2-C2-CA","Kausi Primary","Baiting",35,1
+"KP6","KP6-S2","C2","UN","KP6-S2-C2-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","C3","CA","KP6-S2-C3-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","C3","UN","KP6-S2-C3-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","C4","CA","KP6-S2-C4-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","C4","UN","KP6-S2-C4-UN","Kausi Primary","Baiting",300,1
+"KP6","KP6-S2","D1","CA","KP6-S2-D1-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","D1","UN","KP6-S2-D1-UN","Kausi Primary","Baiting",50,1
+"KP6","KP6-S2","D2","CA","KP6-S2-D2-CA","Kausi Primary","Baiting",75,1
+"KP6","KP6-S2","D2","UN","KP6-S2-D2-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","D3","CA","KP6-S2-D3-CA","Kausi Primary","Baiting",15,1
+"KP6","KP6-S2","D3","UN","KP6-S2-D3-UN","Kausi Primary","Baiting",200,1
+"KP6","KP6-S2","D4","CA","KP6-S2-D4-CA","Kausi Primary","Baiting",150,1
+"KP6","KP6-S2","D4","UN","KP6-S2-D4-UN","Kausi Primary","Baiting",100,1
+"KP6","KP6-S3","A1","CA","KP6-S3-A1-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP6","KP6-S3","A1","UN","KP6-S3-A1-UN","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","A2","CA","KP6-S3-A2-CA","Kausi Primary","Kausi Pre-Poison Baiting",30,1
+"KP6","KP6-S3","A2","UN","KP6-S3-A2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","A3","CA","KP6-S3-A3-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","A3","UN","KP6-S3-A3-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","A4","CA","KP6-S3-A4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","A4","UN","KP6-S3-A4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","B1","CA","KP6-S3-B1-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","B1","UN","KP6-S3-B1-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","B2","CA","KP6-S3-B2-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","B2","UN","KP6-S3-B2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","B3","CA","KP6-S3-B3-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","B3","UN","KP6-S3-B3-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","B4","CA","KP6-S3-B4-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","B4","UN","KP6-S3-B4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C1","CA","KP6-S3-C1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C1","UN","KP6-S3-C1-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C2","CA","KP6-S3-C2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C2","UN","KP6-S3-C2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C3","CA","KP6-S3-C3-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C3","UN","KP6-S3-C3-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C4","CA","KP6-S3-C4-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","C4","UN","KP6-S3-C4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D1","CA","KP6-S3-D1-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D1","UN","KP6-S3-D1-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D2","CA","KP6-S3-D2-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D2","UN","KP6-S3-D2-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D3","CA","KP6-S3-D3-CA","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D3","UN","KP6-S3-D3-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"KP6","KP6-S3","D4","CA","KP6-S3-D4-CA","Kausi Primary","Kausi Pre-Poison Baiting",75,1
+"KP6","KP6-S3","D4","UN","KP6-S3-D4-UN","Kausi Primary","Kausi Pre-Poison Baiting",100,1
+"NP1","NP1-S1","A1","CA","NP1-S1-A1-CA","Numba Primary","Baiting",20,1
+"NP1","NP1-S1","A1","UN","NP1-S1-A1-UN","Numba Primary","Baiting",200,1
+"NP1","NP1-S1","A2","CA","NP1-S1-A2-CA","Numba Primary","Baiting",25,1
+"NP1","NP1-S1","A2","UN","NP1-S1-A2-UN","Numba Primary","Baiting",50,1
+"NP1","NP1-S1","A3","CA","NP1-S1-A3-CA","Numba Primary","Baiting",2,1
+"NP1","NP1-S1","A3","UN","NP1-S1-A3-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S1","A4","CA","NP1-S1-A4-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S1","A4","UN","NP1-S1-A4-UN","Numba Primary","Baiting",20,1
+"NP1","NP1-S1","B1","CA","NP1-S1-B1-CA","Numba Primary","Baiting",4,1
+"NP1","NP1-S1","B1","UN","NP1-S1-B1-UN","Numba Primary","Baiting",30,1
+"NP1","NP1-S1","B2","CA","NP1-S1-B2-CA","Numba Primary","Baiting",10,1
+"NP1","NP1-S1","B2","UN","NP1-S1-B2-UN","Numba Primary","Baiting",3,1
+"NP1","NP1-S1","B3","CA","NP1-S1-B3-CA","Numba Primary","Baiting",7,1
+"NP1","NP1-S1","B3","UN","NP1-S1-B3-UN","Numba Primary","Baiting",200,1
+"NP1","NP1-S1","B4","CA","NP1-S1-B4-CA","Numba Primary","Baiting",3,1
+"NP1","NP1-S1","B4","UN","NP1-S1-B4-UN","Numba Primary","Baiting",200,1
+"NP1","NP1-S1","C1","CA","NP1-S1-C1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S1","C1","UN","NP1-S1-C1-UN","Numba Primary","Baiting",10,1
+"NP1","NP1-S1","C2","CA","NP1-S1-C2-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S1","C2","UN","NP1-S1-C2-UN","Numba Primary","Baiting",12,1
+"NP1","NP1-S1","C3","CA","NP1-S1-C3-CA","Numba Primary","Baiting",35,1
+"NP1","NP1-S1","C3","UN","NP1-S1-C3-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S1","C4","CA","NP1-S1-C4-CA","Numba Primary","Baiting",3,1
+"NP1","NP1-S1","C4","UN","NP1-S1-C4-UN","Numba Primary","Baiting",10,1
+"NP1","NP1-S1","D1","CA","NP1-S1-D1-CA","Numba Primary","Baiting",25,1
+"NP1","NP1-S1","D1","UN","NP1-S1-D1-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S1","D2","CA","NP1-S1-D2-CA","Numba Primary","Baiting",8,1
+"NP1","NP1-S1","D2","UN","NP1-S1-D2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S1","D3","CA","NP1-S1-D3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S1","D3","UN","NP1-S1-D3-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S1","D4","CA","NP1-S1-D4-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S1","D4","UN","NP1-S1-D4-UN","Numba Primary","Baiting",15,1
+"NP1","NP1-S2","A1","CA","NP1-S2-A1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","A1","UN","NP1-S2-A1-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S2","A2","CA","NP1-S2-A2-CA","Numba Primary","Baiting",1,1
+"NP1","NP1-S2","A2","UN","NP1-S2-A2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","A3","CA","NP1-S2-A3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","A3","UN","NP1-S2-A3-UN","Numba Primary","Baiting",200,1
+"NP1","NP1-S2","A4","CA","NP1-S2-A4-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S2","A4","UN","NP1-S2-A4-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S2","B1","CA","NP1-S2-B1-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S2","B1","UN","NP1-S2-B1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","B2","CA","NP1-S2-B2-CA","Numba Primary","Baiting",10,1
+"NP1","NP1-S2","B2","UN","NP1-S2-B2-UN","Numba Primary","Baiting",10,1
+"NP1","NP1-S2","B3","CA","NP1-S2-B3-CA","Numba Primary","Baiting",40,1
+"NP1","NP1-S2","B3","UN","NP1-S2-B3-UN","Numba Primary","Baiting",56,1
+"NP1","NP1-S2","B4","CA","NP1-S2-B4-CA","Numba Primary","Baiting",14,1
+"NP1","NP1-S2","B4","UN","NP1-S2-B4-UN","Numba Primary","Baiting",200,1
+"NP1","NP1-S2","C1","CA","NP1-S2-C1-CA","Numba Primary","Baiting",35,1
+"NP1","NP1-S2","C1","UN","NP1-S2-C1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","C2","CA","NP1-S2-C2-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S2","C2","UN","NP1-S2-C2-UN","Numba Primary","Baiting",41,1
+"NP1","NP1-S2","C3","CA","NP1-S2-C3-CA","Numba Primary","Baiting",8,1
+"NP1","NP1-S2","C3","UN","NP1-S2-C3-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","C4","CA","NP1-S2-C4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","C4","UN","NP1-S2-C4-UN","Numba Primary","Baiting",25,1
+"NP1","NP1-S2","D1","CA","NP1-S2-D1-CA","Numba Primary","Baiting",15,1
+"NP1","NP1-S2","D1","UN","NP1-S2-D1-UN","Numba Primary","Baiting",75,1
+"NP1","NP1-S2","D2","CA","NP1-S2-D2-CA","Numba Primary","Baiting",3,1
+"NP1","NP1-S2","D2","UN","NP1-S2-D2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","D3","CA","NP1-S2-D3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","D3","UN","NP1-S2-D3-UN","Numba Primary","Baiting",5,1
+"NP1","NP1-S2","D4","CA","NP1-S2-D4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S2","D4","UN","NP1-S2-D4-UN","Numba Primary","Baiting",2,1
+"NP1","NP1-S3","A1","CA","NP1-S3-A1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","A1","UN","NP1-S3-A1-UN","Numba Primary","Baiting",30,1
+"NP1","NP1-S3","A2","CA","NP1-S3-A2-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","A2","UN","NP1-S3-A2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","A3","CA","NP1-S3-A3-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S3","A3","UN","NP1-S3-A3-UN","Numba Primary","Baiting",4,1
+"NP1","NP1-S3","A4","CA","NP1-S3-A4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","A4","UN","NP1-S3-A4-UN","Numba Primary","Baiting",10,1
+"NP1","NP1-S3","B1","CA","NP1-S3-B1-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S3","B1","UN","NP1-S3-B1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","B2","CA","NP1-S3-B2-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","B2","UN","NP1-S3-B2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","B3","CA","NP1-S3-B3-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S3","B3","UN","NP1-S3-B3-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","B4","CA","NP1-S3-B4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","B4","UN","NP1-S3-B4-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","C1","CA","NP1-S3-C1-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S3","C1","UN","NP1-S3-C1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","C2","CA","NP1-S3-C2-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","C2","UN","NP1-S3-C2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","C3","CA","NP1-S3-C3-CA","Numba Primary","Baiting",1,1
+"NP1","NP1-S3","C3","UN","NP1-S3-C3-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","C4","CA","NP1-S3-C4-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S3","C4","UN","NP1-S3-C4-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","D1","CA","NP1-S3-D1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","D1","UN","NP1-S3-D1-UN","Numba Primary","Baiting",2,1
+"NP1","NP1-S3","D2","CA","NP1-S3-D2-CA","Numba Primary","Baiting",2,1
+"NP1","NP1-S3","D2","UN","NP1-S3-D2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S3","D3","CA","NP1-S3-D3-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S3","D3","UN","NP1-S3-D3-UN","Numba Primary","Baiting",2,1
+"NP1","NP1-S3","D4","CA","NP1-S3-D4-CA","Numba Primary","Baiting",4,1
+"NP1","NP1-S3","D4","UN","NP1-S3-D4-UN","Numba Primary","Baiting",4,1
+"NP1","NP1-S4","A1","CA","NP1-S4-A1-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S4","A1","UN","NP1-S4-A1-UN","Numba Primary","Baiting",1,1
+"NP1","NP1-S4","A2","CA","NP1-S4-A2-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S4","A2","UN","NP1-S4-A2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","A3","CA","NP1-S4-A3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","A3","UN","NP1-S4-A3-UN","Numba Primary","Baiting",1,1
+"NP1","NP1-S4","A4","CA","NP1-S4-A4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","A4","UN","NP1-S4-A4-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","B1","CA","NP1-S4-B1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","B1","UN","NP1-S4-B1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","B2","CA","NP1-S4-B2-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S4","B2","UN","NP1-S4-B2-UN","Numba Primary","Baiting",3,1
+"NP1","NP1-S4","B3","CA","NP1-S4-B3-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S4","B3","UN","NP1-S4-B3-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","B4","CA","NP1-S4-B4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","B4","UN","NP1-S4-B4-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","C1","CA","NP1-S4-C1-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S4","C1","UN","NP1-S4-C1-UN","Numba Primary","Baiting",6,1
+"NP1","NP1-S4","C2","CA","NP1-S4-C2-CA","Numba Primary","Baiting",1,1
+"NP1","NP1-S4","C2","UN","NP1-S4-C2-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S4","C3","CA","NP1-S4-C3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","C3","UN","NP1-S4-C3-UN","Numba Primary","Baiting",3,1
+"NP1","NP1-S4","C4","CA","NP1-S4-C4-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S4","C4","UN","NP1-S4-C4-UN","Numba Primary","Baiting",104,1
+"NP1","NP1-S4","D1","CA","NP1-S4-D1-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","D1","UN","NP1-S4-D1-UN","Numba Primary","Baiting",1,1
+"NP1","NP1-S4","D2","CA","NP1-S4-D2-CA","Numba Primary","Baiting",7,1
+"NP1","NP1-S4","D2","UN","NP1-S4-D2-UN","Numba Primary","Baiting",5,1
+"NP1","NP1-S4","D3","CA","NP1-S4-D3-CA","Numba Primary","Baiting",30,1
+"NP1","NP1-S4","D3","UN","NP1-S4-D3-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S4","D4","CA","NP1-S4-D4-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S4","D4","UN","NP1-S4-D4-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","A1","CA","NP1-S5-A1-CA","Numba Primary","Baiting",9,1
+"NP1","NP1-S5","A1","UN","NP1-S5-A1-UN","Numba Primary","Baiting",30,1
+"NP1","NP1-S5","A2","CA","NP1-S5-A2-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","A2","UN","NP1-S5-A2-UN","Numba Primary","Baiting",2,1
+"NP1","NP1-S5","A3","CA","NP1-S5-A3-CA","Numba Primary","Baiting",20,1
+"NP1","NP1-S5","A3","UN","NP1-S5-A3-UN","Numba Primary","Baiting",5,1
+"NP1","NP1-S5","A4","CA","NP1-S5-A4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","A4","UN","NP1-S5-A4-UN","Numba Primary","Baiting",3,1
+"NP1","NP1-S5","B1","CA","NP1-S5-B1-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S5","B1","UN","NP1-S5-B1-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","B2","CA","NP1-S5-B2-CA","Numba Primary","Baiting",35,1
+"NP1","NP1-S5","B2","UN","NP1-S5-B2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","B3","CA","NP1-S5-B3-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S5","B3","UN","NP1-S5-B3-UN","Numba Primary","Baiting",75,1
+"NP1","NP1-S5","B4","CA","NP1-S5-B4-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","B4","UN","NP1-S5-B4-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","C1","CA","NP1-S5-C1-CA","Numba Primary","Baiting",15,1
+"NP1","NP1-S5","C1","UN","NP1-S5-C1-UN","Numba Primary","Baiting",1,1
+"NP1","NP1-S5","C2","CA","NP1-S5-C2-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S5","C2","UN","NP1-S5-C2-UN","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","C3","CA","NP1-S5-C3-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S5","C3","UN","NP1-S5-C3-UN","Numba Primary","Baiting",3,1
+"NP1","NP1-S5","C4","CA","NP1-S5-C4-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S5","C4","UN","NP1-S5-C4-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S5","D1","CA","NP1-S5-D1-CA","Numba Primary","Baiting",100,1
+"NP1","NP1-S5","D1","UN","NP1-S5-D1-UN","Numba Primary","Baiting",100,1
+"NP1","NP1-S5","D2","CA","NP1-S5-D2-CA","Numba Primary","Baiting",75,1
+"NP1","NP1-S5","D2","UN","NP1-S5-D2-UN","Numba Primary","Baiting",2,1
+"NP1","NP1-S5","D3","CA","NP1-S5-D3-CA","Numba Primary","Baiting",0,0
+"NP1","NP1-S5","D3","UN","NP1-S5-D3-UN","Numba Primary","Baiting",35,1
+"NP1","NP1-S5","D4","CA","NP1-S5-D4-CA","Numba Primary","Baiting",15,1
+"NP1","NP1-S5","D4","UN","NP1-S5-D4-UN","Numba Primary","Baiting",7,1
+"NP2","NP2-S1","A1","CA","NP2-S1-A1-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","A1","UN","NP2-S1-A1-UN","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","A2","CA","NP2-S1-A2-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","A2","UN","NP2-S1-A2-UN","Numba Primary","Baiting",3,1
+"NP2","NP2-S1","A3","CA","NP2-S1-A3-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","A3","UN","NP2-S1-A3-UN","Numba Primary","Baiting",3,1
+"NP2","NP2-S1","A4","CA","NP2-S1-A4-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","A4","UN","NP2-S1-A4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","B1","CA","NP2-S1-B1-CA","Numba Primary","Baiting",15,1
+"NP2","NP2-S1","B1","UN","NP2-S1-B1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","B2","CA","NP2-S1-B2-CA","Numba Primary","Baiting",100,1
+"NP2","NP2-S1","B2","UN","NP2-S1-B2-UN","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","B3","CA","NP2-S1-B3-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S1","B3","UN","NP2-S1-B3-UN","Numba Primary","Baiting",30,1
+"NP2","NP2-S1","B4","CA","NP2-S1-B4-CA","Numba Primary","Baiting",50,1
+"NP2","NP2-S1","B4","UN","NP2-S1-B4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C1","CA","NP2-S1-C1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C1","UN","NP2-S1-C1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C2","CA","NP2-S1-C2-CA","Numba Primary","Baiting",20,1
+"NP2","NP2-S1","C2","UN","NP2-S1-C2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C3","CA","NP2-S1-C3-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C3","UN","NP2-S1-C3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","C4","CA","NP2-S1-C4-CA","Numba Primary","Baiting",3,1
+"NP2","NP2-S1","C4","UN","NP2-S1-C4-UN","Numba Primary","Baiting",20,1
+"NP2","NP2-S1","D1","CA","NP2-S1-D1-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S1","D1","UN","NP2-S1-D1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","D2","CA","NP2-S1-D2-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","D2","UN","NP2-S1-D2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S1","D3","CA","NP2-S1-D3-CA","Numba Primary","Baiting",40,1
+"NP2","NP2-S1","D3","UN","NP2-S1-D3-UN","Numba Primary","Baiting",20,1
+"NP2","NP2-S1","D4","CA","NP2-S1-D4-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S1","D4","UN","NP2-S1-D4-UN","Numba Primary","Baiting",25,1
+"NP2","NP2-S2","A1","CA","NP2-S2-A1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","A1","UN","NP2-S2-A1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","A2","CA","NP2-S2-A2-CA","Numba Primary","Baiting",45,1
+"NP2","NP2-S2","A2","UN","NP2-S2-A2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","A3","CA","NP2-S2-A3-CA","Numba Primary","Baiting",5,1
+"NP2","NP2-S2","A3","UN","NP2-S2-A3-UN","Numba Primary","Baiting",40,1
+"NP2","NP2-S2","A4","CA","NP2-S2-A4-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S2","A4","UN","NP2-S2-A4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","B1","CA","NP2-S2-B1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","B1","UN","NP2-S2-B1-UN","Numba Primary","Baiting",50,1
+"NP2","NP2-S2","B2","CA","NP2-S2-B2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","B2","UN","NP2-S2-B2-UN","Numba Primary","Baiting",50,1
+"NP2","NP2-S2","B3","CA","NP2-S2-B3-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S2","B3","UN","NP2-S2-B3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","B4","CA","NP2-S2-B4-CA","Numba Primary","Baiting",20,1
+"NP2","NP2-S2","B4","UN","NP2-S2-B4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","C1","CA","NP2-S2-C1-CA","Numba Primary","Baiting",2,1
+"NP2","NP2-S2","C1","UN","NP2-S2-C1-UN","Numba Primary","Baiting",20,1
+"NP2","NP2-S2","C2","CA","NP2-S2-C2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","C2","UN","NP2-S2-C2-UN","Numba Primary","Baiting",10,1
+"NP2","NP2-S2","C3","CA","NP2-S2-C3-CA","Numba Primary","Baiting",2,1
+"NP2","NP2-S2","C3","UN","NP2-S2-C3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","C4","CA","NP2-S2-C4-CA","Numba Primary","Baiting",50,1
+"NP2","NP2-S2","C4","UN","NP2-S2-C4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","D1","CA","NP2-S2-D1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S2","D1","UN","NP2-S2-D1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","D2","CA","NP2-S2-D2-CA","Numba Primary","Baiting",10,1
+"NP2","NP2-S2","D2","UN","NP2-S2-D2-UN","Numba Primary","Baiting",8,1
+"NP2","NP2-S2","D3","CA","NP2-S2-D3-CA","Numba Primary","Baiting",5,1
+"NP2","NP2-S2","D3","UN","NP2-S2-D3-UN","Numba Primary","Baiting",10,1
+"NP2","NP2-S2","D4","CA","NP2-S2-D4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S2","D4","UN","NP2-S2-D4-UN","Numba Primary","Baiting",20,1
+"NP2","NP2-S3","A1","CA","NP2-S3-A1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","A1","UN","NP2-S3-A1-UN","Numba Primary","Baiting",8,1
+"NP2","NP2-S3","A2","CA","NP2-S3-A2-CA","Numba Primary","Baiting",100,1
+"NP2","NP2-S3","A2","UN","NP2-S3-A2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","A3","CA","NP2-S3-A3-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","A3","UN","NP2-S3-A3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","A4","CA","NP2-S3-A4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","A4","UN","NP2-S3-A4-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S3","B1","CA","NP2-S3-B1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","B1","UN","NP2-S3-B1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","B2","CA","NP2-S3-B2-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","B2","UN","NP2-S3-B2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","B3","CA","NP2-S3-B3-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","B3","UN","NP2-S3-B3-UN","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","B4","CA","NP2-S3-B4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","B4","UN","NP2-S3-B4-UN","Numba Primary","Baiting",31,1
+"NP2","NP2-S3","C1","CA","NP2-S3-C1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","C1","UN","NP2-S3-C1-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S3","C2","CA","NP2-S3-C2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","C2","UN","NP2-S3-C2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","C3","CA","NP2-S3-C3-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","C3","UN","NP2-S3-C3-UN","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","C4","CA","NP2-S3-C4-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S3","C4","UN","NP2-S3-C4-UN","Numba Primary","Baiting",35,1
+"NP2","NP2-S3","D1","CA","NP2-S3-D1-CA","Numba Primary","Baiting",75,1
+"NP2","NP2-S3","D1","UN","NP2-S3-D1-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S3","D2","CA","NP2-S3-D2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","D2","UN","NP2-S3-D2-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S3","D3","CA","NP2-S3-D3-CA","Numba Primary","Baiting",75,1
+"NP2","NP2-S3","D3","UN","NP2-S3-D3-UN","Numba Primary","Baiting",35,1
+"NP2","NP2-S3","D4","CA","NP2-S3-D4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S3","D4","UN","NP2-S3-D4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","A1","CA","NP2-S4-A1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S4","A1","UN","NP2-S4-A1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","A2","CA","NP2-S4-A2-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S4","A2","UN","NP2-S4-A2-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S4","A3","CA","NP2-S4-A3-CA","Numba Primary","Baiting",100,1
+"NP2","NP2-S4","A3","UN","NP2-S4-A3-UN","Numba Primary","Baiting",3,1
+"NP2","NP2-S4","A4","CA","NP2-S4-A4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","A4","UN","NP2-S4-A4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","B1","CA","NP2-S4-B1-CA","Numba Primary","Baiting",76,1
+"NP2","NP2-S4","B1","UN","NP2-S4-B1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","B2","CA","NP2-S4-B2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","B2","UN","NP2-S4-B2-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S4","B3","CA","NP2-S4-B3-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","B3","UN","NP2-S4-B3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","B4","CA","NP2-S4-B4-CA","Numba Primary","Baiting",75,1
+"NP2","NP2-S4","B4","UN","NP2-S4-B4-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S4","C1","CA","NP2-S4-C1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","C1","UN","NP2-S4-C1-UN","Numba Primary","Baiting",6,1
+"NP2","NP2-S4","C2","CA","NP2-S4-C2-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S4","C2","UN","NP2-S4-C2-UN","Numba Primary","Baiting",30,1
+"NP2","NP2-S4","C3","CA","NP2-S4-C3-CA","Numba Primary","Baiting",3,1
+"NP2","NP2-S4","C3","UN","NP2-S4-C3-UN","Numba Primary","Baiting",75,1
+"NP2","NP2-S4","C4","CA","NP2-S4-C4-CA","Numba Primary","Baiting",100,1
+"NP2","NP2-S4","C4","UN","NP2-S4-C4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D1","CA","NP2-S4-D1-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D1","UN","NP2-S4-D1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D2","CA","NP2-S4-D2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D2","UN","NP2-S4-D2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D3","CA","NP2-S4-D3-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S4","D3","UN","NP2-S4-D3-UN","Numba Primary","Baiting",30,1
+"NP2","NP2-S4","D4","CA","NP2-S4-D4-CA","Numba Primary","Baiting",4,1
+"NP2","NP2-S4","D4","UN","NP2-S4-D4-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S5","A1","CA","NP2-S5-A1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S5","A1","UN","NP2-S5-A1-UN","Numba Primary","Baiting",35,1
+"NP2","NP2-S5","A2","CA","NP2-S5-A2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","A2","UN","NP2-S5-A2-UN","Numba Primary","Baiting",1,1
+"NP2","NP2-S5","A3","CA","NP2-S5-A3-CA","Numba Primary","Baiting",75,1
+"NP2","NP2-S5","A3","UN","NP2-S5-A3-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","A4","CA","NP2-S5-A4-CA","Numba Primary","Baiting",31,1
+"NP2","NP2-S5","A4","UN","NP2-S5-A4-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S5","B1","CA","NP2-S5-B1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S5","B1","UN","NP2-S5-B1-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","B2","CA","NP2-S5-B2-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","B2","UN","NP2-S5-B2-UN","Numba Primary","Baiting",11,1
+"NP2","NP2-S5","B3","CA","NP2-S5-B3-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S5","B3","UN","NP2-S5-B3-UN","Numba Primary","Baiting",75,1
+"NP2","NP2-S5","B4","CA","NP2-S5-B4-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S5","B4","UN","NP2-S5-B4-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S5","C1","CA","NP2-S5-C1-CA","Numba Primary","Baiting",36,1
+"NP2","NP2-S5","C1","UN","NP2-S5-C1-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S5","C2","CA","NP2-S5-C2-CA","Numba Primary","Baiting",1,1
+"NP2","NP2-S5","C2","UN","NP2-S5-C2-UN","Numba Primary","Baiting",100,1
+"NP2","NP2-S5","C3","CA","NP2-S5-C3-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S5","C3","UN","NP2-S5-C3-UN","Numba Primary","Baiting",36,1
+"NP2","NP2-S5","C4","CA","NP2-S5-C4-CA","Numba Primary","Baiting",75,1
+"NP2","NP2-S5","C4","UN","NP2-S5-C4-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","D1","CA","NP2-S5-D1-CA","Numba Primary","Baiting",30,1
+"NP2","NP2-S5","D1","UN","NP2-S5-D1-UN","Numba Primary","Baiting",75,1
+"NP2","NP2-S5","D2","CA","NP2-S5-D2-CA","Numba Primary","Baiting",35,1
+"NP2","NP2-S5","D2","UN","NP2-S5-D2-UN","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","D3","CA","NP2-S5-D3-CA","Numba Primary","Baiting",2,1
+"NP2","NP2-S5","D3","UN","NP2-S5-D3-UN","Numba Primary","Baiting",21,1
+"NP2","NP2-S5","D4","CA","NP2-S5-D4-CA","Numba Primary","Baiting",0,0
+"NP2","NP2-S5","D4","UN","NP2-S5-D4-UN","Numba Primary","Baiting",35,1
+"NP4","NP4-S1","A1","CA","NP4-S1-A1-CA","Numba Primary","Baiting",21,1
+"NP4","NP4-S1","A1","UN","NP4-S1-A1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","A2","CA","NP4-S1-A2-CA","Numba Primary","Baiting",45,1
+"NP4","NP4-S1","A2","UN","NP4-S1-A2-UN","Numba Primary","Baiting",15,1
+"NP4","NP4-S1","A3","CA","NP4-S1-A3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","A3","UN","NP4-S1-A3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","A4","CA","NP4-S1-A4-CA","Numba Primary","Baiting",3,1
+"NP4","NP4-S1","A4","UN","NP4-S1-A4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","B1","CA","NP4-S1-B1-CA","Numba Primary","Baiting",25,1
+"NP4","NP4-S1","B1","UN","NP4-S1-B1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","B2","CA","NP4-S1-B2-CA","Numba Primary","Baiting",3,1
+"NP4","NP4-S1","B2","UN","NP4-S1-B2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","B3","CA","NP4-S1-B3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","B3","UN","NP4-S1-B3-UN","Numba Primary","Baiting",200,1
+"NP4","NP4-S1","B4","CA","NP4-S1-B4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","B4","UN","NP4-S1-B4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","C1","CA","NP4-S1-C1-CA","Numba Primary","Baiting",1,1
+"NP4","NP4-S1","C1","UN","NP4-S1-C1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","C2","CA","NP4-S1-C2-CA","Numba Primary","Baiting",35,1
+"NP4","NP4-S1","C2","UN","NP4-S1-C2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","C3","CA","NP4-S1-C3-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S1","C3","UN","NP4-S1-C3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","C4","CA","NP4-S1-C4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S1","C4","UN","NP4-S1-C4-UN","Numba Primary","Baiting",200,1
+"NP4","NP4-S1","D1","CA","NP4-S1-D1-CA","Numba Primary","Baiting",20,1
+"NP4","NP4-S1","D1","UN","NP4-S1-D1-UN","Numba Primary","Baiting",1,1
+"NP4","NP4-S1","D2","CA","NP4-S1-D2-CA","Numba Primary","Baiting",20,1
+"NP4","NP4-S1","D2","UN","NP4-S1-D2-UN","Numba Primary","Baiting",8,1
+"NP4","NP4-S1","D3","CA","NP4-S1-D3-CA","Numba Primary","Baiting",20,1
+"NP4","NP4-S1","D3","UN","NP4-S1-D3-UN","Numba Primary","Baiting",100,1
+"NP4","NP4-S1","D4","CA","NP4-S1-D4-CA","Numba Primary","Baiting",5,1
+"NP4","NP4-S1","D4","UN","NP4-S1-D4-UN","Numba Primary","Baiting",300,1
+"NP4","NP4-S2","A1","CA","NP4-S2-A1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","A1","UN","NP4-S2-A1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","A2","CA","NP4-S2-A2-CA","Numba Primary","Baiting",4,1
+"NP4","NP4-S2","A2","UN","NP4-S2-A2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","A3","CA","NP4-S2-A3-CA","Numba Primary","Baiting",8,1
+"NP4","NP4-S2","A3","UN","NP4-S2-A3-UN","Numba Primary","Baiting",75,1
+"NP4","NP4-S2","A4","CA","NP4-S2-A4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","A4","UN","NP4-S2-A4-UN","Numba Primary","Baiting",1,1
+"NP4","NP4-S2","B1","CA","NP4-S2-B1-CA","Numba Primary","Baiting",3,1
+"NP4","NP4-S2","B1","UN","NP4-S2-B1-UN","Numba Primary","Baiting",2,1
+"NP4","NP4-S2","B2","CA","NP4-S2-B2-CA","Numba Primary","Baiting",100,1
+"NP4","NP4-S2","B2","UN","NP4-S2-B2-UN","Numba Primary","Baiting",50,1
+"NP4","NP4-S2","B3","CA","NP4-S2-B3-CA","Numba Primary","Baiting",20,1
+"NP4","NP4-S2","B3","UN","NP4-S2-B3-UN","Numba Primary","Baiting",50,1
+"NP4","NP4-S2","B4","CA","NP4-S2-B4-CA","Numba Primary","Baiting",15,1
+"NP4","NP4-S2","B4","UN","NP4-S2-B4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","C1","CA","NP4-S2-C1-CA","Numba Primary","Baiting",1,1
+"NP4","NP4-S2","C1","UN","NP4-S2-C1-UN","Numba Primary","Baiting",8,1
+"NP4","NP4-S2","C2","CA","NP4-S2-C2-CA","Numba Primary","Baiting",1,1
+"NP4","NP4-S2","C2","UN","NP4-S2-C2-UN","Numba Primary","Baiting",60,1
+"NP4","NP4-S2","C3","CA","NP4-S2-C3-CA","Numba Primary","Baiting",10,1
+"NP4","NP4-S2","C3","UN","NP4-S2-C3-UN","Numba Primary","Baiting",200,1
+"NP4","NP4-S2","C4","CA","NP4-S2-C4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","C4","UN","NP4-S2-C4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","D1","CA","NP4-S2-D1-CA","Numba Primary","Baiting",10,1
+"NP4","NP4-S2","D1","UN","NP4-S2-D1-UN","Numba Primary","Baiting",200,1
+"NP4","NP4-S2","D2","CA","NP4-S2-D2-CA","Numba Primary","Baiting",8,1
+"NP4","NP4-S2","D2","UN","NP4-S2-D2-UN","Numba Primary","Baiting",12,1
+"NP4","NP4-S2","D3","CA","NP4-S2-D3-CA","Numba Primary","Baiting",3,1
+"NP4","NP4-S2","D3","UN","NP4-S2-D3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","D4","CA","NP4-S2-D4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S2","D4","UN","NP4-S2-D4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","A1","CA","NP4-S3-A1-CA","Numba Primary","Baiting",8,1
+"NP4","NP4-S3","A1","UN","NP4-S3-A1-UN","Numba Primary","Baiting",14,1
+"NP4","NP4-S3","A2","CA","NP4-S3-A2-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","A2","UN","NP4-S3-A2-UN","Numba Primary","Baiting",101,1
+"NP4","NP4-S3","A3","CA","NP4-S3-A3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","A3","UN","NP4-S3-A3-UN","Numba Primary","Baiting",8,1
+"NP4","NP4-S3","A4","CA","NP4-S3-A4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","A4","UN","NP4-S3-A4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","B1","CA","NP4-S3-B1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","B1","UN","NP4-S3-B1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","B2","CA","NP4-S3-B2-CA","Numba Primary","Baiting",3,1
+"NP4","NP4-S3","B2","UN","NP4-S3-B2-UN","Numba Primary","Baiting",14,1
+"NP4","NP4-S3","B3","CA","NP4-S3-B3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","B3","UN","NP4-S3-B3-UN","Numba Primary","Baiting",100,1
+"NP4","NP4-S3","B4","CA","NP4-S3-B4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","B4","UN","NP4-S3-B4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","C1","CA","NP4-S3-C1-CA","Numba Primary","Baiting",15,1
+"NP4","NP4-S3","C1","UN","NP4-S3-C1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","C2","CA","NP4-S3-C2-CA","Numba Primary","Baiting",25,1
+"NP4","NP4-S3","C2","UN","NP4-S3-C2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","C3","CA","NP4-S3-C3-CA","Numba Primary","Baiting",150,1
+"NP4","NP4-S3","C3","UN","NP4-S3-C3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","C4","CA","NP4-S3-C4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","C4","UN","NP4-S3-C4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","D1","CA","NP4-S3-D1-CA","Numba Primary","Baiting",150,1
+"NP4","NP4-S3","D1","UN","NP4-S3-D1-UN","Numba Primary","Baiting",50,1
+"NP4","NP4-S3","D2","CA","NP4-S3-D2-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S3","D2","UN","NP4-S3-D2-UN","Numba Primary","Baiting",15,1
+"NP4","NP4-S3","D3","CA","NP4-S3-D3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","D3","UN","NP4-S3-D3-UN","Numba Primary","Baiting",200,1
+"NP4","NP4-S3","D4","CA","NP4-S3-D4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S3","D4","UN","NP4-S3-D4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","A1","CA","NP4-S4-A1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","A1","UN","NP4-S4-A1-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","A2","CA","NP4-S4-A2-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","A2","UN","NP4-S4-A2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","A3","CA","NP4-S4-A3-CA","Numba Primary","Baiting",6,1
+"NP4","NP4-S4","A3","UN","NP4-S4-A3-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","A4","CA","NP4-S4-A4-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","A4","UN","NP4-S4-A4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","B1","CA","NP4-S4-B1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","B1","UN","NP4-S4-B1-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","B2","CA","NP4-S4-B2-CA","Numba Primary","Baiting",100,1
+"NP4","NP4-S4","B2","UN","NP4-S4-B2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","B3","CA","NP4-S4-B3-CA","Numba Primary","Baiting",75,1
+"NP4","NP4-S4","B3","UN","NP4-S4-B3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","B4","CA","NP4-S4-B4-CA","Numba Primary","Baiting",7,1
+"NP4","NP4-S4","B4","UN","NP4-S4-B4-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","C1","CA","NP4-S4-C1-CA","Numba Primary","Baiting",8,1
+"NP4","NP4-S4","C1","UN","NP4-S4-C1-UN","Numba Primary","Baiting",3,1
+"NP4","NP4-S4","C2","CA","NP4-S4-C2-CA","Numba Primary","Baiting",75,1
+"NP4","NP4-S4","C2","UN","NP4-S4-C2-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","C3","CA","NP4-S4-C3-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","C3","UN","NP4-S4-C3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","C4","CA","NP4-S4-C4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","C4","UN","NP4-S4-C4-UN","Numba Primary","Baiting",4,1
+"NP4","NP4-S4","D1","CA","NP4-S4-D1-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S4","D1","UN","NP4-S4-D1-UN","Numba Primary","Baiting",75,1
+"NP4","NP4-S4","D2","CA","NP4-S4-D2-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","D2","UN","NP4-S4-D2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","D3","CA","NP4-S4-D3-CA","Numba Primary","Baiting",100,1
+"NP4","NP4-S4","D3","UN","NP4-S4-D3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S4","D4","CA","NP4-S4-D4-CA","Numba Primary","Baiting",2,1
+"NP4","NP4-S4","D4","UN","NP4-S4-D4-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S5","A1","CA","NP4-S5-A1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","A1","UN","NP4-S5-A1-UN","Numba Primary","Baiting",6,1
+"NP4","NP4-S5","A2","CA","NP4-S5-A2-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","A2","UN","NP4-S5-A2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","A3","CA","NP4-S5-A3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","A3","UN","NP4-S5-A3-UN","Numba Primary","Baiting",8,1
+"NP4","NP4-S5","A4","CA","NP4-S5-A4-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","A4","UN","NP4-S5-A4-UN","Numba Primary","Baiting",4,1
+"NP4","NP4-S5","B1","CA","NP4-S5-B1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","B1","UN","NP4-S5-B1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","B2","CA","NP4-S5-B2-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","B2","UN","NP4-S5-B2-UN","Numba Primary","Baiting",2,1
+"NP4","NP4-S5","B3","CA","NP4-S5-B3-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","B3","UN","NP4-S5-B3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","B4","CA","NP4-S5-B4-CA","Numba Primary","Baiting",39,1
+"NP4","NP4-S5","B4","UN","NP4-S5-B4-UN","Numba Primary","Baiting",30,1
+"NP4","NP4-S5","C1","CA","NP4-S5-C1-CA","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","C1","UN","NP4-S5-C1-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","C2","CA","NP4-S5-C2-CA","Numba Primary","Baiting",9,1
+"NP4","NP4-S5","C2","UN","NP4-S5-C2-UN","Numba Primary","Baiting",75,1
+"NP4","NP4-S5","C3","CA","NP4-S5-C3-CA","Numba Primary","Baiting",6,1
+"NP4","NP4-S5","C3","UN","NP4-S5-C3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","C4","CA","NP4-S5-C4-CA","Numba Primary","Baiting",10,1
+"NP4","NP4-S5","C4","UN","NP4-S5-C4-UN","Numba Primary","Baiting",100,1
+"NP4","NP4-S5","D1","CA","NP4-S5-D1-CA","Numba Primary","Baiting",8,1
+"NP4","NP4-S5","D1","UN","NP4-S5-D1-UN","Numba Primary","Baiting",8,1
+"NP4","NP4-S5","D2","CA","NP4-S5-D2-CA","Numba Primary","Baiting",30,1
+"NP4","NP4-S5","D2","UN","NP4-S5-D2-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","D3","CA","NP4-S5-D3-CA","Numba Primary","Baiting",36,1
+"NP4","NP4-S5","D3","UN","NP4-S5-D3-UN","Numba Primary","Baiting",0,0
+"NP4","NP4-S5","D4","CA","NP4-S5-D4-CA","Numba Primary","Baiting",100,1
+"NP4","NP4-S5","D4","UN","NP4-S5-D4-UN","Numba Primary","Baiting",75,1
+"NP5","NP5-S1","A1","CA","NP5-S1-A1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","A1","UN","NP5-S1-A1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","A2","CA","NP5-S1-A2-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","A2","UN","NP5-S1-A2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","A3","CA","NP5-S1-A3-CA","Numba Primary","Baiting",22,1
+"NP5","NP5-S1","A3","UN","NP5-S1-A3-UN","Numba Primary","Baiting",11,1
+"NP5","NP5-S1","A4","CA","NP5-S1-A4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","A4","UN","NP5-S1-A4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","B1","CA","NP5-S1-B1-CA","Numba Primary","Baiting",2,1
+"NP5","NP5-S1","B1","UN","NP5-S1-B1-UN","Numba Primary","Baiting",1,1
+"NP5","NP5-S1","B2","CA","NP5-S1-B2-CA","Numba Primary","Baiting",5,1
+"NP5","NP5-S1","B2","UN","NP5-S1-B2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","B3","CA","NP5-S1-B3-CA","Numba Primary","Baiting",10,1
+"NP5","NP5-S1","B3","UN","NP5-S1-B3-UN","Numba Primary","Baiting",4,1
+"NP5","NP5-S1","B4","CA","NP5-S1-B4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","B4","UN","NP5-S1-B4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","C1","CA","NP5-S1-C1-CA","Numba Primary","Baiting",8,1
+"NP5","NP5-S1","C1","UN","NP5-S1-C1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","C2","CA","NP5-S1-C2-CA","Numba Primary","Baiting",5,1
+"NP5","NP5-S1","C2","UN","NP5-S1-C2-UN","Numba Primary","Baiting",200,1
+"NP5","NP5-S1","C3","CA","NP5-S1-C3-CA","Numba Primary","Baiting",15,1
+"NP5","NP5-S1","C3","UN","NP5-S1-C3-UN","Numba Primary","Baiting",20,1
+"NP5","NP5-S1","C4","CA","NP5-S1-C4-CA","Numba Primary","Baiting",3,1
+"NP5","NP5-S1","C4","UN","NP5-S1-C4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","D1","CA","NP5-S1-D1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S1","D1","UN","NP5-S1-D1-UN","Numba Primary","Baiting",1,1
+"NP5","NP5-S1","D2","CA","NP5-S1-D2-CA","Numba Primary","Baiting",20,1
+"NP5","NP5-S1","D2","UN","NP5-S1-D2-UN","Numba Primary","Baiting",200,1
+"NP5","NP5-S1","D3","CA","NP5-S1-D3-CA","Numba Primary","Baiting",40,1
+"NP5","NP5-S1","D3","UN","NP5-S1-D3-UN","Numba Primary","Baiting",3,1
+"NP5","NP5-S1","D4","CA","NP5-S1-D4-CA","Numba Primary","Baiting",50,1
+"NP5","NP5-S1","D4","UN","NP5-S1-D4-UN","Numba Primary","Baiting",20,1
+"NP5","NP5-S2","A1","CA","NP5-S2-A1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","A1","UN","NP5-S2-A1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","A2","CA","NP5-S2-A2-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S2","A2","UN","NP5-S2-A2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","A3","CA","NP5-S2-A3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","A3","UN","NP5-S2-A3-UN","Numba Primary","Baiting",2,1
+"NP5","NP5-S2","A4","CA","NP5-S2-A4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","A4","UN","NP5-S2-A4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","B1","CA","NP5-S2-B1-CA","Numba Primary","Baiting",6,1
+"NP5","NP5-S2","B1","UN","NP5-S2-B1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","B2","CA","NP5-S2-B2-CA","Numba Primary","Baiting",2,1
+"NP5","NP5-S2","B2","UN","NP5-S2-B2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","B3","CA","NP5-S2-B3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","B3","UN","NP5-S2-B3-UN","Numba Primary","Baiting",100,1
+"NP5","NP5-S2","B4","CA","NP5-S2-B4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","B4","UN","NP5-S2-B4-UN","Numba Primary","Baiting",75,1
+"NP5","NP5-S2","C1","CA","NP5-S2-C1-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S2","C1","UN","NP5-S2-C1-UN","Numba Primary","Baiting",77,1
+"NP5","NP5-S2","C2","CA","NP5-S2-C2-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S2","C2","UN","NP5-S2-C2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","C3","CA","NP5-S2-C3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","C3","UN","NP5-S2-C3-UN","Numba Primary","Baiting",100,1
+"NP5","NP5-S2","C4","CA","NP5-S2-C4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","C4","UN","NP5-S2-C4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","D1","CA","NP5-S2-D1-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S2","D1","UN","NP5-S2-D1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","D2","UN","NP5-S2-D2-UN","Numba Primary","Baiting",5,1
+"NP5","NP5-S2","D3","CA","NP5-S2-D3-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S2","D3","UN","NP5-S2-D3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S2","D4","CA","NP5-S2-D4-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S2","D4","UN","NP5-S2-D4-UN","Numba Primary","Baiting",100,1
+"NP5","NP5-S3","A1","CA","NP5-S3-A1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","A1","UN","NP5-S3-A1-UN","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","A2","CA","NP5-S3-A2-CA","Numba Primary","Baiting",65,1
+"NP5","NP5-S3","A2","UN","NP5-S3-A2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","A3","CA","NP5-S3-A3-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","A3","UN","NP5-S3-A3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","A4","CA","NP5-S3-A4-CA","Numba Primary","Baiting",2,1
+"NP5","NP5-S3","A4","UN","NP5-S3-A4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","B1","CA","NP5-S3-B1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","B1","UN","NP5-S3-B1-UN","Numba Primary","Baiting",3,1
+"NP5","NP5-S3","B2","CA","NP5-S3-B2-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","B2","UN","NP5-S3-B2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","B3","CA","NP5-S3-B3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","B3","UN","NP5-S3-B3-UN","Numba Primary","Baiting",31,1
+"NP5","NP5-S3","B4","CA","NP5-S3-B4-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","B4","UN","NP5-S3-B4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","C1","CA","NP5-S3-C1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","C1","UN","NP5-S3-C1-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","C2","CA","NP5-S3-C2-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","C2","UN","NP5-S3-C2-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","C3","CA","NP5-S3-C3-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","C3","UN","NP5-S3-C3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","C4","CA","NP5-S3-C4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","C4","UN","NP5-S3-C4-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","D1","CA","NP5-S3-D1-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","D1","UN","NP5-S3-D1-UN","Numba Primary","Baiting",75,1
+"NP5","NP5-S3","D2","CA","NP5-S3-D2-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","D2","UN","NP5-S3-D2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","D3","CA","NP5-S3-D3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","D3","UN","NP5-S3-D3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S3","D4","CA","NP5-S3-D4-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S3","D4","UN","NP5-S3-D4-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","A1","CA","NP5-S4-A1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","A1","UN","NP5-S4-A1-UN","Numba Primary","Baiting",2,1
+"NP5","NP5-S4","A2","CA","NP5-S4-A2-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S4","A2","UN","NP5-S4-A2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","A3","CA","NP5-S4-A3-CA","Numba Primary","Baiting",100,1
+"NP5","NP5-S4","A3","UN","NP5-S4-A3-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","A4","CA","NP5-S4-A4-CA","Numba Primary","Baiting",100,1
+"NP5","NP5-S4","A4","UN","NP5-S4-A4-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","B1","CA","NP5-S4-B1-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","B1","UN","NP5-S4-B1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","B2","CA","NP5-S4-B2-CA","Numba Primary","Baiting",100,1
+"NP5","NP5-S4","B2","UN","NP5-S4-B2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","B3","CA","NP5-S4-B3-CA","Numba Primary","Baiting",75,1
+"NP5","NP5-S4","B3","UN","NP5-S4-B3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","B4","CA","NP5-S4-B4-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","B4","UN","NP5-S4-B4-UN","Numba Primary","Baiting",100,1
+"NP5","NP5-S4","C1","CA","NP5-S4-C1-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","C1","UN","NP5-S4-C1-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","C2","CA","NP5-S4-C2-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","C2","UN","NP5-S4-C2-UN","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","C3","CA","NP5-S4-C3-CA","Numba Primary","Baiting",6,1
+"NP5","NP5-S4","C3","UN","NP5-S4-C3-UN","Numba Primary","Baiting",6,1
+"NP5","NP5-S4","C4","CA","NP5-S4-C4-CA","Numba Primary","Baiting",6,1
+"NP5","NP5-S4","C4","UN","NP5-S4-C4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","D1","CA","NP5-S4-D1-CA","Numba Primary","Baiting",30,1
+"NP5","NP5-S4","D1","UN","NP5-S4-D1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","D2","CA","NP5-S4-D2-CA","Numba Primary","Baiting",6,1
+"NP5","NP5-S4","D2","UN","NP5-S4-D2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","D3","CA","NP5-S4-D3-CA","Numba Primary","Baiting",6,1
+"NP5","NP5-S4","D3","UN","NP5-S4-D3-UN","Numba Primary","Baiting",2,1
+"NP5","NP5-S4","D4","CA","NP5-S4-D4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S4","D4","UN","NP5-S4-D4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","A1","CA","NP5-S5-A1-CA","Numba Primary","Baiting",1,1
+"NP5","NP5-S5","A1","UN","NP5-S5-A1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","A2","CA","NP5-S5-A2-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","A2","UN","NP5-S5-A2-UN","Numba Primary","Baiting",40,1
+"NP5","NP5-S5","A3","CA","NP5-S5-A3-CA","Numba Primary","Baiting",50,1
+"NP5","NP5-S5","A3","UN","NP5-S5-A3-UN","Numba Primary","Baiting",50,1
+"NP5","NP5-S5","A4","CA","NP5-S5-A4-CA","Numba Primary","Baiting",60,1
+"NP5","NP5-S5","A4","UN","NP5-S5-A4-UN","Numba Primary","Baiting",300,1
+"NP5","NP5-S5","B1","CA","NP5-S5-B1-CA","Numba Primary","Baiting",36,1
+"NP5","NP5-S5","B1","UN","NP5-S5-B1-UN","Numba Primary","Baiting",40,1
+"NP5","NP5-S5","B2","CA","NP5-S5-B2-CA","Numba Primary","Baiting",40,1
+"NP5","NP5-S5","B2","UN","NP5-S5-B2-UN","Numba Primary","Baiting",3,1
+"NP5","NP5-S5","B3","CA","NP5-S5-B3-CA","Numba Primary","Baiting",100,1
+"NP5","NP5-S5","B3","UN","NP5-S5-B3-UN","Numba Primary","Baiting",40,1
+"NP5","NP5-S5","B4","CA","NP5-S5-B4-CA","Numba Primary","Baiting",10,1
+"NP5","NP5-S5","B4","UN","NP5-S5-B4-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","C1","CA","NP5-S5-C1-CA","Numba Primary","Baiting",1,1
+"NP5","NP5-S5","C1","UN","NP5-S5-C1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","C2","CA","NP5-S5-C2-CA","Numba Primary","Baiting",50,1
+"NP5","NP5-S5","C2","UN","NP5-S5-C2-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","C3","CA","NP5-S5-C3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","C3","UN","NP5-S5-C3-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","C4","CA","NP5-S5-C4-CA","Numba Primary","Baiting",1,1
+"NP5","NP5-S5","C4","UN","NP5-S5-C4-UN","Numba Primary","Baiting",2,1
+"NP5","NP5-S5","D1","CA","NP5-S5-D1-CA","Numba Primary","Baiting",50,1
+"NP5","NP5-S5","D1","UN","NP5-S5-D1-UN","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","D2","CA","NP5-S5-D2-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","D2","UN","NP5-S5-D2-UN","Numba Primary","Baiting",20,1
+"NP5","NP5-S5","D3","CA","NP5-S5-D3-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","D3","UN","NP5-S5-D3-UN","Numba Primary","Baiting",50,1
+"NP5","NP5-S5","D4","CA","NP5-S5-D4-CA","Numba Primary","Baiting",0,0
+"NP5","NP5-S5","D4","UN","NP5-S5-D4-UN","Numba Primary","Baiting",0,0
